@@ -33,4 +33,52 @@ public class Resultados {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
+
+	
+	public Resultados() {}
+	
+	public Resultados(String id_resultados, Dispositivos dispositivo, Opciones opcion, Caracteristicas caracteristica) {
+		this.id_resultados = id_resultados;
+		this.dispositivo = dispositivo;
+		this.opcion = opcion;
+		this.caracteristica = caracteristica;
+	}
+
+	public String getId_resultados() {
+		return id_resultados;
+	}
+
+	public void setId_resultados(String id_resultados) {
+		this.id_resultados = id_resultados;
+	}
+
+	public Dispositivos getDispositivo() {
+		return dispositivo;
+	}
+
+	public void setDispositivo(Dispositivos dispositivo) {
+		this.dispositivo = dispositivo;
+	}
+
+	public Opciones getOpcion() {
+		return opcion;
+	}
+
+	public void setOpcion(Opciones opcion) {
+		this.opcion = opcion;
+	}
+
+	public Caracteristicas getCaracteristica() {
+		return caracteristica;
+	}
+
+	public void setCaracteristica(Caracteristicas caracteristica) {
+		this.caracteristica = caracteristica;
+	}
+
+	@Override
+	public String toString() {
+		return "Resultados [id_resultados=" + id_resultados + ", dispositivo=" + dispositivo + ", opcion=" + opcion
+				+ ", caracteristica=" + caracteristica + "]";
+	}
 }

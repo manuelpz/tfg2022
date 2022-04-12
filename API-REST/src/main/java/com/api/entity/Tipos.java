@@ -32,6 +32,51 @@ public class Tipos {
 	//    TIPO 2 -> DISPOSITIVOS 2,3,10...
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
 	private List<Dispositivos> dispositivos = new ArrayList<>();
+
+	public Tipos() {}
 	
-	
+	public Tipos(String id_tipo, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
+		this.id_tipo = id_tipo;
+		this.tipo = tipo;
+		this.caracteristicas = caracteristicas;
+		this.dispositivos = dispositivos;
+	}
+
+	public String getId_tipo() {
+		return id_tipo;
+	}
+
+	public void setId_tipo(String id_tipo) {
+		this.id_tipo = id_tipo;
+	}
+
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public List<Caracteristicas> getCaracteristicas() {
+		return caracteristicas;
+	}
+
+	public void setCaracteristicas(List<Caracteristicas> caracteristicas) {
+		this.caracteristicas = caracteristicas;
+	}
+
+	public List<Dispositivos> getDispositivos() {
+		return dispositivos;
+	}
+
+	public void setDispositivos(List<Dispositivos> dispositivos) {
+		this.dispositivos = dispositivos;
+	}
+
+	@Override
+	public String toString() {
+		return "Tipos [id_tipo=" + id_tipo + ", tipo=" + tipo + ", caracteristicas=" + caracteristicas
+				+ ", dispositivos=" + dispositivos + "]";
+	}
 }
