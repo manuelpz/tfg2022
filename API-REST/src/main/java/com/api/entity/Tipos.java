@@ -32,4 +32,6 @@ public class Tipos {
 	//    TIPO 2 -> DISPOSITIVOS 2,3,10...
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
 	private List<Dispositivos> dispositivos = new ArrayList<>();
+	
+	
 }
