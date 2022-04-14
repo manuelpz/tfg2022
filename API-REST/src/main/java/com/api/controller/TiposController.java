@@ -24,12 +24,12 @@ public class TiposController {
 	TiposService tiposService;
 	
 	@GetMapping("/tipo/{tipo}")
-	public String getTipo(@PathVariable(value = "tipo") String tipo){
+	public Tipos getTipo(@PathVariable(value = "tipo") String tipo){
 		return tiposService.getTipo(tipo);
 	}
 	
 	@GetMapping("/tipos")
-	public List<String> getAllTipos() {
+	public List<Tipos> getAllTipos() {
 		return tiposService.getAllTipos();	
 	}
 	
@@ -38,7 +38,7 @@ public class TiposController {
 		return tiposService.createTipo(tipo);
 	}
 	
-	@PutMapping("/tipo/{id}")
+	@PutMapping("/tipo")
 	public Tipos modifyTipo(@Validated @RequestBody Tipos tipo) {
 		return tiposService.modifyTipo( tipo);
 	}

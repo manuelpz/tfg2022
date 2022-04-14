@@ -13,6 +13,9 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "CARACTERISTICAS")
 public class Caracteristicas {
@@ -26,6 +29,7 @@ public class Caracteristicas {
 	
 	//Muchas de estas caracteristicas van a corresponder a un tipo
 	//Ej: Color, Peso y Resolucion van a corresponder al tipo "1" -> "MONITOR"
+	@JsonIgnoreProperties(value="caracteristicas")
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_TIPO")
 	private Tipos tipo;

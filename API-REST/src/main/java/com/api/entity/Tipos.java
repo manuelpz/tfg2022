@@ -10,6 +10,9 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name="TIPOS")
 public class Tipos {
@@ -25,6 +28,7 @@ public class Tipos {
 	//Un tipo de dispositivo puede tener varias características
 	//Ej: Resolucion, Peso, Color...
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties(value = "caracteristicas")
 	private List<Caracteristicas> caracteristicas = new ArrayList<>();
 	
 	//Un tipo puede tener varios dispositivos
@@ -57,7 +61,7 @@ public class Tipos {
 	public void setTipo(String tipo) {
 		this.tipo = tipo;
 	}
-
+	
 	public List<Caracteristicas> getCaracteristicas() {
 		return caracteristicas;
 	}

@@ -1,6 +1,6 @@
 package com.api.service.Impl;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,20 +24,14 @@ public class TiposServiceImpl implements TiposService{
 	}
 
 	@Override
-	public String getTipo(String id) {
-		Tipos tipo = tiposRepository.getById(id);
-		return tipo.getTipo();
+	public Tipos getTipo(String id) {	
+		return tiposRepository.getById(id);
 	}
 	
 	
 	@Override
-	public List<String> getAllTipos() {
-	 List<String> nombres = new ArrayList<String>();
-	 List<Tipos> tipos = tiposRepository.findAll();
-	 for(Tipos tipo : tipos) {
-		 nombres.add(tipo.getTipo());
-	 }
-	 return nombres;
+	public List<Tipos> getAllTipos() {
+	 return tiposRepository.findAll();
 	}
 
 	@Override
