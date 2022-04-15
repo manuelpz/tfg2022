@@ -27,14 +27,15 @@ public class ResultadosController {
 	ResultadosService resultadosService;
 	
 	@GetMapping("/resultado/{id}")
-	public Resultados getResultado(@PathVariable(value = "id") String id){
-		return resultadosService.getResultado(id);
+	public List<Resultados> getResultado(@PathVariable(value = "id") String id){
+		return resultadosService.findByDispositivo(id);
 	}
 	
 	@GetMapping("/resultados")
 	public List<Resultados> getAllResultados() {
 		return resultadosService.getAllResultados();	
 	}
+	
 	
 	@PostMapping("/resultado")
 	public Resultados createResultado(@Validated @RequestBody Resultados resultado) {

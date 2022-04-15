@@ -44,4 +44,9 @@ public class ResultadosServiceImpl implements ResultadosService{
 		resultadosRepository.save(resultado);
 		return resultado;
 	}
+
+	@Override
+	public List<Resultados> findByDispositivo(String id) {
+		return resultadosRepository.findByDispositivo(id);
+	}
 }

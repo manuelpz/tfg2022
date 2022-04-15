@@ -14,4 +14,5 @@ public interface ResultadosService {
 	List<Resultados> getAllResultados();
 	void deleteResultado(String id);
 	Resultados modifyResultado(Resultados resultado);
+	List<Resultados> findByDispositivo(String id);
 }
