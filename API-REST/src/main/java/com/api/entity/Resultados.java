@@ -44,11 +44,12 @@ public class Resultados {
 	
 	public Resultados() {}
 	
-	public Resultados(String id_resultado, Dispositivos dispositivo, Opciones opcion, Caracteristicas caracteristica) {
+	public Resultados(String id_resultado, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
 		this.id_resultado = id_resultado;
 		this.dispositivo = dispositivo;
-		this.opcion = opcion;
 		this.caracteristica = caracteristica;
+		this.opcion = opcion;
+		
 	}
 
 	public String getId_resultado() {

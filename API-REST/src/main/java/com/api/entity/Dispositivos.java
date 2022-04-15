@@ -26,7 +26,7 @@ public class Dispositivos {
 	
 	//Muchos de estos dispositivos van a corresponder a un tipo
 	//Ej: DISPOSITIVOS 1,2,5,7 correponden al tipo "1" -> "MONITOR"
-	@JsonIgnoreProperties(value="dispositivos")
+	@JsonIgnoreProperties({"dispositivos","caracteristicas"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_TIPO")
 	private Tipos tipo;
