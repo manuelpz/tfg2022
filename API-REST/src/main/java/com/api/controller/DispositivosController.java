@@ -27,9 +27,9 @@ public class DispositivosController {
 	@Autowired
 	DispositivosService dispositivosService;
 	
-	@GetMapping("/dispositivo/{id}")
-	public Dispositivos getDispositivo(@PathVariable(value = "id") String id){
-		return dispositivosService.getDispositivo(id);
+	@GetMapping("/dispositivo/{tipo}")
+	public List<Dispositivos> getDispositivo(@PathVariable(value = "tipo") String tipo){
+		return dispositivosService.findByTipo(tipo);
 	}
 	
 	@GetMapping("/dispositivos")

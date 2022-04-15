@@ -14,4 +14,5 @@ public interface DispositivosService {
 	List<Dispositivos> getAllDispositivos();
 	void deleteDispositivo(String id);
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
+	List<Dispositivos> findByTipo(String tipo);
 }
