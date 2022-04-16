@@ -13,7 +13,7 @@ export class ParamFiltrosOrdenadoresService {
     return this.marca
   }
   setMarca(unMarca:string){
-    console.log(unMarca)
+    console.log(unMarca+"setter")
     this.marca = unMarca
   }
 }
