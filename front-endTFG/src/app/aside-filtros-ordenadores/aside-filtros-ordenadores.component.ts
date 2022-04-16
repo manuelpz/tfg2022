@@ -19,4 +19,8 @@ getOrdenadores(){
 setMarca(unMarca:string){
   this.paramsFiltros.setMarca(unMarca)
   }
+
+  getMarca(){
+    return this.paramsFiltros.getMarca()
+  }
 }

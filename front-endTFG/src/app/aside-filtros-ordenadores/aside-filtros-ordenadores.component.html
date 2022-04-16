@@ -7,21 +7,21 @@
         <tr><td>
             <div class="form-group">
                 <label for="marcaList">Elige una marca</label>
-                <select #marca class="form-control" id="marcaList" (change)="setMarca(marca.value)">
+                <select #marca class="form-control" (change)="setMarca(marca.value)">
                     <option value="0">(Elige una marca)</option>
                     <ng-container *ngFor="let marca of getOrdenadores()">
-                        
+
                         <ng-container *ngFor="let resultado of marca.resultados">
-                         
-                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca' && marca.tipo.tipo === 'Ordenadores'">
+
+                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca_ordenadores' && marca.tipo.tipo === 'ORDENADOR'">
                                 <option value="">{{resultado.opcion.opcion }}</option>
-                   
+
                             </ng-container>
                         </ng-container>
                     </ng-container>
                 </select>
             </div>
-          
+
         </td></tr>
     </tbody>
 </table>

@@ -5,20 +5,19 @@ import { of } from 'rxjs';
   name: 'filtroMarca'
 })
 export class FiltroMarcaPipe implements PipeTransform {
-  
+
   private rura=new Array()
   transform(ordenadores: any[], marca: string): any[] {
     if(ordenadores && ordenadores.length){
-     
-      //he aqui un gran problema---------------------------------------------------------------------------------------
-      
-      return ordenadores.filter(ordenador=>ordenador.resultados[0].opcion.opcion==marca)
-      
-      
-    }else{
-      return ordenadores
+     for(let ordenador of ordenadores){
+       for(let i = 0; i < ordenador.resultados.length; i++){
+        if(ordenador.resultados[i].opcion.opcion.toLowerCase().indexOf(marca.toLowerCase())>-1){
+         this.rura.push(ordenador)
+       }
+     }
+      //he aqui un gran problema--------------------------------------------------------------------------------------
     }
-    
   }
+      return this.rura
 
-}
+}}
