@@ -1,0 +1,54 @@
+
+<table id="marcaFilters" class="table table-striped">
+    <thead class="thead-light">
+        <tr><th>Marca</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+            <div class="form-group">
+                <label for="marcaList">Elige una marca</label>
+                <select #marca class="form-control" id="marcaList" (change)="setMarca(marca.value)">
+                    <option value="0">(Elige una marca)</option>
+                    <ng-container *ngFor="let marca of getOrdenadores()">
+                        
+                        <ng-container *ngFor="let resultado of marca.resultados">
+                         
+                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca' && marca.tipo.tipo === 'Ordenadores'">
+                                <option value="">{{resultado.opcion.opcion }}</option>
+                   
+                            </ng-container>
+                        </ng-container>
+                    </ng-container>
+                </select>
+            </div>
+          
+        </td></tr>
+    </tbody>
+</table>
+<table id="tecFilters" class="table table-striped">
+    <thead class="thead-light">
+        <tr><th>TECNOLOGÍA</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>
+            <div class="form-group">
+                <label for="techList">Elige una tecnología</label>
+                <select #tec class="form-control" id="techList"  >
+                    <option value="0">(Elige una tecnología)</option>
+                    <ng-container >
+                        <option value="{{tec.id}}"></option>
+                    </ng-container>
+                </select>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="tec1" checked>
+                <label class="form-check-label" for="tec1">Tecnología1</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="tec2" checked>
+                <label class="form-check-label" for="tec2">Tecnología2</label>
+            </div>
+        </td></tr>
+    </tbody>
+</table>
+<button class="btn btn-primary" id="resetFilters" (click)="marca.value=''; tec.value='0' ;">Borrar filtros</button>
