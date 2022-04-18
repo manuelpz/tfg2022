@@ -1,23 +1,23 @@
 
-<table id="marcaFilters" class="table table-striped">
+<table id="tipoFilters" class="table table-striped">
     <thead class="thead-light">
-        <tr><th>Marca</th></tr>
+        <tr><th>Tipo</th></tr>
     </thead>
     <tbody>
         <tr><td>
             <div class="form-group">
-                <label for="marcaList">Elige una marca</label>
-                <select #marca class="form-control" id="marcaList" (change)="setMarca(marca.value)">
-                    <option value="0">(Elige una marca)</option>
-                    <ng-container *ngFor="let marca of getOrdenadores()">
+                <label for="tipoList">Elige el tipo</label>
+                <select #tipo class="form-control" id="tipoList" (change)="setTipo(tipo.value)"  >
+                    <option value="0">(Elige el tipo)</option>
+                    <ng-container *ngFor="let tipo of getOrdenadores()">
                         
-                        <ng-container *ngFor="let resultado of marca.resultados">
-                         
-                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca' && marca.tipo.tipo === 'Ordenadores'">
-                                <option value="{{resultado.opcion.id_opcion }}">{{resultado.opcion.opcion }}</option>
+                        
+                        <ng-container *ngIf="tipo.tipo.tipo !== 'Ordenadores' &&  tipo.tipo.tipo !== 'Impresora' && tipo.tipo.tipo !== 'Pantallas'">
+                           
+                                <option value="{{tipo.tipo.id_tipo }}">{{tipo.tipo.tipo }}</option>
                    
-                            </ng-container>
-                        </ng-container>
+                            
+                        </ng-container>  
                     </ng-container>
                 </select>
             </div>
@@ -56,4 +56,4 @@
         <a routerLink="/nav" routerLinkActive="active" aria-current="page" href="#">  <tr><th>Crear Ordenador</th></tr> </a>
     </thead>
 </table>
-<button class="btn btn-primary" id="resetFilters" (click)="marca.value=''; tec.value='0' ;">Borrar filtros</button>
+<button class="btn btn-primary" id="resetFilters" (click)="tipo.value=''; tec.value='0' ;">Borrar filtros</button>

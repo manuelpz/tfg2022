@@ -1,0 +1,11 @@
+<div *ngIf ="impresora.tipo.tipo === 'Impresora'">
+    <div class="row">
+        
+        <div class="col col-lg-3">
+            <h5 class="card-title">{{impresora.tipo.tipo}}</h5>
+        </div>
+        <div class="col col-lg-6">	
+            <p *ngFor=" let resultado of impresora.resultados" class="card-tex">{{resultado.caracteristica.caracteristica }} : {{resultado.opcion.opcion }}</p>
+        </div>
+    </div>
+    </div>
