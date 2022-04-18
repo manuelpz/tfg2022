@@ -16,6 +16,14 @@ import { BdOrdenadoresService } from './bd-ordenadores.service';
 import { HttpClientModule } from '@angular/common/http';
 import { QrComponenteComponent } from './qr-componente/qr-componente.component';
 import { FiltroMarcaPipe } from './filtro-marca.pipe';
+import { CrearOrdenadoresComponent } from './crear-ordenadores/crear-ordenadores.component';
+import { AsideFiltrosImpresorasComponent } from './aside-filtros-impresoras/aside-filtros-impresoras.component';
+import { ResultadosImpresorasComponent } from './resultados-impresoras/resultados-impresoras.component';
+import { ImpresorasTarjetaComponent } from './impresoras-tarjeta/impresoras-tarjeta.component';
+import { ResultadosOtrosComponent } from './resultados-otros/resultados-otros.component';
+import { OtrosTarjetaComponent } from './otros-tarjeta/otros-tarjeta.component';
+import { AsideFiltrosOtrosComponent } from './aside-filtros-otros/aside-filtros-otros.component';
+import { FiltroTiposPipe } from './filtro-tipos.pipe';
 
 
 @NgModule({
@@ -32,6 +40,14 @@ import { FiltroMarcaPipe } from './filtro-marca.pipe';
     OrdenadorTarjetaComponent,
     QrComponenteComponent,
     FiltroMarcaPipe,
+    CrearOrdenadoresComponent,
+    AsideFiltrosImpresorasComponent,
+    ResultadosImpresorasComponent,
+    ImpresorasTarjetaComponent,
+    ResultadosOtrosComponent,
+    OtrosTarjetaComponent,
+    AsideFiltrosOtrosComponent,
+    FiltroTiposPipe,
  
   ],
   imports: [
