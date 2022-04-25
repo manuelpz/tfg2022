@@ -24,6 +24,9 @@ import { ResultadosOtrosComponent } from './resultados-otros/resultados-otros.co
 import { OtrosTarjetaComponent } from './otros-tarjeta/otros-tarjeta.component';
 import { AsideFiltrosOtrosComponent } from './aside-filtros-otros/aside-filtros-otros.component';
 import { FiltroTiposPipe } from './filtro-tipos.pipe';
+import { AsideFiltrosPantallasComponent } from './aside-filtros-pantallas/aside-filtros-pantallas.component';
+import { PantallasTarjetaComponent } from './pantallas-tarjeta/pantallas-tarjeta.component';
+import { ResultadosPantallasComponent } from './resultados-pantallas/resultados-pantallas.component';
 
 
 @NgModule({
@@ -48,6 +51,9 @@ import { FiltroTiposPipe } from './filtro-tipos.pipe';
     OtrosTarjetaComponent,
     AsideFiltrosOtrosComponent,
     FiltroTiposPipe,
+    AsideFiltrosPantallasComponent,
+    PantallasTarjetaComponent,
+    ResultadosPantallasComponent,
  
   ],
   imports: [
