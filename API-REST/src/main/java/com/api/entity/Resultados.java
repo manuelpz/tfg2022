@@ -21,7 +21,7 @@ public class Resultados {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_RESULTADO")
-	private int id_resultado;
+	private int id;
 	
 	//Muchos de estos resultados van a corresponder a una id de dispositivo
 	//Ej: RESULTADOS CON ID 1,2,3 correponden al dispositivo con ID "1"
@@ -47,20 +47,20 @@ public class Resultados {
 	
 	public Resultados() {}
 	
-	public Resultados(int id_resultado, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
-		this.id_resultado = id_resultado;
+	public Resultados(int id, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
+		this.id = id;
 		this.dispositivo = dispositivo;
 		this.caracteristica = caracteristica;
 		this.opcion = opcion;
 		
 	}
 
-	public int getId_resultado() {
-		return id_resultado;
+	public int getId() {
+		return id;
 	}
 
-	public void setId_resultado(int id_resultado) {
-		this.id_resultado = id_resultado;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Dispositivos getDispositivo() {
@@ -89,7 +89,7 @@ public class Resultados {
 
 	@Override
 	public String toString() {
-		return "Resultados [id_resultados=" + id_resultado + ", dispositivo=" + dispositivo + ", opcion=" + opcion
+		return "Resultados [id_resultados=" + id + ", dispositivo=" + dispositivo + ", opcion=" + opcion
 				+ ", caracteristica=" + caracteristica + "]";
 	}
 }

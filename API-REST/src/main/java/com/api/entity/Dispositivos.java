@@ -25,7 +25,7 @@ public class Dispositivos {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_DISPOSITIVO")
-	private int id_dispositivo;
+	private int id;
 	
 	//Muchos de estos dispositivos van a corresponder a un tipo
 	//Ej: DISPOSITIVOS 1,2,5,7 correponden al tipo "1" -> "MONITOR"
@@ -41,18 +41,18 @@ public class Dispositivos {
 
 	public Dispositivos() {}
 	
-	public Dispositivos(int id_dispositivo, Tipos tipo, List<Resultados> resultados) {
-		this.id_dispositivo = id_dispositivo;
+	public Dispositivos(int id, Tipos tipo, List<Resultados> resultados) {
+		this.id = id;
 		this.tipo = tipo;
 		this.resultados = resultados;
 	}
 
-	public int getId_dispositivo() {
-		return id_dispositivo;
+	public int getId() {
+		return id;
 	}
 
-	public void setId_dispositivo(int id_dispositivo) {
-		this.id_dispositivo = id_dispositivo;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public Tipos getTipo() {
@@ -73,6 +73,6 @@ public class Dispositivos {
 
 	@Override
 	public String toString() {
-		return "Dispositivos [id_dispositivo=" + id_dispositivo + ", tipo=" + tipo + ", resultados=" + resultados + "]";
+		return "Dispositivos [id_dispositivo=" + id + ", tipo=" + tipo + ", resultados=" + resultados + "]";
 	}
 }

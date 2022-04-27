@@ -34,7 +34,7 @@ public class DispositivosController {
 	
 	@GetMapping("/dispositivo/lastId")
 	public Dispositivos getLastId() {
-		return dispositivosService.findTopByOrderById_DispositivoDesc();	
+		return dispositivosService.findTopByOrderByIdDesc();	
 	}
 	
 	@GetMapping("/dispositivos")

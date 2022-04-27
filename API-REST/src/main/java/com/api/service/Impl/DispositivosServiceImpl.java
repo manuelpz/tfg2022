@@ -59,7 +59,7 @@ public class DispositivosServiceImpl implements DispositivosService {
 	}
 
 	@Override
-	public Dispositivos findTopByOrderById_DispositivoDesc() {
-		return dispositivosRepository.findTopByOrderById_DispositivoDesc();
+	public Dispositivos findTopByOrderByIdDesc() {
+		return dispositivosRepository.findTopByOrderByIdDesc();
 	}
 }

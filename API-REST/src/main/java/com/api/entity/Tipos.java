@@ -22,7 +22,7 @@ public class Tipos {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_TIPO")
-	private int id_tipo;
+	private int id;
 	
 	@Column(name = "TIPO")
 	private String tipo;
@@ -42,19 +42,19 @@ public class Tipos {
 
 	public Tipos() {}
 	
-	public Tipos(int id_tipo, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
-		this.id_tipo = id_tipo;
+	public Tipos(int id, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
+		this.id = id;
 		this.tipo = tipo;
 		this.caracteristicas = caracteristicas;
 		this.dispositivos = dispositivos;
 	}
 
-	public int getId_tipo() {
-		return id_tipo;
+	public int getId() {
+		return id;
 	}
 
-	public void setId_tipo(int id_tipo) {
-		this.id_tipo = id_tipo;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getTipo() {
@@ -83,7 +83,7 @@ public class Tipos {
 
 	@Override
 	public String toString() {
-		return "Tipos [id_tipo=" + id_tipo + ", tipo=" + tipo + ", caracteristicas=" + caracteristicas
+		return "Tipos [id_tipo=" + id + ", tipo=" + tipo + ", caracteristicas=" + caracteristicas
 				+ ", dispositivos=" + dispositivos + "]";
 	}
 }

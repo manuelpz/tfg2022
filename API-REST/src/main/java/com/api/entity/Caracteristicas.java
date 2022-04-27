@@ -25,7 +25,7 @@ public class Caracteristicas {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_CARACTERISTICA")
-	private int id_caracteristica;
+	private int id;
 	
 	@Column(name = "CARACTERISTICA")
 	private String caracteristica;
@@ -50,21 +50,21 @@ public class Caracteristicas {
 	
 	public Caracteristicas() {}
 	
-	public Caracteristicas(int id_caracteristica, String caracteristica, Tipos tipo, List<Opciones> opciones,
+	public Caracteristicas(int id, String caracteristica, Tipos tipo, List<Opciones> opciones,
 			List<Resultados> resultados) {
-		this.id_caracteristica = id_caracteristica;
+		this.id = id;
 		this.caracteristica = caracteristica;
 		this.tipo = tipo;
 		this.opciones = opciones;
 		this.resultados = resultados;
 	}
 
-	public int getId_caracteristica() {
-		return id_caracteristica;
+	public int getId() {
+		return id;
 	}
 
-	public void setId_caracteristica(int id_caracteristica) {
-		this.id_caracteristica = id_caracteristica;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getCaracteristica() {
@@ -101,7 +101,7 @@ public class Caracteristicas {
 
 	@Override
 	public String toString() {
-		return "Caracteristicas [id_caracteristica=" + id_caracteristica + ", caracteristica=" + caracteristica
+		return "Caracteristicas [id_caracteristica=" + id + ", caracteristica=" + caracteristica
 				+ ", tipo=" + tipo + ", opciones=" + opciones + ", resultados=" + resultados + "]";
 	}	
 }

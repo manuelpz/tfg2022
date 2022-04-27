@@ -25,7 +25,7 @@ public class Opciones {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_OPCION")
-	private int id_opcion;
+	private int id;
 	
 	@Column(name = "OPCION")
 	private String opcion;
@@ -44,19 +44,19 @@ public class Opciones {
 
 	public Opciones() {}
 	
-	public Opciones(int id_opcion, String opcion, List<Resultados> resultados, Caracteristicas caracteristica) {
-		this.id_opcion = id_opcion;
+	public Opciones(int id, String opcion, List<Resultados> resultados, Caracteristicas caracteristica) {
+		this.id = id;
 		this.opcion = opcion;
 		this.resultados = resultados;
 		this.caracteristica = caracteristica;
 	}
 
-	public int getId_opcion() {
-		return id_opcion;
+	public int getId() {
+		return id;
 	}
 
-	public void setId_opcion(int id_opcion) {
-		this.id_opcion = id_opcion;
+	public void setId(int id) {
+		this.id = id;
 	}
 
 	public String getOpcion() {
@@ -85,7 +85,7 @@ public class Opciones {
 
 	@Override
 	public String toString() {
-		return "Opciones [id_opcion=" + id_opcion + ", opcion=" + opcion + ", resultados=" + resultados
+		return "Opciones [id_opcion=" + id + ", opcion=" + opcion + ", resultados=" + resultados
 				+ ", caracteristica=" + caracteristica + "]";
 	}
 }
