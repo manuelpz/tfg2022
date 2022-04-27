@@ -13,8 +13,8 @@ export class ResultadosOtrosComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  getOrdenadores(){
-    return this.bdOrdenadores.getOrdenadores()
+  getOtros(){
+    return this.bdOrdenadores.getOtros()
   }
   getTipo(){
     return this.paramsFiltros.getTipo()

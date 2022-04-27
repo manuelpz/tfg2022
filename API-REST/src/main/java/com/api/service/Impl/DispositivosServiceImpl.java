@@ -39,7 +39,7 @@ public class DispositivosServiceImpl implements DispositivosService {
 	}
 
 	@Override
-	public void deleteDispositivo(String id) {
+	public void deleteDispositivo(int id) {
 		Dispositivos dispositivoBorrado = dispositivosRepository.getById(id);
 		dispositivosRepository.delete(dispositivoBorrado);
 		

@@ -25,7 +25,7 @@ nuevoPc():any{
    return this.bdOrdenadores.postOrdenador(this.urlPost,
     {
     tipo:{
-      id_tipo: this.bdOrdenadores.getOrdenadores()[0].tipo.id_tipo,
+      id: this.bdOrdenadores.getOrdenadores()[0].tipo.id,
     }
   }).subscribe((response)=>{
     console.log("enviado")

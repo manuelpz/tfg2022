@@ -31,13 +31,14 @@ public class Tipos {
 	//Un tipo de dispositivo puede tener varias características
 	//Ej: Resolucion, Peso, Color...
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"caracteristicas","tipo"})
+	@JsonIgnoreProperties({"caracteristicas","tipo","dispositivos","opciones","resultados"})
 	private List<Caracteristicas> caracteristicas = new ArrayList<>();
 	
 	//Un tipo puede tener varios dispositivos
 	//Ej: TIPO 1 -> DISPOSITIVOS 1,5,7,9...
 	//    TIPO 2 -> DISPOSITIVOS 2,3,10...
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"tipo","resultados"})
 	private List<Dispositivos> dispositivos = new ArrayList<>();
 
 	public Tipos() {}

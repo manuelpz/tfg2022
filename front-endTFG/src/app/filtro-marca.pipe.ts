@@ -9,7 +9,7 @@ export class FiltroMarcaPipe implements PipeTransform {
 
   transform(ordenadores: any[], marca: string=""): any[] {
     if (ordenadores && ordenadores.length) {
-      return ordenadores.filter(ordenadores => ordenadores.resultados[0].opcion.id_opcion.includes(marca))
+      return ordenadores.filter(ordenadores => ordenadores.resultados[0].opcion.id.includes(marca))
     }
     return ordenadores
   }

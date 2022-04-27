@@ -13,8 +13,8 @@
 
                         <ng-container *ngFor="let resultado of marca.resultados">
 
-                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca' && marca.tipo.tipo === 'Ordenadores'">
-                                <option value="{{resultado.opcion.id_opcion }}">{{resultado.opcion.opcion }}</option>
+                            <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca'">
+                                <option value="{{resultado.opcion.id }}">{{resultado.opcion.opcion }}</option>
 
                             </ng-container>
                         </ng-container>

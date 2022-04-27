@@ -9,8 +9,10 @@ export class BdOrdenadoresService {
 
   private ordenadores:any
   private post:any
-  private urlOrdenadores="http://localhost:8080/api/dispositivo/ordenador"
-  private urlPost="localhost:8080/api/dispositivo"
+  private otros:any
+  private urlOrdenadores="http://localhost:8080/api/dispositivo/ordenadores"
+  private urlPost="http://localhost:8080/api/dispositivo"
+  private urlGet="http://localhost:8080/api/dispositivos"
 
 //Saberse esta muy bien
   constructor(private http:HttpClient,
@@ -20,10 +22,13 @@ export class BdOrdenadoresService {
   http.get(this.urlOrdenadores).subscribe((response)=>{
 
     this.ordenadores = response
-
-
   })
 
+  this.otros = new Array()
+  http.get(this.urlGet).subscribe((response)=>{
+
+    this.otros = response
+  })
 
 
 
@@ -41,6 +46,13 @@ export class BdOrdenadoresService {
     return this.http.post(url,body)
   }
 
+  borrarUltimo(url:string, body:any){
+    return this.http.delete(url,body)
+  }
+
+  getOtros(){
+    return this.otros
+  }
 
 
 }

@@ -13,5 +13,7 @@ public interface DispositivosRepository extends JpaRepository<Dispositivos, Stri
 	List<Dispositivos> findByTipo(String tipo);
 
 	Dispositivos findTopByOrderByIdDesc();
+
+	Dispositivos getById(int id);
 	
 }

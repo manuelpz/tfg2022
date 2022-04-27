@@ -12,7 +12,7 @@ public interface DispositivosService {
 	Dispositivos createDispositivo(Dispositivos dispositivo);
 	Dispositivos getDispositivo(String id);
 	List<Dispositivos> getAllDispositivos();
-	void deleteDispositivo(String id);
+	void deleteDispositivo(int id);
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
 	Dispositivos findTopByOrderByIdDesc();

@@ -53,7 +53,7 @@ public class DispositivosController {
 	}
 	
 	@DeleteMapping("/dispositivo/{id}")
-	public void deleteTipo(@PathVariable(value = "tipo") String id) {
+	public void deleteTipo(@PathVariable(value = "id") int id) {
 		dispositivosService.deleteDispositivo(id);
 	}
 }

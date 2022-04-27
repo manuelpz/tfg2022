@@ -8,6 +8,7 @@ import { BdOrdenadoresService } from '../bd-ordenadores.service';
 })
 export class CrearOrdenadoresComponent implements OnInit {
 
+  private urlPost = "http://localhost:8080/api/dispositivo"
   constructor(private bdOrdenadores:BdOrdenadoresService) { }
 
   ngOnInit(): void {
@@ -22,7 +23,7 @@ export class CrearOrdenadoresComponent implements OnInit {
   }
 
   borrarUltimo(){
-    //PENDIENTE DE REALIZAR
+    this.bdOrdenadores.borrarUltimo(this.urlPost, 1)
   }
 
 }
