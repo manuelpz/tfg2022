@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,8 +23,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Dispositivos {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_DISPOSITIVO")
-	private String id_dispositivo;
+	private int id_dispositivo;
 	
 	//Muchos de estos dispositivos van a corresponder a un tipo
 	//Ej: DISPOSITIVOS 1,2,5,7 correponden al tipo "1" -> "MONITOR"
@@ -38,17 +41,17 @@ public class Dispositivos {
 
 	public Dispositivos() {}
 	
-	public Dispositivos(String id_dispositivo, Tipos tipo, List<Resultados> resultados) {
+	public Dispositivos(int id_dispositivo, Tipos tipo, List<Resultados> resultados) {
 		this.id_dispositivo = id_dispositivo;
 		this.tipo = tipo;
 		this.resultados = resultados;
 	}
 
-	public String getId_dispositivo() {
+	public int getId_dispositivo() {
 		return id_dispositivo;
 	}
 
-	public void setId_dispositivo(String id_dispositivo) {
+	public void setId_dispositivo(int id_dispositivo) {
 		this.id_dispositivo = id_dispositivo;
 	}
 

@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,8 +23,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Opciones {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_OPCION")
-	private String id_opcion;
+	private int id_opcion;
 	
 	@Column(name = "OPCION")
 	private String opcion;
@@ -41,18 +44,18 @@ public class Opciones {
 
 	public Opciones() {}
 	
-	public Opciones(String id_opcion, String opcion, List<Resultados> resultados, Caracteristicas caracteristica) {
+	public Opciones(int id_opcion, String opcion, List<Resultados> resultados, Caracteristicas caracteristica) {
 		this.id_opcion = id_opcion;
 		this.opcion = opcion;
 		this.resultados = resultados;
 		this.caracteristica = caracteristica;
 	}
 
-	public String getId_opcion() {
+	public int getId_opcion() {
 		return id_opcion;
 	}
 
-	public void setId_opcion(String id_opcion) {
+	public void setId_opcion(int id_opcion) {
 		this.id_opcion = id_opcion;
 	}
 

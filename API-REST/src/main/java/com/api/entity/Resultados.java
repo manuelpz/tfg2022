@@ -4,6 +4,8 @@ package com.api.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -17,8 +19,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Resultados {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_RESULTADO")
-	private String id_resultado;
+	private int id_resultado;
 	
 	//Muchos de estos resultados van a corresponder a una id de dispositivo
 	//Ej: RESULTADOS CON ID 1,2,3 correponden al dispositivo con ID "1"
@@ -44,7 +47,7 @@ public class Resultados {
 	
 	public Resultados() {}
 	
-	public Resultados(String id_resultado, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
+	public Resultados(int id_resultado, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
 		this.id_resultado = id_resultado;
 		this.dispositivo = dispositivo;
 		this.caracteristica = caracteristica;
@@ -52,11 +55,11 @@ public class Resultados {
 		
 	}
 
-	public String getId_resultado() {
+	public int getId_resultado() {
 		return id_resultado;
 	}
 
-	public void setId_resultado(String id_resultado) {
+	public void setId_resultado(int id_resultado) {
 		this.id_resultado = id_resultado;
 	}
 

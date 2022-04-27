@@ -57,4 +57,9 @@ public class DispositivosServiceImpl implements DispositivosService {
 		List<Dispositivos> dispositivos = tipo2.getDispositivos();
 		return dispositivos;
 	}
+
+	@Override
+	public Dispositivos findTopByOrderById_DispositivoDesc() {
+		return dispositivosRepository.findTopByOrderById_DispositivoDesc();
+	}
 }

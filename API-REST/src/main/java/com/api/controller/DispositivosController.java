@@ -32,6 +32,11 @@ public class DispositivosController {
 		return dispositivosService.findByTipo(tipo);
 	}
 	
+	@GetMapping("/dispositivo/lastId")
+	public Dispositivos getLastId() {
+		return dispositivosService.findTopByOrderById_DispositivoDesc();	
+	}
+	
 	@GetMapping("/dispositivos")
 	public List<Dispositivos> getAllDispositivos() {
 		return dispositivosService.getAllDispositivos();	

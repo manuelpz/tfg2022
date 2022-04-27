@@ -15,4 +15,5 @@ public interface DispositivosService {
 	void deleteDispositivo(String id);
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
+	Dispositivos findTopByOrderById_DispositivoDesc();
 }

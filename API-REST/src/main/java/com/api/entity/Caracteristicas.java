@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -21,8 +23,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Caracteristicas {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_CARACTERISTICA")
-	private String id_caracteristica;
+	private int id_caracteristica;
 	
 	@Column(name = "CARACTERISTICA")
 	private String caracteristica;
@@ -47,7 +50,7 @@ public class Caracteristicas {
 	
 	public Caracteristicas() {}
 	
-	public Caracteristicas(String id_caracteristica, String caracteristica, Tipos tipo, List<Opciones> opciones,
+	public Caracteristicas(int id_caracteristica, String caracteristica, Tipos tipo, List<Opciones> opciones,
 			List<Resultados> resultados) {
 		this.id_caracteristica = id_caracteristica;
 		this.caracteristica = caracteristica;
@@ -56,11 +59,11 @@ public class Caracteristicas {
 		this.resultados = resultados;
 	}
 
-	public String getId_caracteristica() {
+	public int getId_caracteristica() {
 		return id_caracteristica;
 	}
 
-	public void setId_caracteristica(String id_caracteristica) {
+	public void setId_caracteristica(int id_caracteristica) {
 		this.id_caracteristica = id_caracteristica;
 	}
 

@@ -6,6 +6,8 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -18,8 +20,9 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Tipos {
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_TIPO")
-	private String id_tipo;
+	private int id_tipo;
 	
 	@Column(name = "TIPO")
 	private String tipo;
@@ -39,18 +42,18 @@ public class Tipos {
 
 	public Tipos() {}
 	
-	public Tipos(String id_tipo, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
+	public Tipos(int id_tipo, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
 		this.id_tipo = id_tipo;
 		this.tipo = tipo;
 		this.caracteristicas = caracteristicas;
 		this.dispositivos = dispositivos;
 	}
 
-	public String getId_tipo() {
+	public int getId_tipo() {
 		return id_tipo;
 	}
 
-	public void setId_tipo(String id_tipo) {
+	public void setId_tipo(int id_tipo) {
 		this.id_tipo = id_tipo;
 	}
 

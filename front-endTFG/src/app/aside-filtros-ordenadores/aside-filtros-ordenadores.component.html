@@ -10,18 +10,18 @@
                 <select #marca class="form-control" id="marcaList" (change)="setMarca(marca.value)">
                     <option value="0">(Elige una marca)</option>
                     <ng-container *ngFor="let marca of getOrdenadores()">
-                        
+
                         <ng-container *ngFor="let resultado of marca.resultados">
-                         
+
                             <ng-container *ngIf="resultado.caracteristica.caracteristica === 'Marca' && marca.tipo.tipo === 'Ordenadores'">
                                 <option value="{{resultado.opcion.id_opcion }}">{{resultado.opcion.opcion }}</option>
-                   
+
                             </ng-container>
                         </ng-container>
                     </ng-container>
                 </select>
             </div>
-          
+
         </td></tr>
     </tbody>
 </table>
@@ -53,7 +53,7 @@
 </table>
 <table id="tecFilters" class="table table-striped">
     <thead class="thead-light">
-        <a routerLink="/nav" routerLinkActive="active" aria-current="page" href="#">  <tr><th>Crear Ordenador</th></tr> </a>
+        <a routerLink="/nuevoPC" routerLinkActive="active" aria-current="page" href="#" (click)="nuevoPc()">  <tr><th>Añadir nuevo ordenador</th></tr> </a>
     </thead>
 </table>
 <button class="btn btn-primary" id="resetFilters" (click)="marca.value=''; tec.value='0' ;">Borrar filtros</button>
