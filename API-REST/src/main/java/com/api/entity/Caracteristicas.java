@@ -17,6 +17,15 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "CARACTERISTICAS")
@@ -46,62 +55,4 @@ public class Caracteristicas {
 	//Ej: CARACTERISTICA "COLOR" puede aparecer en las columnas RESULTADOS "1,2,3..."
 	@OneToMany(mappedBy = "caracteristica", cascade = CascadeType.ALL)
 	private List<Resultados> resultados = new ArrayList<>();
-
-	
-	public Caracteristicas() {}
-	
-	public Caracteristicas(int id, String caracteristica, Tipos tipo, List<Opciones> opciones,
-			List<Resultados> resultados) {
-		this.id = id;
-		this.caracteristica = caracteristica;
-		this.tipo = tipo;
-		this.opciones = opciones;
-		this.resultados = resultados;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getCaracteristica() {
-		return caracteristica;
-	}
-
-	public void setCaracteristica(String caracteristica) {
-		this.caracteristica = caracteristica;
-	}
-
-	public Tipos getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Tipos tipo) {
-		this.tipo = tipo;
-	}
-
-	public List<Opciones> getOpciones() {
-		return opciones;
-	}
-
-	public void setOpciones(List<Opciones> opciones) {
-		this.opciones = opciones;
-	}
-
-	public List<Resultados> getResultados() {
-		return resultados;
-	}
-
-	public void setResultados(List<Resultados> resultados) {
-		this.resultados = resultados;
-	}
-
-	@Override
-	public String toString() {
-		return "Caracteristicas [id_caracteristica=" + id + ", caracteristica=" + caracteristica
-				+ ", tipo=" + tipo + ", opciones=" + opciones + ", resultados=" + resultados + "]";
-	}	
 }

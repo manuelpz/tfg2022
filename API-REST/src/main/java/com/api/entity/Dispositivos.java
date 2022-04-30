@@ -17,6 +17,14 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "DISPOSITIVOS")
@@ -38,41 +46,4 @@ public class Dispositivos {
 	//Ej: El dispositivo con ID "1", tiene asociadas las columnas "resultado" 1,2,3...
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
 	private List<Resultados> resultados = new ArrayList<>();
-
-	public Dispositivos() {}
-	
-	public Dispositivos(int id, Tipos tipo, List<Resultados> resultados) {
-		this.id = id;
-		this.tipo = tipo;
-		this.resultados = resultados;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Tipos getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(Tipos tipo) {
-		this.tipo = tipo;
-	}
-
-	public List<Resultados> getResultados() {
-		return resultados;
-	}
-
-	public void setResultados(List<Resultados> resultados) {
-		this.resultados = resultados;
-	}
-
-	@Override
-	public String toString() {
-		return "Dispositivos [id_dispositivo=" + id + ", tipo=" + tipo + ", resultados=" + resultados + "]";
-	}
 }

@@ -17,6 +17,15 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "OPCIONES")
@@ -41,51 +50,4 @@ public class Opciones {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
-
-	public Opciones() {}
-	
-	public Opciones(int id, String opcion, List<Resultados> resultados, Caracteristicas caracteristica) {
-		this.id = id;
-		this.opcion = opcion;
-		this.resultados = resultados;
-		this.caracteristica = caracteristica;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getOpcion() {
-		return opcion;
-	}
-
-	public void setOpcion(String opcion) {
-		this.opcion = opcion;
-	}
-
-	public List<Resultados> getResultados() {
-		return resultados;
-	}
-
-	public void setResultados(List<Resultados> resultados) {
-		this.resultados = resultados;
-	}
-
-	public Caracteristicas getCaracteristica() {
-		return caracteristica;
-	}
-
-	public void setCaracteristica(Caracteristicas caracteristica) {
-		this.caracteristica = caracteristica;
-	}
-
-	@Override
-	public String toString() {
-		return "Opciones [id_opcion=" + id + ", opcion=" + opcion + ", resultados=" + resultados
-				+ ", caracteristica=" + caracteristica + "]";
-	}
 }

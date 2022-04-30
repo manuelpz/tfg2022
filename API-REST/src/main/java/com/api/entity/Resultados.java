@@ -1,6 +1,8 @@
 package com.api.entity;
 
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,15 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "RESULTADOS")
@@ -43,53 +54,4 @@ public class Resultados {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
-
-	
-	public Resultados() {}
-	
-	public Resultados(int id, Dispositivos dispositivo,  Caracteristicas caracteristica, Opciones opcion) {
-		this.id = id;
-		this.dispositivo = dispositivo;
-		this.caracteristica = caracteristica;
-		this.opcion = opcion;
-		
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public Dispositivos getDispositivo() {
-		return dispositivo;
-	}
-
-	public void setDispositivo(Dispositivos dispositivo) {
-		this.dispositivo = dispositivo;
-	}
-
-	public Opciones getOpcion() {
-		return opcion;
-	}
-
-	public void setOpcion(Opciones opcion) {
-		this.opcion = opcion;
-	}
-
-	public Caracteristicas getCaracteristica() {
-		return caracteristica;
-	}
-
-	public void setCaracteristica(Caracteristicas caracteristica) {
-		this.caracteristica = caracteristica;
-	}
-
-	@Override
-	public String toString() {
-		return "Resultados [id_resultados=" + id + ", dispositivo=" + dispositivo + ", opcion=" + opcion
-				+ ", caracteristica=" + caracteristica + "]";
-	}
 }

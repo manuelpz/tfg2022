@@ -14,6 +14,15 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name="TIPOS")
@@ -40,51 +49,4 @@ public class Tipos {
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
 	@JsonIgnoreProperties({"tipo","resultados"})
 	private List<Dispositivos> dispositivos = new ArrayList<>();
-
-	public Tipos() {}
-	
-	public Tipos(int id, String tipo, List<Caracteristicas> caracteristicas, List<Dispositivos> dispositivos) {
-		this.id = id;
-		this.tipo = tipo;
-		this.caracteristicas = caracteristicas;
-		this.dispositivos = dispositivos;
-	}
-
-	public int getId() {
-		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getTipo() {
-		return tipo;
-	}
-
-	public void setTipo(String tipo) {
-		this.tipo = tipo;
-	}
-	
-	public List<Caracteristicas> getCaracteristicas() {
-		return caracteristicas;
-	}
-
-	public void setCaracteristicas(List<Caracteristicas> caracteristicas) {
-		this.caracteristicas = caracteristicas;
-	}
-
-	public List<Dispositivos> getDispositivos() {
-		return dispositivos;
-	}
-
-	public void setDispositivos(List<Dispositivos> dispositivos) {
-		this.dispositivos = dispositivos;
-	}
-
-	@Override
-	public String toString() {
-		return "Tipos [id_tipo=" + id + ", tipo=" + tipo + ", caracteristicas=" + caracteristicas
-				+ ", dispositivos=" + dispositivos + "]";
-	}
 }
