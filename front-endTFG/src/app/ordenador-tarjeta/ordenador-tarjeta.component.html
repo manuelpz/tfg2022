@@ -1,0 +1,16 @@
+
+<div class="row">
+	
+	<div class="col col-lg-3">
+		<h5 class="card-title">{{ordenador.tipo.tipo}}</h5>
+	</div>
+	<div class="col col-lg-6">	
+		<p *ngFor=" let resultado of ordenador.resultados" class="card-tex">{{resultado.caracteristica.caracteristica }} : {{resultado.opcion.opcion }}</p>
+		<a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" class="nav-link" aria-current="page" href="#">
+			<button #dispositivo type="button"  class="btn btn-outline-primary" >Generar QR</button></a>
+		
+		
+	</div>
+	
+</div>
+<!-- (click)="setDispositivo(ordenador.id_dispositivo) -->
