@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { BdOrdenadoresService } from '../bd-ordenadores.service';
 
 @Component({
   selector: 'app-crear-ordenadores',
@@ -8,22 +7,9 @@ import { BdOrdenadoresService } from '../bd-ordenadores.service';
 })
 export class CrearOrdenadoresComponent implements OnInit {
 
-  private urlPost = "http://localhost:8080/api/dispositivo"
-  constructor(private bdOrdenadores:BdOrdenadoresService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  salir(){
-    return this.bdOrdenadores.salir()
-  }
-
-  enviarDatos(){
-   // this.bdOrdenadores.postOrdenador('http://localhost:8080/api/dispositivo',this.form.value())
-  }
-
-  borrarUltimo(){
-    this.bdOrdenadores.borrarUltimo(this.urlPost, 1)
   }
 
 }

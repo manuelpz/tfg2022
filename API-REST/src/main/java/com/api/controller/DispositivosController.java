@@ -27,7 +27,7 @@ public class DispositivosController {
 	@Autowired
 	DispositivosService dispositivosService;
 	
-	@GetMapping("/dispositivo/{tipo}")
+	@GetMapping("/dispositivo/tipo/{tipo}")
 	public List<Dispositivos> getDispositivo(@PathVariable(value = "tipo") String tipo){
 		return dispositivosService.findByTipo(tipo);
 	}
@@ -40,6 +40,11 @@ public class DispositivosController {
 	@GetMapping("/dispositivos")
 	public List<Dispositivos> getAllDispositivos() {
 		return dispositivosService.getAllDispositivos();	
+	}
+	
+	@GetMapping("/dispositivo/id/{id}")
+	public Dispositivos getDispositivosID(@PathVariable(value = "id") int id) {
+		return dispositivosService.findById(id);	
 	}
 	
 	@PostMapping("/dispositivo")

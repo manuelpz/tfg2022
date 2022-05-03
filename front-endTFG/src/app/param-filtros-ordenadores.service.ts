@@ -5,18 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class ParamFiltrosOrdenadoresService {
 
-  private marca:string=""
+  private patron:string=""
   constructor() { }
 
  
-  setMarca(unMarca:string){
+  setPatron(unPatron:string){
     
-    this.marca = unMarca
+    this.patron = unPatron
     
   }
   
-  getMarca(){
-    console.log(this.marca)
-    return this.marca
+  getPatron(){
+    console.log(this.patron)
+    return this.patron
   }
 }

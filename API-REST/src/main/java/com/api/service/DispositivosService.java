@@ -16,4 +16,5 @@ public interface DispositivosService {
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
 	Dispositivos findTopByOrderByIdDesc();
+	Dispositivos findById(int id);
 }
