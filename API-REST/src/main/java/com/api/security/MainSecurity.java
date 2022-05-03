@@ -1,7 +1,9 @@
 package com.api.security;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -13,17 +15,22 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+
 import com.api.security.jwt.JwtEntryPoint;
 import com.api.security.jwt.JwtTokenFilter;
 import com.api.security.service.UserDetailsServiceImpl;
+
+
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MainSecurity extends WebSecurityConfigurerAdapter{
 	
+	@Autowired
 	UserDetailsServiceImpl userDetailsService;
 	
+	@Autowired
 	JwtEntryPoint jwtEntryPoint;
 	
 	@Bean
@@ -44,7 +51,6 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
-		// TODO Auto-generated method stub
 		return super.authenticationManagerBean();
 	}
 
@@ -58,7 +64,7 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http.cors().and().csrf().disable()
 		.authorizeRequests()
-		.antMatchers("/auth/**").permitAll()
+		.antMatchers("/**").permitAll()
 		.anyRequest().authenticated()
 		.and()
 		.exceptionHandling().authenticationEntryPoint(jwtEntryPoint)
@@ -67,5 +73,4 @@ public class MainSecurity extends WebSecurityConfigurerAdapter{
 		
 		http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
-
 }

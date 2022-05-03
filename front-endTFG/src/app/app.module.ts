@@ -16,6 +16,9 @@ import { QrComponenteComponent } from './qr-componente/qr-componente.component';
 import { FiltroPatronPipe } from './filtro-patron.pipe';
 import { ObjToArrayPipe } from './obj-to-array.pipe';
 import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
+import { LoginComponent } from './auth/login.component';
+import { RegistroComponent } from './auth/registro.component';
+import { MenuComponent } from './menu/menu.component';
 
 
 @NgModule({
@@ -32,6 +35,9 @@ import { NgxQRCodeModule } from '@techiediaries/ngx-qrcode';
   
     FiltroPatronPipe,
        ObjToArrayPipe,
+       LoginComponent,
+       RegistroComponent,
+       MenuComponent,
  
   ],
   imports: [
