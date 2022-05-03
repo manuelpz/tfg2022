@@ -16,7 +16,7 @@ export class ResultadosOrdenadoresComponent implements OnInit {
   getOrdenadores(){
     return this.bdOrdenadores.getOrdenadores()
   }
-  getMarca(){
-    return this.paramsFiltros.getMarca()
+  getPatron(){
+    return this.paramsFiltros.getPatron()
   }
 }

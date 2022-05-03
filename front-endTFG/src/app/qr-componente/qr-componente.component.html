@@ -1,1 +1,21 @@
-<p>qr-componente works!</p>
+
+<ng-container *ngIf="estaCargando()">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+  </ng-container> 
+ 
+<ng-container *ngIf="getDispositivo()">
+    {{getDispositivo().tipo.tipo}}<br>
+          
+           
+       
+
+  <ng-container *ngFor="let dispositivo of getDispositivo().resultados">
+  
+  {{dispositivo.caracteristica.caracteristica}} : {{dispositivo.opcion.opcion}}<br>
+       
+        
+    
+  </ng-container> 
+</ng-container>   

@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient}from '@angular/common/http';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -8,51 +7,51 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class BdOrdenadoresService {
 
   private ordenadores:any
+  private respuesta:any
   private post:any
-  private otros:any
-  private urlOrdenadores="http://localhost:8080/api/dispositivo/ordenadores"
-  private urlPost="http://localhost:8080/api/dispositivo"
-  private urlGet="http://localhost:8080/api/dispositivos"
+  private cargando:boolean=true
+  private urlDispositivos="http://localhost:8080/api/dispositivos"
+  private urlDispositivo="http://localhost:8080/api/dispositivo/id/"
+  private urlTipos="http://localhost:8080/api/tipos"
+
 
 //Saberse esta muy bien
-  constructor(private http:HttpClient,
-              private route: ActivatedRoute,
-              private router: Router) {
+  constructor(private http:HttpClient) { 
   this.ordenadores = new Array()
-  http.get(this.urlOrdenadores).subscribe((response)=>{
-
+  http.get(this.urlDispositivos).subscribe((response)=>{
+    
     this.ordenadores = response
+  
+
   })
+  
+    
+ 
+ 
+}
+setDispositivo(dispositivo:string){
+ 
+    this.http.get(this.urlDispositivo+dispositivo).subscribe((response:any)=>{
 
-  this.otros = new Array()
-  http.get(this.urlGet).subscribe((response)=>{
-
-    this.otros = response
-  })
-
-
-
+      this.respuesta = response
+      this.cargando=false
+     
+     
+    })
 }
   getOrdenadores(){
-
+  
     return this.ordenadores
   }
 
-  salir(){
-    return this.router.navigate(['/ordenadores'])
+  getDispotivo(){
+  console.log(this.respuesta)
+   console.log("AAAAA")
+    return (this.respuesta) //aqui se puede añadir un .json o un JSON stringifi
   }
-
-  postOrdenador(url:string, body:any){
-    return this.http.post(url,body)
-  }
-
-  borrarUltimo(url:string, body:any){
-    return this.http.delete(url,body)
-  }
-
-  getOtros(){
-    return this.otros
-  }
-
-
+  
+ estaCargando(){
+   return this.cargando
+ }
+  
 }

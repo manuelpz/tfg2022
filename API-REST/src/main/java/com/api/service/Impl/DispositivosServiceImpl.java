@@ -62,4 +62,10 @@ public class DispositivosServiceImpl implements DispositivosService {
 	public Dispositivos findTopByOrderByIdDesc() {
 		return dispositivosRepository.findTopByOrderByIdDesc();
 	}
+
+	@Override
+	public Dispositivos findById(int id) {
+		// TODO Auto-generated method stub
+		return dispositivosRepository.findById(id);
+	}
 }

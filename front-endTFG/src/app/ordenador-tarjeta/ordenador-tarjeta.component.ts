@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { BdOrdenadoresService } from '../bd-ordenadores.service';
 
 @Component({
   selector: 'app-ordenador-tarjeta',
@@ -7,9 +8,11 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class OrdenadorTarjetaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private Dispositivo:BdOrdenadoresService) { }
   @Input() ordenador:any
   ngOnInit(): void {
   }
-
+  setDispositivo(dispositivo:string){
+    return this.Dispositivo.setDispositivo(dispositivo)
+  }
 }

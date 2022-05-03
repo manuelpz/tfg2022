@@ -9,7 +9,6 @@ import { ParamFiltrosOrdenadoresService } from '../param-filtros-ordenadores.ser
 })
 export class AsideFiltrosOrdenadoresComponent implements OnInit {
 
-  private urlPost = "http://localhost:8080/api/dispositivo"
   constructor(private bdOrdenadores:BdOrdenadoresService,private paramsFiltros:ParamFiltrosOrdenadoresService) { }
 
   ngOnInit(): void {
@@ -17,19 +16,8 @@ export class AsideFiltrosOrdenadoresComponent implements OnInit {
 getOrdenadores(){
   return this.bdOrdenadores.getOrdenadores()
 }
-setMarca(unMarca:string){
-  this.paramsFiltros.setMarca(unMarca)
-  }
 
-nuevoPc():any{
-   return this.bdOrdenadores.postOrdenador(this.urlPost,
-    {
-    tipo:{
-      id: this.bdOrdenadores.getOrdenadores()[0].tipo.id,
-    }
-  }).subscribe((response)=>{
-    console.log("enviado")
-
-})
+setPatron(unPatron:string){
+  this.paramsFiltros.setPatron(unPatron)
   }
 }
