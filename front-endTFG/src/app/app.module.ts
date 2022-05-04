@@ -26,7 +26,8 @@ import { RegistroComponent } from './auth/registro.component';
 import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
+import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -62,6 +63,7 @@ import { ToastrModule } from 'ngx-toastr';
     HttpClientModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    ToastContainerModule,
     FormsModule
   ],
   providers: [BdOrdenadoresService,BdOrdenadoresService],

@@ -32,24 +32,19 @@ export class RegistroComponent implements OnInit {
       this.isLogged = true;
     }
   }
-  showSuccess() {
-    this.toastr.success('Usuario registrado correctamente');
-  }
+
   onRegister(): void {
     this.nuevoUsuario = new NuevoUsuario(this.nombre, this.nombreUsuario, this.email, this.password);
-    console.log("hola")
     this.authService.nuevo(this.nuevoUsuario).subscribe(
-    {
-      next: data => {
-        console.log(data);
-        this.showSuccess();
-        this.router.navigate(['/login']);
-      },
-      error: err => {
-        this.errMsj = err.error.mensaje;
-    },
-      }
-    );
-    
+      {
+        next: (data: any) => {
+          this.toastr.success('Ya puedes iniciar sesion','Registro completado');
+          this.router.navigate(['/login']);
+        },
+        error: err => {
+          this.errMsj = err.error.mensaje;
+          this.toastr.error(this.errMsj);
+        }
+      });
+    }
   }
-}
