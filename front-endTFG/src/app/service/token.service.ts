@@ -46,4 +46,9 @@ public getAuthorities(): string[] {
 
     return this.roles;
   }
+
+  //Limpia sessionStorage
+  public logout(): void {
+    window.sessionStorage.clear();
+  }
 }

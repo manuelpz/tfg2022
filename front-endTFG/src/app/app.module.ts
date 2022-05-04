@@ -21,6 +21,12 @@ import { TiposComponent } from './tipos/tipos.component';
 import { TiposResultadosComponent } from './tipos-resultados/tipos-resultados.component';
 import { AsideFiltrosTiposComponent } from './aside-filtros-tipos/aside-filtros-tipos.component';
 import { FiltroPatronTipoPipe } from './filtro-patron-tipo.pipe';
+import { LoginComponent } from './auth/login.component';
+import { RegistroComponent } from './auth/registro.component';
+import { FormsModule } from '@angular/forms';
+import { MenuComponent } from './menu/menu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 
 @NgModule({
@@ -34,7 +40,7 @@ import { FiltroPatronTipoPipe } from './filtro-patron-tipo.pipe';
     ResultadosOrdenadoresComponent,
     OrdenadorTarjetaComponent,
     QrComponenteComponent,
-  
+
     FiltroPatronPipe,
        ObjToArrayPipe,
        TipoTarjetaComponent,
@@ -42,13 +48,21 @@ import { FiltroPatronTipoPipe } from './filtro-patron-tipo.pipe';
        TiposResultadosComponent,
        AsideFiltrosTiposComponent,
        FiltroPatronTipoPipe,
- 
+       LoginComponent,
+       RegistroComponent,
+       MenuComponent
+
+
+
   ],
   imports: [
     BrowserModule,
     NgxQRCodeModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+    FormsModule
   ],
   providers: [BdOrdenadoresService,BdOrdenadoresService],
   bootstrap: [AppComponent]
