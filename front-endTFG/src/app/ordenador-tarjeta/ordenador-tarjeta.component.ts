@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BdOrdenadoresService } from '../bd-ordenadores.service';
+import { PdfComponent } from '../pdf/pdf.component';
 
 @Component({
   selector: 'app-ordenador-tarjeta',
@@ -15,4 +16,5 @@ export class OrdenadorTarjetaComponent implements OnInit {
   setDispositivo(dispositivo:string){
     return this.Dispositivo.setDispositivo(dispositivo)
   }
+ 
 }

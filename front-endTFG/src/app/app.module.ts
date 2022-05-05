@@ -29,6 +29,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
 import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
 import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo-dispositivo.component';
+import { PdfComponent } from './pdf/pdf.component';
 
 
 
@@ -56,7 +57,8 @@ import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo
        RegistroComponent,
        MenuComponent,
        CrearTipoComponent,
-       NuevoDispositivoComponent
+       NuevoDispositivoComponent,
+       PdfComponent
 
 
 

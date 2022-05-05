@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient}from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { Dispositivo } from './models/dispositivo';
 
 @Injectable({
   providedIn: 'root'
@@ -74,17 +75,21 @@ setDispositivo(dispositivo:string){
 
     })
 }
+
   getOrdenadores(){
 
     return this.ordenadores
   }
 
   getDispotivo(){
-  console.log(this.respuesta)
-   console.log("AAAAA")
+ 
     return (this.respuesta) //aqui se puede añadir un .json o un JSON stringifi
   }
-
+  getIdPdf(){
+   
+    
+      return (this.respuesta.id) //aqui se puede añadir un .json o un JSON stringifi
+    }
  estaCargando(){
    return this.cargando
  }
