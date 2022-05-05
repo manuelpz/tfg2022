@@ -14,7 +14,7 @@ import { TiposComponent } from './tipos/tipos.component';
 
 
 const routes: Routes =[ {path:'nav',component:NavComponent},
-{path:'ordenadores',component:OrdenadoresComponent},
+{path:'dispositivos',component:OrdenadoresComponent},
 {path:'login',component:LoginComponent},
 {path:'registro',component:RegistroComponent},
 {path:'nuevo-dispositivo',component:NuevoDispositivoComponent},
