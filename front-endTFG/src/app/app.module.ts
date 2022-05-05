@@ -27,7 +27,12 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
+<<<<<<< HEAD
 import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
+=======
+import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo-dispositivo.component';
+
+>>>>>>> develop
 
 
 
@@ -53,7 +58,11 @@ import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
        LoginComponent,
        RegistroComponent,
        MenuComponent,
+<<<<<<< HEAD
        CrearTipoComponent
+=======
+       NuevoDispositivoComponent
+>>>>>>> develop
 
 
 
