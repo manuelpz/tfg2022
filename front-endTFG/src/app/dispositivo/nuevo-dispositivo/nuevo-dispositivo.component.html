@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form (ngSubmit)="crear()" novalidate #f="ngForm">
+              <div class="form-group">
+                  <label for="tipo">Tipo</label>
+                  <select class="form-control" name="tipo" [(ngModel)]="tipo">
+                    <ng-container *ngFor="let tipo of getTipos()">
+                      <option [ngValue]="tipo">{{tipo.tipo}}</option>
+                    </ng-container>
+                  </select>
+              </div>
+              <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+          </form>
+      </div>
+  </div>
+</div>
+

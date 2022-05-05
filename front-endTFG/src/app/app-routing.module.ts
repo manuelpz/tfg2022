@@ -4,6 +4,7 @@ import { LoginComponent } from './auth/login.component';
 import { RegistroComponent } from './auth/registro.component';
 
 import { NavComponent } from './nav/nav.component';
+import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo-dispositivo.component';
 import { OrdenadoresComponent } from './ordenadores/ordenadores.component';
 
 import { Page404Component } from './page404/page404.component';
@@ -15,6 +16,7 @@ const routes: Routes =[ {path:'nav',component:NavComponent},
 {path:'ordenadores',component:OrdenadoresComponent},
 {path:'login',component:LoginComponent},
 {path:'registro',component:RegistroComponent},
+{path:'nuevo-dispositivo',component:NuevoDispositivoComponent},
 {path:'tipos',component:TiposComponent},
 {path:'dispositivo/:id',component:QrComponenteComponent},
 {path: '',redirectTo:'/nav',pathMatch:'full'},
