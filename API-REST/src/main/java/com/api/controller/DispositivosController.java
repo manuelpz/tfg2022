@@ -47,17 +47,17 @@ public class DispositivosController {
 		return dispositivosService.findById(id);	
 	}
 	
-	@PostMapping("/dispositivo")
+	@PostMapping("/dispositivo/nuevo")
 	public Dispositivos createDispositivo(@Validated @RequestBody Dispositivos dispositivo) {
 		return dispositivosService.createDispositivo(dispositivo);
 	}
 	
-	@PutMapping("/dispositivo/{id}")
+	@PutMapping("/dispositivo/actualizar/{id}")
 	public Dispositivos modifyDispositivo(@Validated @RequestBody Dispositivos dispositivo) {
 		return dispositivosService.modifyDispositivo(dispositivo);
 	}
 	
-	@DeleteMapping("/dispositivo/{id}")
+	@DeleteMapping("/dispositivo/eliminar/{id}")
 	public void deleteTipo(@PathVariable(value = "id") int id) {
 		dispositivosService.deleteDispositivo(id);
 	}

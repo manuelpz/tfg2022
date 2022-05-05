@@ -9,11 +9,11 @@ import { Tipo } from '../models/tipo';
 })
 export class DispositivoService {
   private tipos: any
-  private urlPost='http://localhost:8080/api/dispositivo';
+  private urlBase='http://localhost:8080/api/dispositivo/';
 
   constructor(private http: HttpClient) { }
 
   public guardar(dispositivo: Dispositivo): Observable<any>{
-    return this.http.post(this.urlPost, dispositivo);
+    return this.http.post(this.urlBase + "nuevo", dispositivo);
   }
 }
