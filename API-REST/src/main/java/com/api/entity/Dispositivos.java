@@ -14,6 +14,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -40,6 +41,7 @@ public class Dispositivos {
 	@JsonIgnoreProperties({"dispositivos","caracteristicas"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_TIPO")
+	@NotNull
 	private Tipos tipo;
 	
 	//Un dispositivo puede tener varias columnas "resultado"

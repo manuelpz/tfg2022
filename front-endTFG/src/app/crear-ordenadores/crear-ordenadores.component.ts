@@ -11,5 +11,4 @@ export class CrearOrdenadoresComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
 }
