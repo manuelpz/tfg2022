@@ -38,12 +38,17 @@ export class RegistroComponent implements OnInit {
     this.authService.nuevo(this.nuevoUsuario).subscribe(
       {
         next: (data: any) => {
-          this.toastr.success('Ya puedes iniciar sesion','Registro completado');
-          this.router.navigate(['/login']);
+          this.toastr.success('Ya puedes iniciar sesion con tu nuevo administrador','Registro completado',{
+            timeOut: 10000,
+            positionClass: 'toast-top-center'
+          });
+          this.router.navigate(['/nav']);
         },
         error: err => {
           this.errMsj = err.error.mensaje;
-          this.toastr.error(this.errMsj);
+          this.toastr.error(this.errMsj, 'ERROR',{
+            timeOut: 10000,
+            positionClass: 'toast-top-center'});
         }
       });
     }

@@ -62,9 +62,9 @@ public class AuthController {
 			return new ResponseEntity(new Mensaje("Este email ya se encuentra en uso"), HttpStatus.BAD_REQUEST);
 		Usuario usuario = new Usuario(nuevoUsuario.getNombre(), nuevoUsuario.getNombreUsuario(), nuevoUsuario.getEmail(), passwordEncoder.encode(nuevoUsuario.getPassword()));
 		Set<Rol> roles = new HashSet<>();
-		roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
-		if(nuevoUsuario.getRoles().contains("admin"))
-			roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+		roles.add(rolService.getByRolNombre(RolNombre.ROLE_ADMIN).get());
+		if(nuevoUsuario.getRoles().contains("user"))
+			roles.add(rolService.getByRolNombre(RolNombre.ROLE_USER).get());
 		usuario.setRoles(roles);
 		usuarioService.save(usuario);
 		return new ResponseEntity<>(new Mensaje("Usuario guardado"), HttpStatus.CREATED);	

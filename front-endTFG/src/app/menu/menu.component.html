@@ -11,6 +11,9 @@
         <li class="nav-item" *ngIf="!isLogged">
             <a class="nav-link"  routerLink="/login"><i class="fas fa-sign-in-alt"></i> Iniciar Sesión</a>
           </li>
+          <li class="nav-item" *ngIf="isLogged">
+            <a routerLink="/registro" class="nav-link" style="cursor: pointer;"><i class="fas fa-user-plus"></i> Nuevo administrador</a>
+          </li>
           <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
             <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open" ></i> Cerrar Sesión</a>
           </li>
