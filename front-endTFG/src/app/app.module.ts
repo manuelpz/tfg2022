@@ -27,6 +27,7 @@ import { FormsModule } from '@angular/forms';
 import { MenuComponent } from './menu/menu.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
+import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
 
 
 
@@ -51,7 +52,8 @@ import { ToastrModule,ToastContainerModule } from 'ngx-toastr';
        FiltroPatronTipoPipe,
        LoginComponent,
        RegistroComponent,
-       MenuComponent
+       MenuComponent,
+       CrearTipoComponent
 
 
 
