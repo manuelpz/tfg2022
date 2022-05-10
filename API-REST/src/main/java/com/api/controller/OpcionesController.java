@@ -32,6 +32,11 @@ public class OpcionesController {
 		return opcionesService.getOpcion(id);
 	}
 	
+	@GetMapping("/opcion/tipo/{id}")
+	public List<Opciones> getOpcionesByCaracteristicaId(@PathVariable(value = "id") int id){
+		return opcionesService.getOpcionesByCaracteristicaId(id);
+	}
+	
 	@GetMapping("/opciones")
 	public List<Opciones> getAllOpciones() {
 		return opcionesService.getAllOpciones();	

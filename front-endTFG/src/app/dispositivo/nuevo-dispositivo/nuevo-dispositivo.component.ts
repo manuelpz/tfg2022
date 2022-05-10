@@ -15,8 +15,15 @@ import { DispositivoService } from '../../service/dispositivo.service';
 export class NuevoDispositivoComponent implements OnInit {
 
   tipo!: Tipo;
+  resultado: any;
   private tipos: any;
+  private caracteristicas: any;
+  private opciones: any;
+  private value: any;
   private urlGet='http://localhost:8080/api/tipos';
+  private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
+  private urlOpciones = 'http://localhost:8080/api/opciones';
+  selectedOption: any
 
   constructor(
     private dispositivoService: DispositivoService,
@@ -29,6 +36,16 @@ export class NuevoDispositivoComponent implements OnInit {
       (response: any) =>{
         this.tipos = response;
       })
+
+      this.http.get(this.caracteristicasUrl).subscribe(
+        (response: any) =>{
+          this.caracteristicas = response;
+        })
+
+        this.http.get(this.urlOpciones).subscribe(
+          (response: any) =>{
+            this.opciones = response;
+        })
   }
 
   crear(): void {
@@ -52,5 +69,21 @@ export class NuevoDispositivoComponent implements OnInit {
 
   getTipos(): any{
     return this.tipos
+  }
+
+  getCaracteristicas(): any{
+    return this.caracteristicas
+  }
+
+  setValue(value: any): void{
+    this.value = value;
+  }
+
+  getValue(){
+    return this.value
+  }
+
+  getOpciones(): any{
+    return this.opciones
   }
 }

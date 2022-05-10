@@ -12,6 +12,7 @@ public interface OpcionesService {
 	Opciones createOpcion(Opciones opcion);
 	Opciones getOpcion(String id);
 	List<Opciones> getAllOpciones();
+	List<Opciones> getOpcionesByCaracteristicaId(int id);
 	void deleteOpcion(String id);
 	Opciones modifyOpcion(Opciones opcion);
 

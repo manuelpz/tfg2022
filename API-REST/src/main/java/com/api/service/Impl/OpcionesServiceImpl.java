@@ -43,4 +43,9 @@ public class OpcionesServiceImpl implements OpcionesService{
 		opcionesRepository.save(opcion);
 		return opcion;
 	}
+
+	@Override
+	public List<Opciones> getOpcionesByCaracteristicaId(int id) {
+		return opcionesRepository.getOpcionesByCaracteristicaId(id);
+	}
 }
