@@ -12,12 +12,12 @@
                     <ng-container *ngFor="let caracteristica of getCaracteristicas()" >
                       <ng-container *ngIf="tipo">
                         <ng-container *ngIf="caracteristica.tipo.id == tipo.id">
-                          <h5 >{{caracteristica.caracteristica}}</h5>
+                          <h5>{{caracteristica.caracteristica}}</h5>
 
-                          <select class="form-control" name="opcion" [(ngModel)]="opcion" (change)="setCaracterValue(caracteristica.caracteristica)">
+                          <select class="form-control" name="opcion">
                             <ng-container *ngFor="let opcion of getOpciones()">
                               <ng-container *ngIf="opcion.caracteristica.id == caracteristica.id">
-                                <option [ngValue]="opcion">{{opcion.opcion}}</option>
+                                <option>{{opcion.opcion}}</option>
                               </ng-container>
                             </ng-container>
                           </select>

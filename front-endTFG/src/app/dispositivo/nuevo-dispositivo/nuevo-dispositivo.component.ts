@@ -56,8 +56,8 @@ export class NuevoDispositivoComponent implements OnInit {
 
   crear(): void {
     //nuevo develop2
-    const dispositivo = new Dispositivo(this.tipo);
-    this.dispositivoService.guardar(dispositivo).subscribe(
+    const resultado = new Resultado(new Dispositivo(this.tipo), new Caracteristica('y','y'), new Opcion('y'));
+    this.dispositivoService.guardar(resultado).subscribe(
       data =>{
         this,this.toastr.success('Dispositivo creado correctamente','',{
           timeOut: 10000,

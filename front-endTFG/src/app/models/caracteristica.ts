@@ -1,13 +1,11 @@
 import { Tipo } from "./tipo";
 
 export class Caracteristica {
-
+  id: string
   caracteristica: string;
-  tipo: Tipo;
 
-  constructor(caracteristica: string, tipo: Tipo) {
+  constructor(id:string, caracteristica: string) {
+    this.id = id
     this.caracteristica = caracteristica
-    this.tipo = tipo
   }
-  
 }
