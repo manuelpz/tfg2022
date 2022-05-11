@@ -3,6 +3,7 @@ package com.api.entity;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -37,21 +38,21 @@ public class Resultados {
 	//Muchos de estos resultados van a corresponder a una id de dispositivo
 	//Ej: RESULTADOS CON ID 1,2,3 correponden al dispositivo con ID "1"
 	@JsonIgnoreProperties({"tipo", "resultados"})
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_DISPOSITIVO")
 	private Dispositivos dispositivo;
 	
 	//Muchos de estos resultados van a corresponder a una id de opciones
 	//Ej: RESULTADOS CON ID 1,2,3 correponden a la opcion con ID "1"
 	@JsonIgnoreProperties({"resultados", "caracteristica"})
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_OPCION")
 	private Opciones opcion;
 	
 	//Muchos de estos resultados van a corresponder a una id de caracteristicas
 	//Ej: RESULTADOS CON ID 1,2,3 correponden a la carcteristica con ID "1"
 	@JsonIgnoreProperties({"tipo", "opciones","resultados"})
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY, cascade=CascadeType.ALL)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
 }

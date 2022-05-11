@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { Caracteristica } from 'src/app/models/caracteristica';
+import { Opcion } from 'src/app/models/opcion';
+import { Resultado } from 'src/app/models/resultado';
 import { Dispositivo } from '../../models/dispositivo';
 import { Tipo } from '../../models/tipo';
 import { DispositivoService } from '../../service/dispositivo.service';
@@ -15,7 +18,11 @@ import { DispositivoService } from '../../service/dispositivo.service';
 export class NuevoDispositivoComponent implements OnInit {
 
   tipo!: Tipo;
-  resultado: any;
+  opcion!: Opcion
+  caracteristica!: Caracteristica
+  resultado: Resultado;
+  opcionval: any;
+  caracter: any;
   private tipos: any;
   private caracteristicas: any;
   private opciones: any;
@@ -23,7 +30,6 @@ export class NuevoDispositivoComponent implements OnInit {
   private urlGet='http://localhost:8080/api/tipos';
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
   private urlOpciones = 'http://localhost:8080/api/opciones';
-  selectedOption: any
 
   constructor(
     private dispositivoService: DispositivoService,
@@ -49,8 +55,8 @@ export class NuevoDispositivoComponent implements OnInit {
   }
 
   crear(): void {
-    const dispositivo = new Dispositivo(this.tipo);
-    this.dispositivoService.guardar(dispositivo).subscribe(
+    const resultado = new Resultado(new Dispositivo(this.tipo),new Opcion(this.opcionval ,new Caracteristica(this.caracter,this.tipo)), new Caracteristica(this.caracter,this.tipo));
+    this.dispositivoService.guardar(resultado).subscribe(
       data =>{
         this,this.toastr.success('Dispositivo creado correctamente','',{
           timeOut: 10000,
@@ -85,5 +91,15 @@ export class NuevoDispositivoComponent implements OnInit {
 
   getOpciones(): any{
     return this.opciones
+  }
+
+  setOpcionValue(opcion){
+    this.opcionval = opcion;
+    console.log(this.opcionval)
+  }
+
+  setCaracterValue(caracter){
+    this.caracter = caracter;
+    console.log(this.caracter)
   }
 }
