@@ -49,7 +49,7 @@ export class NuevoDispositivoComponent implements OnInit {
   }
 
   crear(): void {
-    //nuevo develop
+    //nuevo develop2
     const dispositivo = new Dispositivo(this.tipo);
     this.dispositivoService.guardar(dispositivo).subscribe(
       data =>{
