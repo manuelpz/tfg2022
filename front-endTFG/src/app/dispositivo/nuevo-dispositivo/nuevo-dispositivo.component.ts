@@ -25,11 +25,7 @@ export class NuevoDispositivoComponent implements OnInit {
   caracter: any;
   charId: any;
   private tipos: any;
-  private caracteristicas: any;
-  private opciones: any;
   private urlGet='http://localhost:8080/api/tipos';
-  private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
-  private urlOpciones = 'http://localhost:8080/api/opciones';
 
   constructor(
     private dispositivoService: DispositivoService,
@@ -42,16 +38,6 @@ export class NuevoDispositivoComponent implements OnInit {
       (response: any) =>{
         this.tipos = response;
       })
-
-      this.http.get(this.caracteristicasUrl).subscribe(
-        (response: any) =>{
-          this.caracteristicas = response;
-        })
-
-        this.http.get(this.urlOpciones).subscribe(
-          (response: any) =>{
-            this.opciones = response;
-        })
   }
 
   crear(): void {
@@ -60,7 +46,7 @@ export class NuevoDispositivoComponent implements OnInit {
       data =>{
         this.toastr.info('Añada caracteristicas a su nuevo dispositivo','Dispositivo añadido correctamente',{
           timeOut: 10000,
-          positionClass: 'toast-top-center'
+          positionClass: 'toast-top-right'
         });
         this.router.navigate(['/caracteristicas']);
       },
@@ -75,23 +61,5 @@ export class NuevoDispositivoComponent implements OnInit {
 
   getTipos(): any{
     return this.tipos
-  }
-
-  getCaracteristicas(): any{
-    return this.caracteristicas
-  }
-
-  getOpciones(): any{
-    return this.opciones
-  }
-
-  setOptId(e: any){
-    console.log(e.target.value)
-    this.optId = e.target.value
-  }
-
-  setCharValue(value: any){
-    console.log(value)
-    this.charId = value;
   }
 }

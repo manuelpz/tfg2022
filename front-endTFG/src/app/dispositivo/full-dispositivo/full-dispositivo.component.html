@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <ng-container *ngFor="let caracteristica of caracteristicas">
+        <ng-container *ngIf="ultimoDispositivo">
+          <ng-container *ngIf="caracteristica.tipo.id == ultimoDispositivo.tipo.id">
+
+
+            <form (ngSubmit)="guardarFull()" novalidate #f="ngForm">
+              <div class="form-group">
+              <h5>{{caracteristica.caracteristica}}</h5>
+              <select class="form-control" name="opcion" [(ngModel)]="opcion">
+                <ng-container *ngFor="let opcion of opciones">
+                  <ng-container *ngIf="opcion.caracteristica.id == caracteristica.id">
+                    <option [ngValue]="opcion">{{opcion.opcion}}</option>
+                  </ng-container>
+                </ng-container>
+              </select>
+            </div>
+              <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </form>
+
+
+          </ng-container>
+        </ng-container>
+      </ng-container>
+    </div>
+  </div>
+</div>

@@ -10,11 +10,12 @@ import { Resultado } from '../models/resultado';
 })
 export class DispositivoService {
   private urlBase='http://localhost:8080/api/dispositivo/';
+  private urlBaseResultado='http://localhost:8080/api/resultado';
 
   constructor(private http: HttpClient) { }
 
   public guardarFull(resultado: Resultado): Observable<any>{
-    return this.http.post(this.urlBase ,resultado);
+    return this.http.post(this.urlBaseResultado ,resultado);
   }
 
   public guardarDispo(dispositivo: Dispositivo): Observable<any>{
