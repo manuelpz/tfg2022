@@ -11,6 +11,7 @@ import { OrdenadoresComponent } from './ordenadores/ordenadores.component';
 import { Page404Component } from './page404/page404.component';
 import { QrComponenteComponent } from './qr-componente/qr-componente.component';
 import { TiposComponent } from './tipos/tipos.component';
+import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-dispositivo.component';
 
 
 const routes: Routes =[ {path:'nav',component:NavComponent},
@@ -18,6 +19,7 @@ const routes: Routes =[ {path:'nav',component:NavComponent},
 {path:'login',component:LoginComponent},
 {path:'registro',component:RegistroComponent},
 {path:'nuevo-dispositivo',component:NuevoDispositivoComponent},
+{path:'caracteristicas',component:FullDispositivoComponent},
 {path:'tipos',component:TiposComponent},
 {path:'creartipos',component:CrearTipoComponent},
 {path:'dispositivo/:id',component:QrComponenteComponent},

@@ -9,7 +9,7 @@ import { Resultado } from '../models/resultado';
   providedIn: 'root'
 })
 export class DispositivoService {
-  private urlBase='http://localhost:8080/api/resultado';
+  private urlBase='http://localhost:8080/api/dispositivo/';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,11 @@ export class DispositivoService {
   }
 
   public guardarDispo(dispositivo: Dispositivo): Observable<any>{
-    return this.http.post('http://localhost:8080/api/dispositivo/' +'nuevo', dispositivo);
+    return this.http.post( this.urlBase +'nuevo', dispositivo);
+  }
+
+  public getUltimoDispositivo(): Observable<any>{
+    return this.http.get(this.urlBase +'lastId');
   }
 
 

@@ -58,18 +58,18 @@ export class NuevoDispositivoComponent implements OnInit {
     const dispositivo = new Dispositivo(this.tipo)
     this.dispositivoService.guardarDispo(dispositivo).subscribe(
       data =>{
-        this,this.toastr.success('Dispositivo creado correctamente','',{
+        this.toastr.info('Añada caracteristicas a su nuevo dispositivo','Dispositivo añadido correctamente',{
           timeOut: 10000,
           positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/nav']);
+        this.router.navigate(['/caracteristicas']);
       },
       err =>{
         this.toastr.error('Error al crear dispositivo','ERROR',{
           timeOut: 10000,
           positionClass: 'toast-top-center'
     });
-    this.router.navigate(['/nuevo-dispositivo']);
+    this.router.navigate(['/caracteristicas']);
     });
   }
 
