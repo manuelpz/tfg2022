@@ -38,14 +38,10 @@ public class Opciones {
 	
 	@Column(name = "OPCION")
 	private String opcion;
-	
-	//Una opcion puede tener varios resultados
-	//Ej: Opcion "1" -> Color rojo; Puede aparecer que varios monitores tengan "color rojo".
+
 	@OneToMany(mappedBy = "opcion", cascade = CascadeType.ALL)
 	private List<Resultados> resultados = new ArrayList<>();
 	
-	//Muchas de estas opciones van a corresponder a una caracteristica
-	//Ej: OPCIONES "ROJO, AZUL, VERDE" correponden a la caracteristica "COLOR"
 	@JsonIgnoreProperties({"tipo", "opciones"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
