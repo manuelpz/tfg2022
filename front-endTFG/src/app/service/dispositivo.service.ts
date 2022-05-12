@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Dispositivo } from '../models/dispositivo';
 import { Resultado } from '../models/resultado';
 
 
@@ -12,7 +13,13 @@ export class DispositivoService {
 
   constructor(private http: HttpClient) { }
 
-  public guardar(resultado: Resultado): Observable<any>{
+  public guardarFull(resultado: Resultado): Observable<any>{
     return this.http.post(this.urlBase ,resultado);
   }
+
+  public guardarDispo(dispositivo: Dispositivo): Observable<any>{
+    return this.http.post('http://localhost:8080/api/dispositivo/' +'nuevo', dispositivo);
+  }
+
+
 }

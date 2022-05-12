@@ -9,15 +9,15 @@
                       <option [ngValue]="tipo">{{tipo.tipo}}</option>
                     </ng-container>
                   </select>
-                    <ng-container *ngFor="let caracteristica of getCaracteristicas()" >
+                    <ng-container *ngFor="let caracteristica of getCaracteristicas()">
                       <ng-container *ngIf="tipo">
                         <ng-container *ngIf="caracteristica.tipo.id == tipo.id">
-                          <h5>{{caracteristica.caracteristica}}</h5>
+                          <h5 #yolo>{{caracteristica.caracteristica}}</h5>
 
-                          <select class="form-control" name="opcion">
+                          <select (change)="setCharValue(yolo)" class="form-control" name="opcion" [(ngModel)]="optId" #optio>
                             <ng-container *ngFor="let opcion of getOpciones()">
                               <ng-container *ngIf="opcion.caracteristica.id == caracteristica.id">
-                                <option>{{opcion.opcion}}</option>
+                                <option [value]="optId">{{opcion.opcion}}</option>
                               </ng-container>
                             </ng-container>
                           </select>

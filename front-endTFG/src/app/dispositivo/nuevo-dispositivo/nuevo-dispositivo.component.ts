@@ -21,12 +21,12 @@ export class NuevoDispositivoComponent implements OnInit {
   opcion!: Opcion
   caracteristica!: Caracteristica
   resultado: Resultado;
-  opcionval: any;
+  optId: any;
   caracter: any;
+  charId: any;
   private tipos: any;
   private caracteristicas: any;
   private opciones: any;
-  private value: any;
   private urlGet='http://localhost:8080/api/tipos';
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
   private urlOpciones = 'http://localhost:8080/api/opciones';
@@ -55,9 +55,8 @@ export class NuevoDispositivoComponent implements OnInit {
   }
 
   crear(): void {
-    //nuevo develop2
-    const resultado = new Resultado(new Dispositivo(this.tipo), new Caracteristica('y','y'), new Opcion('y'));
-    this.dispositivoService.guardar(resultado).subscribe(
+    const dispositivo = new Dispositivo(this.tipo)
+    this.dispositivoService.guardarDispo(dispositivo).subscribe(
       data =>{
         this,this.toastr.success('Dispositivo creado correctamente','',{
           timeOut: 10000,
@@ -82,25 +81,17 @@ export class NuevoDispositivoComponent implements OnInit {
     return this.caracteristicas
   }
 
-  setValue(value: any): void{
-    this.value = value;
-  }
-
-  getValue(){
-    return this.value
-  }
-
   getOpciones(): any{
     return this.opciones
   }
 
-  setOpcionValue(opcion){
-    this.opcionval = opcion;
-    console.log(this.opcionval)
+  setOptId(e: any){
+    console.log(e.target.value)
+    this.optId = e.target.value
   }
 
-  setCaracterValue(caracter){
-    this.caracter = caracter;
-    console.log(this.caracter)
+  setCharValue(value: any){
+    console.log(value)
+    this.charId = value;
   }
 }

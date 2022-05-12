@@ -1,9 +1,9 @@
 import { Caracteristica } from "./caracteristica";
 
 export class Opcion {
-  id: string
+  id: number
 
-  constructor(id:string) {
+  constructor(id:number) {
     this.id = id
   }
 

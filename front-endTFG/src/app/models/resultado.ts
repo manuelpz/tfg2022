@@ -1,6 +1,7 @@
 import { Caracteristica } from "./caracteristica";
 import { Dispositivo } from "./dispositivo";
 import { Opcion } from "./opcion";
+import { Tipo } from "./tipo";
 
 export class Resultado {
 
