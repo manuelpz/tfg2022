@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.api.entity.Caracteristicas;
 
 @Repository
-public interface CaracteristicasRepository extends JpaRepository<Caracteristicas, String> {
+public interface CaracteristicasRepository extends JpaRepository<Caracteristicas, Integer> {
 
 }

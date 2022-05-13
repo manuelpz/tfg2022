@@ -10,9 +10,9 @@ import com.api.entity.Resultados;
 public interface ResultadosService {
 
 	Resultados createResultado(Resultados resultado);
-	Resultados getResultado(String id);
+	Resultados getResultado(int id);
 	List<Resultados> getAllResultados();
-	void deleteResultado(String id);
+	void deleteResultado(int id);
 	Resultados modifyResultado(Resultados resultado);
 	List<Resultados> findByDispositivo(String id);
 }

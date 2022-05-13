@@ -24,8 +24,8 @@ public class TiposServiceImpl implements TiposService{
 	}
 
 	@Override
-	public Tipos getTipo(String id) {	
-		return tiposRepository.getById(id);
+	public Tipos getTipo(String tipo) {	
+		return tiposRepository.getByTipo(tipo);
 	}
 	
 	
@@ -35,8 +35,8 @@ public class TiposServiceImpl implements TiposService{
 	}
 
 	@Override
-	public void deleteTipo(String tipo) {
-		Tipos tipoBorrado = tiposRepository.getByTipo(tipo);
+	public void deleteTipo(int id) {
+		Tipos tipoBorrado = tiposRepository.getById(id);
 		tiposRepository.delete(tipoBorrado);
 	}
 

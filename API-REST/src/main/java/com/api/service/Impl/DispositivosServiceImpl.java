@@ -29,7 +29,7 @@ public class DispositivosServiceImpl implements DispositivosService {
 	}
 
 	@Override
-	public Dispositivos getDispositivo(String id) {
+	public Dispositivos getDispositivo(int id) {
 		return dispositivosRepository.getById(id);
 	}
 

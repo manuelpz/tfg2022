@@ -23,7 +23,7 @@ public class OpcionesServiceImpl implements OpcionesService{
 	}
 
 	@Override
-	public Opciones getOpcion(String id) {
+	public Opciones getOpcion(int id) {
 		return opcionesRepository.getById(id);
 	}
 
@@ -33,7 +33,7 @@ public class OpcionesServiceImpl implements OpcionesService{
 	}
 
 	@Override
-	public void deleteOpcion(String id) {
+	public void deleteOpcion(int id) {
 		Opciones opcionBorrada = opcionesRepository.getById(id);
 		opcionesRepository.delete(opcionBorrada);
 	}

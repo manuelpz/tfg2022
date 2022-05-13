@@ -28,7 +28,7 @@ public class CaracteristicasController {
 	CaracteristicasService caracteristicasService;
 	
 	@GetMapping("/caracteristica/{id}")
-	public Caracteristicas getCaracteristica(@PathVariable(value = "id") String id){
+	public Caracteristicas getCaracteristica(@PathVariable(value = "id") int id){
 		return caracteristicasService.getCaracteristica(id);
 	}
 	
@@ -48,7 +48,7 @@ public class CaracteristicasController {
 	}
 	
 	@DeleteMapping("/caracteristica/{id}")
-	public void deleteCaracteristica(@PathVariable(value = "id") String id) {
+	public void deleteCaracteristica(@PathVariable(value = "id") int id) {
 		caracteristicasService.deleteCaracteristica(id);
 	}
 }

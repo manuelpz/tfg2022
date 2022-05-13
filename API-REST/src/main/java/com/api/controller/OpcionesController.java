@@ -28,7 +28,7 @@ public class OpcionesController {
 	OpcionesService opcionesService;
 	
 	@GetMapping("/opcion/{id}")
-	public Opciones getOpcion(@PathVariable(value = "id") String id){
+	public Opciones getOpcion(@PathVariable(value = "id") int id){
 		return opcionesService.getOpcion(id);
 	}
 	
@@ -53,7 +53,7 @@ public class OpcionesController {
 	}
 	
 	@DeleteMapping("/opcion/{id}")
-	public void deleteOpcion(@PathVariable(value = "id") String id) {
+	public void deleteOpcion(@PathVariable(value = "id") int id) {
 		opcionesService.deleteOpcion(id);
 	}
 }

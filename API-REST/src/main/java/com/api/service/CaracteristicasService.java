@@ -10,9 +10,9 @@ import com.api.entity.Caracteristicas;
 public interface CaracteristicasService {
 
 	Caracteristicas createCaracteristica(Caracteristicas caracteristica);
-	Caracteristicas getCaracteristica(String id);
+	Caracteristicas getCaracteristica(int id);
 	List<Caracteristicas> getAllCaracteristicas();
-	void deleteCaracteristica(String id);
+	void deleteCaracteristica(int id);
 	Caracteristicas modifyCaracteristica(Caracteristicas caracteristica);
 	
 }

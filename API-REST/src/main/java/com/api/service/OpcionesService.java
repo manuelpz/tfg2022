@@ -10,10 +10,10 @@ import com.api.entity.Opciones;
 public interface OpcionesService {
 	
 	Opciones createOpcion(Opciones opcion);
-	Opciones getOpcion(String id);
+	Opciones getOpcion(int id);
 	List<Opciones> getAllOpciones();
 	List<Opciones> getOpcionesByCaracteristicaId(int id);
-	void deleteOpcion(String id);
+	void deleteOpcion(int id);
 	Opciones modifyOpcion(Opciones opcion);
 
 }

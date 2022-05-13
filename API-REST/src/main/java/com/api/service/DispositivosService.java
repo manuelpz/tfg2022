@@ -10,7 +10,7 @@ import com.api.entity.Dispositivos;
 public interface DispositivosService {
 
 	Dispositivos createDispositivo(Dispositivos dispositivo);
-	Dispositivos getDispositivo(String id);
+	Dispositivos getDispositivo(int id);
 	List<Dispositivos> getAllDispositivos();
 	void deleteDispositivo(int id);
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);

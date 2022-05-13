@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.api.entity.Opciones;
 
 @Repository
-public interface OpcionesRepository extends JpaRepository<Opciones, String> {
+public interface OpcionesRepository extends JpaRepository<Opciones, Integer> {
 	List<Opciones> getOpcionesByCaracteristicaId(int id);
 
 }

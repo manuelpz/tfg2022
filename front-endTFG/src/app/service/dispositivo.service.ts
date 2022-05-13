@@ -11,6 +11,7 @@ import { Resultado } from '../models/resultado';
 export class DispositivoService {
   private urlBase='http://localhost:8080/api/dispositivo/';
   private urlBaseResultado='http://localhost:8080/api/resultado';
+  private urlBaseRespuesta='http://localhost:8080/api/nuevo/';
 
   constructor(private http: HttpClient) { }
 
@@ -26,5 +27,8 @@ export class DispositivoService {
     return this.http.get(this.urlBase +'lastId');
   }
 
+  public guardarRespuesta(respuesta: any): Observable<any>{
+    return this.http.post(this.urlBaseRespuesta +'respuesta', respuesta);
+  }
 
 }

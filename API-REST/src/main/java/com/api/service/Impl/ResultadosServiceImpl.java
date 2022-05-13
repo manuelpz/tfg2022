@@ -23,7 +23,7 @@ public class ResultadosServiceImpl implements ResultadosService{
 	}
 
 	@Override
-	public Resultados getResultado(String id) {
+	public Resultados getResultado(int id) {
 		return resultadosRepository.getById(id);
 	}
 
@@ -33,7 +33,7 @@ public class ResultadosServiceImpl implements ResultadosService{
 	}
 
 	@Override
-	public void deleteResultado(String id) {
+	public void deleteResultado(int id) {
 		Resultados resultadoBorrado = resultadosRepository.getById(id);
 		resultadosRepository.delete(resultadoBorrado);
 		

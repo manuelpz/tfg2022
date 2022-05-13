@@ -48,7 +48,7 @@ public class ResultadosController {
 	}
 	
 	@DeleteMapping("/resultado/{id}")
-	public void deleteResultado(@PathVariable(value = "id") String id) {
+	public void deleteResultado(@PathVariable(value = "id") int id) {
 		resultadosService.deleteResultado(id);
 	}
 }

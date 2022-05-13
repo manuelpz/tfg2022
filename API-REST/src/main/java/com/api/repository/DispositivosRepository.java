@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.api.entity.Dispositivos;
 
 @Repository
-public interface DispositivosRepository extends JpaRepository<Dispositivos, String> {
+public interface DispositivosRepository extends JpaRepository<Dispositivos, Integer> {
 	
 	List<Dispositivos> findByTipo(String tipo);
 

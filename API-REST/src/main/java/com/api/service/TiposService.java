@@ -12,7 +12,7 @@ public interface TiposService {
 	Tipos createTipo(Tipos tipo);
 	Tipos getTipo(String tipo);
 	List<Tipos> getAllTipos();
-	void deleteTipo(String tipo);
+	void deleteTipo(int id);
 	Tipos modifyTipo(Tipos tipo);
 
 }

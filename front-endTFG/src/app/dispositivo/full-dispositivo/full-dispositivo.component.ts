@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Toast, ToastrService } from 'ngx-toastr';
+import { Caracteristica } from 'src/app/models/caracteristica';
 import { Resultado } from 'src/app/models/resultado';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
@@ -15,12 +16,16 @@ export class FullDispositivoComponent implements OnInit {
   //VARIABLES PUBLICAS
   ultimoDispositivo: any;
   caracteristicas: any;
+  caracteristicasf: any;
   opciones: any;
   opcion: any;
+  respuesta: any[] = []
+
 
   //VARIABLES PRIVADAS
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
   private urlOpciones = 'http://localhost:8080/api/opciones';
+  private urlCaracteristicas = 'http://localhost:8080/api/caracteristicasfijas';
 
   constructor(private dispositivoService: DispositivoService,
               private http: HttpClient,
@@ -33,6 +38,7 @@ export class FullDispositivoComponent implements OnInit {
     this.dispositivoService.getUltimoDispositivo().subscribe(
       (response: any) =>{
         this.ultimoDispositivo = response;
+        console.log(this.ultimoDispositivo)
       })
 
       //OBTENCION CARACTERISTICAS
@@ -46,6 +52,12 @@ export class FullDispositivoComponent implements OnInit {
           (response: any) =>{
             this.opciones = response;
         })
+
+        //OBTENCION CARACTERISTICAS FIJAS
+        this.http.get(this.urlCaracteristicas).subscribe((response: any) => {
+          this.caracteristicasf = response;
+        });
+
     }
 
     //GUARDAR EL DISPOSITIVO POR COMPLETO
@@ -69,6 +81,10 @@ export class FullDispositivoComponent implements OnInit {
         });
         this.route.navigate(['/nav']);
       });
+  }
+  getCaracteristicas(): any {
+    return this.caracteristicasf;
+    console.log(this.caracteristicas)
   }
 }
 

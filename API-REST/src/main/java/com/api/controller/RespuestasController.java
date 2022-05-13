@@ -15,40 +15,41 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.entity.Tipos;
-import com.api.service.TiposService;
+import com.api.entity.Respuestas;
+import com.api.service.RespuestasService;
 
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
-public class TiposController {
+public class RespuestasController {
 	
 	@Autowired
-	TiposService tiposService;
-	
-	@GetMapping("/tipo/{tipo}")
-	public Tipos getTipo(@PathVariable(value = "tipo") String tipo){
-		return tiposService.getTipo(tipo);
+	RespuestasService respuestasService;
+
+	@GetMapping("/respuesta/{id}")
+	public Respuestas getRespuesta(@PathVariable(value = "id") int id){
+		return respuestasService.getRespuesta(id);
 	}
 	
-	@GetMapping("/tipos")
-	public List<Tipos> getAllTipos() {
-		return tiposService.getAllTipos();	
+	@GetMapping("/respuestas")
+	public List<Respuestas> getRespuestas(){
+		return respuestasService.getRespuestas();
 	}
 	
-	@PostMapping("/tipo")
-	public Tipos createTipo(@Validated @RequestBody Tipos tipo) {
-		return tiposService.createTipo(tipo);
+	@PostMapping("/nuevo/respuesta")
+	public Respuestas createRespuesta(@Validated @RequestBody Respuestas respuesta) {
+		return respuestasService.createRespuesta(respuesta);
 	}
 	
-	@PutMapping("/tipo")
-	public Tipos modifyTipo(@Validated @RequestBody Tipos tipo) {
-		return tiposService.modifyTipo( tipo);
+	@PutMapping("/actualizar/respuesta")
+	public Respuestas modifyRespuesta(Respuestas respuesta) {
+		respuestasService.createRespuesta(respuesta);
+		return respuesta;
 	}
 	
-	@DeleteMapping("/tipo/{tipo}")
-	public void deleteTipo(@PathVariable(value = "id") int id) {
-		tiposService.deleteTipo(id);
+	@DeleteMapping("/eliminar/respuesta/{id}")
+	public void deleteRespuesta(@PathVariable(value="id") int id) {
+		respuestasService.deleteRespuesta(id);
 	}
-	
+
 }

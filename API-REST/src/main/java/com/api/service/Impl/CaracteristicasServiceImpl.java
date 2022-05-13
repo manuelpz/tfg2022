@@ -23,7 +23,7 @@ public class CaracteristicasServiceImpl implements CaracteristicasService {
 	}
 
 	@Override
-	public Caracteristicas getCaracteristica(String id) {
+	public Caracteristicas getCaracteristica(int id) {
 		return caracteristicasRepository.getById(id);
 	}
 
@@ -33,7 +33,7 @@ public class CaracteristicasServiceImpl implements CaracteristicasService {
 	}
 
 	@Override
-	public void deleteCaracteristica(String id) {
+	public void deleteCaracteristica(int id) {
 		Caracteristicas caracteristicaBorrada = caracteristicasRepository.getById(id);
 		caracteristicasRepository.delete(caracteristicaBorrada);
 		
