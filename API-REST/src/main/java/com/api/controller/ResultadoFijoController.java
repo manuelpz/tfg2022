@@ -15,41 +15,37 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.api.entity.Respuestas;
-import com.api.service.RespuestasService;
+import com.api.entity.ResultadosFijos;
+import com.api.service.ResultadosFijosService;
 
 @RestController
 @CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
 @RequestMapping("/api")
-public class RespuestasController {
+public class ResultadoFijoController {
 	
 	@Autowired
-	RespuestasService respuestasService;
-
-	@GetMapping("/respuesta/{id}")
-	public Respuestas getRespuesta(@PathVariable(value = "id") int id){
-		return respuestasService.getRespuesta(id);
+	ResultadosFijosService resultadosFijosService;
+	
+	
+	@GetMapping("/resultadosfijos")
+	public List<ResultadosFijos> getAllResultados() {
+		return resultadosFijosService.getAllResultadosFijos();	
 	}
 	
-	@GetMapping("/respuestas")
-	public List<Respuestas> getRespuestas(){
-		return respuestasService.getRespuestas();
+	
+	@PostMapping("/resultadofijo")
+	public ResultadosFijos createResultado(@Validated @RequestBody ResultadosFijos resultadoFijo) {
+		return resultadosFijosService.createResultadoFijo(resultadoFijo);
 	}
 	
-	@PostMapping("/nuevo/respuesta")
-	public Respuestas createRespuesta(@Validated @RequestBody Respuestas respuesta) {
-		return respuestasService.createRespuesta(respuesta);
+	@PutMapping("/nuevo/resultadofijo")
+	public ResultadosFijos modifyResultadoFijo(@Validated @RequestBody ResultadosFijos resultadoFijo) {
+		return resultadosFijosService.modifyResultadoFijo(resultadoFijo);
 	}
 	
-	@PutMapping("/actualizar/respuesta")
-	public Respuestas modifyRespuesta(Respuestas respuesta) {
-		respuestasService.createRespuesta(respuesta);
-		return respuesta;
-	}
-	
-	@DeleteMapping("/eliminar/respuesta/{id}")
-	public void deleteRespuesta(@PathVariable(value="id") int id) {
-		respuestasService.deleteRespuesta(id);
+	@DeleteMapping("/resultadofijo/{id}")
+	public void deleteResultadoFijo(@PathVariable(value = "id") int id) {
+		resultadosFijosService.deleteResultadoFijo(id);
 	}
 
 }

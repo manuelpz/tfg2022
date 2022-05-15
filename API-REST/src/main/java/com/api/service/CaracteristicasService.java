@@ -11,6 +11,7 @@ public interface CaracteristicasService {
 
 	Caracteristicas createCaracteristica(Caracteristicas caracteristica);
 	Caracteristicas getCaracteristica(int id);
+	List<Caracteristicas> getCaracteristicasByTipo(String tipo);
 	List<Caracteristicas> getAllCaracteristicas();
 	void deleteCaracteristica(int id);
 	Caracteristicas modifyCaracteristica(Caracteristicas caracteristica);

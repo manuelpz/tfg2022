@@ -32,6 +32,12 @@ public class CaracteristicasController {
 		return caracteristicasService.getCaracteristica(id);
 	}
 	
+	
+	@GetMapping("/caracteristicas/tipo/{tipo}")
+	public List<Caracteristicas> getCaracteristicasByTipo(@PathVariable(value = "tipo") String tipo){
+		return caracteristicasService.getCaracteristicasByTipo(tipo);
+	}
+	
 	@GetMapping("/caracteristicas")
 	public List<Caracteristicas> getAllCaracteristicas() {
 		return caracteristicasService.getAllCaracteristicas();	

@@ -39,8 +39,5 @@ public class CaracteristicasFijas {
 	
 	@JsonIgnoreProperties({"caracteristicaf"})
 	@OneToMany(mappedBy = "caracteristicaf", cascade = CascadeType.ALL)
-	private List<Respuestas> respuestas = new ArrayList<>();
-	
-	@OneToMany(mappedBy = "caracteristicaf", cascade = CascadeType.ALL)
-	private List<Resultados> resultados = new ArrayList<>();
+	private List<ResultadosFijos> resultadosFijos = new ArrayList<>();
 }

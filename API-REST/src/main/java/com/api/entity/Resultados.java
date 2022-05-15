@@ -47,15 +47,4 @@ public class Resultados {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_CARACTERISTICA_FIJA")
-	private CaracteristicasFijas caracteristicaf;
-	
-	@ManyToOne(fetch = FetchType.LAZY)
-	@JoinColumn(name = "ID_RESPUESTA")
-	private Respuestas respuesta;
-	
-	
-	
 }

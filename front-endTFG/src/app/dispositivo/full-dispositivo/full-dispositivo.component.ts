@@ -1,9 +1,13 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Toast, ToastrService } from 'ngx-toastr';
-import { Caracteristica } from 'src/app/models/caracteristica';
+import {ToastrService } from 'ngx-toastr';
+
+import { caracteristicaf } from 'src/app/models/caracteristicaf';
+import { Dispositivo } from 'src/app/models/dispositivo';
+import { Opcion } from 'src/app/models/opcion';
 import { Resultado } from 'src/app/models/resultado';
+import { ResultadoFijo } from 'src/app/models/resultado-fijo';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
 @Component({
@@ -16,14 +20,17 @@ export class FullDispositivoComponent implements OnInit {
   //VARIABLES PUBLICAS
   ultimoDispositivo: any;
   caracteristicas: any;
-  caracteristicasf: any;
+  caracteristicasf: caracteristicaf;
+  caractFiltro: any[]= [];
   opciones: any;
-  opcion: any;
-  respuesta: any[] = []
+  opcionf: any[] = []
+  opcion: any[] = []
+  respuesta: string[] = []
 
 
   //VARIABLES PRIVADAS
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
+  private caracteristicasFiltro = 'http://localhost:8080/api/caracteristicas/tipo/{tipo}';
   private urlOpciones = 'http://localhost:8080/api/opciones';
   private urlCaracteristicas = 'http://localhost:8080/api/caracteristicasfijas';
 
@@ -38,7 +45,6 @@ export class FullDispositivoComponent implements OnInit {
     this.dispositivoService.getUltimoDispositivo().subscribe(
       (response: any) =>{
         this.ultimoDispositivo = response;
-        console.log(this.ultimoDispositivo)
       })
 
       //OBTENCION CARACTERISTICAS
@@ -61,31 +67,51 @@ export class FullDispositivoComponent implements OnInit {
     }
 
     //GUARDAR EL DISPOSITIVO POR COMPLETO
+     console(){
+      console.log(this.opcionf);
+      console.log(this.respuesta);
+
+    }
     guardarFull(){
-      let caracteristica = this.opcion.caracteristica;
-      const resultado = new Resultado(this.ultimoDispositivo, caracteristica, this.opcion);
-      console.log(this.ultimoDispositivo);
-      console.log(this.opcion);
-      this.dispositivoService.guardarFull(resultado).subscribe(
+    for(let i = 0; i < this.respuesta.length; i++){
+      let caracteristicaf = this.caracteristicasf[i];
+      const resultadoFijo = new ResultadoFijo(this.ultimoDispositivo, caracteristicaf, this.respuesta[i]);
+      console.log(resultadoFijo);
+      this.dispositivoService.guardarResultadoFijo(resultadoFijo).subscribe(
+        data =>
+        console.log("ResultadoFijo guardado")
+      )
+    }
+    
+    for(let i = 0; i < this.opcionf.length; i++){
+      let caracteristica = this.opcionf[i].caracteristica;
+      const resultado = new Resultado(this.ultimoDispositivo, caracteristica, this.opcionf[i]);
+      this.dispositivoService.guardarResultado(resultado).subscribe(
         data =>{
-          this.toastr.success('Dispositivo guardado correctamente','',{
-            timeOut: 10000,
-            positionClass: 'toast-top-center'
-          });
-          this.route.navigate(['/nav']);
-      },
-        err =>{
-          this.toastr.error('Error al guardar dispositivo','',{
-            timeOut: 10000,
-            positionClass: 'toast-top-center'
-        });
-        this.route.navigate(['/nav']);
-      });
+          console.log("Resultado guardado")
+        }
+      )
+    }
+
+
+
+      // this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
+      // this.route.navigate(['/nav']);
   }
   getCaracteristicas(): any {
     return this.caracteristicasf;
-    console.log(this.caracteristicas)
   }
+
+  changeOption(){
+    console.log(this.opcionf)
+    console.log(this.opcionf.length)
+  }
+  //filtrar caracteristicas por id del ultimo dispositivo
+  getOptions(tipo: string): any {
+    return this.caracteristicas.filter(caracteristica => caracteristica.tipo.tipo === tipo);
+  }
+
 }
+
 
 

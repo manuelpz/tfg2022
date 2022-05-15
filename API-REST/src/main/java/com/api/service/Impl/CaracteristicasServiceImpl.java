@@ -44,4 +44,9 @@ public class CaracteristicasServiceImpl implements CaracteristicasService {
 		caracteristicasRepository.save(caracteristica);
 		return caracteristica;
 	}
+
+	@Override
+	public List<Caracteristicas> getCaracteristicasByTipo(String tipo) {
+		return caracteristicasRepository.getCaracteristicasByTipoTipo(tipo);
+	}
 }

@@ -3,9 +3,9 @@ package com.api.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.api.entity.Respuestas;
+import com.api.entity.ResultadosFijos;
 
 @Repository
-public interface RespuestasRepository extends JpaRepository<Respuestas, Integer> {
+public interface ResultadosFijosRepository extends JpaRepository<ResultadosFijos, Integer>{
 
 }

@@ -6,27 +6,24 @@
           <label for="caracteristicaf">{{caracteristicaf.caracteristicaf}}</label>
           <input class="form-control" type="text" name="respuesta" [(ngModel)]="respuesta[i]">
         </ng-container>
-        <ng-container *ngFor="let caracteristica of caracteristicas">
-          <ng-container *ngIf="ultimoDispositivo">
 
+
+
+
+        <ng-container *ngIf="ultimoDispositivo && caracteristicas">
+        <ng-container *ngFor="let caracteristica of getOptions(ultimoDispositivo.tipo.tipo); let i = index">
             <ng-container *ngIf="caracteristica.tipo.id == ultimoDispositivo.tipo.id">
-
-
               <div class="form-group">
                 <h5>{{caracteristica.caracteristica}}</h5>
-                <select class="form-control" name="opcion" [(ngModel)]="opcion">
-                  <ng-container *ngFor="let opcion of opciones">
-                    <ng-container *ngIf="opcion.caracteristica.id == caracteristica.id">
-                      <option [ngValue]="opcion">{{opcion.opcion}}</option>
-                    </ng-container>
-                  </ng-container>
+                <select (ngModelChange)="changeOption()" class="form-control" name="opcion" [(ngModel)]="opcionf[i]">
+                  <option  *ngFor="let opcion of caracteristica.opciones" [ngValue]="opcion" >{{opcion.opcion}}</option>
                 </select>
               </div>
-
-
             </ng-container>
           </ng-container>
         </ng-container>
+
+
         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
       </form>
     </div>

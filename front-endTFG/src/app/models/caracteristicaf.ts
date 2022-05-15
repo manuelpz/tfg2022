@@ -1,4 +1,4 @@
-export class CaracteristicaFija {
+export class caracteristicaf {
 
   id: number
 

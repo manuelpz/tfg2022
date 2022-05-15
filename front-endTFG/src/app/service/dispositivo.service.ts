@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Dispositivo } from '../models/dispositivo';
 import { Resultado } from '../models/resultado';
+import { ResultadoFijo } from '../models/resultado-fijo';
 
 
 @Injectable({
@@ -11,12 +12,17 @@ import { Resultado } from '../models/resultado';
 export class DispositivoService {
   private urlBase='http://localhost:8080/api/dispositivo/';
   private urlBaseResultado='http://localhost:8080/api/resultado';
+  private urlBaseResultadoFijo='http://localhost:8080/api/resultadofijo';
   private urlBaseRespuesta='http://localhost:8080/api/nuevo/';
 
   constructor(private http: HttpClient) { }
 
-  public guardarFull(resultado: Resultado): Observable<any>{
+  public guardarResultado(resultado: Resultado): Observable<any>{
     return this.http.post(this.urlBaseResultado ,resultado);
+  }
+
+  public guardarResultadoFijo(resultadoFijo: ResultadoFijo): Observable<any>{
+    return this.http.post(this.urlBaseResultadoFijo, resultadoFijo);
   }
 
   public guardarDispo(dispositivo: Dispositivo): Observable<any>{

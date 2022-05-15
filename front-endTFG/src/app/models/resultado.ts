@@ -4,6 +4,7 @@ import { Opcion } from "./opcion";
 
 
 
+
 export class Resultado {
 
   dispositivo: Dispositivo

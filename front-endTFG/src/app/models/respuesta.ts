@@ -1,11 +1,7 @@
-import { CaracteristicaFija } from "./caracteristica-fija"
-
 export class Respuesta {
   respuesta: string
-  caracteristicaf: CaracteristicaFija
 
-  constructor(respuesta: string, caracteristicaf: CaracteristicaFija) {
+  constructor(respuesta: string) {
     this.respuesta = respuesta
-    this.caracteristicaf = caracteristicaf
   }
 }
