@@ -2,7 +2,6 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Respuesta } from 'src/app/models/respuesta';
 import { Dispositivo } from '../../models/dispositivo';
 import { Tipo } from '../../models/tipo';
 import { DispositivoService } from '../../service/dispositivo.service';

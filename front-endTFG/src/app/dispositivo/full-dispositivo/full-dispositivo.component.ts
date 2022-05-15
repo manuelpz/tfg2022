@@ -4,8 +4,6 @@ import { Router } from '@angular/router';
 import {ToastrService } from 'ngx-toastr';
 
 import { caracteristicaf } from 'src/app/models/caracteristicaf';
-import { Dispositivo } from 'src/app/models/dispositivo';
-import { Opcion } from 'src/app/models/opcion';
 import { Resultado } from 'src/app/models/resultado';
 import { ResultadoFijo } from 'src/app/models/resultado-fijo';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
@@ -82,7 +80,7 @@ export class FullDispositivoComponent implements OnInit {
         console.log("ResultadoFijo guardado")
       )
     }
-    
+
     for(let i = 0; i < this.opcionf.length; i++){
       let caracteristica = this.opcionf[i].caracteristica;
       const resultado = new Resultado(this.ultimoDispositivo, caracteristica, this.opcionf[i]);
@@ -92,9 +90,6 @@ export class FullDispositivoComponent implements OnInit {
         }
       )
     }
-
-
-
       // this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
       // this.route.navigate(['/nav']);
   }
