@@ -20,7 +20,7 @@ import com.api.entity.Opciones;
 import com.api.service.OpcionesService;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api")
 public class OpcionesController {
 

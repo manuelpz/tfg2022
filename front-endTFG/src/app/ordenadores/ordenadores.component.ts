@@ -10,6 +10,7 @@ export class OrdenadoresComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
 }

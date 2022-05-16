@@ -10,5 +10,6 @@
     <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" class="nav-link" aria-current="page"
       href="#">
       <button #dispositivo type="button" class="btn btn-outline-primary">Generar QR</button></a>
+      <button (click)="eliminarDispositivo(ordenador.id)" type="button" class="btn btn-outline-danger">Eliminar</button><br><br>
   </div>
 </div>

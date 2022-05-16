@@ -19,7 +19,7 @@ import com.api.entity.ResultadosFijos;
 import com.api.service.ResultadosFijosService;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api")
 public class ResultadoFijoController {
 	

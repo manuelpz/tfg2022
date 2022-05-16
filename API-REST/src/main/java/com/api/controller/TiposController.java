@@ -19,7 +19,7 @@ import com.api.entity.Tipos;
 import com.api.service.TiposService;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api")
 public class TiposController {
 	

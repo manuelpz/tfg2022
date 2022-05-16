@@ -19,7 +19,7 @@ import com.api.entity.CaracteristicasFijas;
 import com.api.service.CaracteristicasFijasService;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api")
 public class CaracteristicasFijasController {
 	

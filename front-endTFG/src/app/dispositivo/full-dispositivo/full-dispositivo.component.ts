@@ -2,10 +2,13 @@ import { HttpClient } from '@angular/common/http';
 import { Component,OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {ToastrService } from 'ngx-toastr';
+import { BdOrdenadoresService } from 'src/app/bd-ordenadores.service';
 
 import { caracteristicaf } from 'src/app/models/caracteristicaf';
+import { Dispositivo } from 'src/app/models/dispositivo';
 import { Resultado } from 'src/app/models/resultado';
 import { ResultadoFijo } from 'src/app/models/resultado-fijo';
+import { OrdenadoresComponent } from 'src/app/ordenadores/ordenadores.component';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
 @Component({
@@ -29,6 +32,7 @@ export class FullDispositivoComponent implements OnInit {
   private urlCaracteristicas = 'http://localhost:8080/api/caracteristicasfijas';
 
   constructor(private dispositivoService: DispositivoService,
+              private bdOrdenadores: BdOrdenadoresService,
               private http: HttpClient,
               private route: Router,
               private toastr: ToastrService) { }
@@ -76,10 +80,11 @@ export class FullDispositivoComponent implements OnInit {
       )
     }
       this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
-      this.route.navigate(['/nav']);
+      this.route.navigate(['/dispositivos']);
       err=>{
         this.toastr.error('Error al guardar dispositivo', 'Error');
       }
+      this.bdOrdenadores.getDispositivos()
   }
   getCaracteristicas(): any {
     return this.caracteristicasf;
