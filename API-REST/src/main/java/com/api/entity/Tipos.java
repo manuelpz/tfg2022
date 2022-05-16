@@ -45,7 +45,7 @@ public class Tipos {
 	private List<Caracteristicas> caracteristicas = new ArrayList<>();
 
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"tipo","resultados"})
+	@JsonIgnoreProperties({"tipo","resultados","resultadosf"})
 	@Builder.Default
 	private List<Dispositivos> dispositivos = new ArrayList<>();
 

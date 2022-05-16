@@ -16,7 +16,6 @@ export class NuevoDispositivoComponent implements OnInit {
   respuesta: any[] = [];
   caracteristicaf: any[] = [];
   private tipos: any;
-  private caracteristicas: any;
   private urlGet = 'http://localhost:8080/api/tipos';
 
   constructor(

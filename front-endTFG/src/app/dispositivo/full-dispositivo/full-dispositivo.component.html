@@ -15,7 +15,7 @@
             <ng-container *ngIf="caracteristica.tipo.id == ultimoDispositivo.tipo.id">
               <div class="form-group">
                 <h5>{{caracteristica.caracteristica}}</h5>
-                <select (ngModelChange)="changeOption()" class="form-control" name="opcion" [(ngModel)]="opcionf[i]">
+                <select class="form-control" name="opcion" [(ngModel)]="opcionf[i]">
                   <option  *ngFor="let opcion of caracteristica.opciones" [ngValue]="opcion" >{{opcion.opcion}}</option>
                 </select>
               </div>

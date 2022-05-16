@@ -36,7 +36,7 @@ public class Dispositivos {
 	@Column(name = "ID_DISPOSITIVO")
 	private int id;
 
-	@JsonIgnoreProperties({"dispositivos","caracteristicas"})
+	@JsonIgnoreProperties({"dispositivos","caracteristicas","caracteristicasf"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_TIPO")
 	@NotNull
@@ -44,4 +44,7 @@ public class Dispositivos {
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
 	private List<Resultados> resultados = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
+	private List<ResultadosFijos> resultadosf = new ArrayList<>();
 }

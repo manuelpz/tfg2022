@@ -19,17 +19,13 @@ export class FullDispositivoComponent implements OnInit {
   ultimoDispositivo: any;
   caracteristicas: any;
   caracteristicasf: caracteristicaf;
-  caractFiltro: any[]= [];
   opciones: any;
   opcionf: any[] = []
-  opcion: any[] = []
   respuesta: string[] = []
 
 
   //VARIABLES PRIVADAS
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
-  private caracteristicasFiltro = 'http://localhost:8080/api/caracteristicas/tipo/{tipo}';
-  private urlOpciones = 'http://localhost:8080/api/opciones';
   private urlCaracteristicas = 'http://localhost:8080/api/caracteristicasfijas';
 
   constructor(private dispositivoService: DispositivoService,
@@ -51,12 +47,6 @@ export class FullDispositivoComponent implements OnInit {
           this.caracteristicas = response;
         })
 
-        //OBTENCION OPCIONES
-        this.http.get(this.urlOpciones).subscribe(
-          (response: any) =>{
-            this.opciones = response;
-        })
-
         //OBTENCION CARACTERISTICAS FIJAS
         this.http.get(this.urlCaracteristicas).subscribe((response: any) => {
           this.caracteristicasf = response;
@@ -65,11 +55,6 @@ export class FullDispositivoComponent implements OnInit {
     }
 
     //GUARDAR EL DISPOSITIVO POR COMPLETO
-     console(){
-      console.log(this.opcionf);
-      console.log(this.respuesta);
-
-    }
     guardarFull(){
     for(let i = 0; i < this.respuesta.length; i++){
       let caracteristicaf = this.caracteristicasf[i];
@@ -90,18 +75,16 @@ export class FullDispositivoComponent implements OnInit {
         }
       )
     }
-      // this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
-      // this.route.navigate(['/nav']);
+      this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
+      this.route.navigate(['/nav']);
+      err=>{
+        this.toastr.error('Error al guardar dispositivo', 'Error');
+      }
   }
   getCaracteristicas(): any {
     return this.caracteristicasf;
   }
 
-  changeOption(){
-    console.log(this.opcionf)
-    console.log(this.opcionf.length)
-  }
-  //filtrar caracteristicas por id del ultimo dispositivo
   getOptions(tipo: string): any {
     return this.caracteristicas.filter(caracteristica => caracteristica.tipo.tipo === tipo);
   }

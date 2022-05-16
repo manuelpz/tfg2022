@@ -34,7 +34,7 @@ public class ResultadosFijos {
 	@Column(name = "RESPUESTA")
 	private String respuesta;
 	
-	@JsonIgnoreProperties({"tipo", "resultados"})
+	@JsonIgnoreProperties({"tipo", "resultados","resultadosf"})
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_DISPOSITIVO")
 	private Dispositivos dispositivo;
