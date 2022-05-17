@@ -31,6 +31,7 @@ import { CrearTipoComponent } from './crear-tipo/crear-tipo.component';
 import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo-dispositivo.component';
 import { PdfComponent } from './pdf/pdf.component';
 import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-dispositivo.component';
+import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristica-fija.component';
 
 
 
@@ -60,6 +61,7 @@ import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-di
        NuevoDispositivoComponent,
        PdfComponent,
        FullDispositivoComponent,
+       CaracteristicaFijaComponent,
   ],
   imports: [
     BrowserModule,

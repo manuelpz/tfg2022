@@ -78,8 +78,8 @@ setDispositivo(dispositivo:string){
 
   eliminarDispositivo(id: number){
     this.http.delete(this.urlBase+"dispositivo/eliminar/"+id).subscribe((response:any)=>{
-      this.toastr.success("Se ha eliminado correctamente")
-      window.location.reload()
+      this.toastr.success("El dispositivo se ha eliminado correctamente")
+      this.getDispositivos()
     })
   }
 
