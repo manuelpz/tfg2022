@@ -1,11 +1,9 @@
+<!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
+<ng-container *ngFor="let tipos of getTipos() | filtroPatronTipo:getPatronTipo()">
 
-  <!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
-  <ng-container *ngFor="let tipos of getTipos() | filtroPatronTipo:getPatronTipo()">
-        
-    <ng-container>
-      
-        <app-tipo-tarjeta [tipos]="tipos"></app-tipo-tarjeta>
-        
-    </ng-container> 
-  </ng-container> 
+  <ng-container>
 
+    <app-tipo-tarjeta [tipos]="tipos"></app-tipo-tarjeta>
+
+  </ng-container>
+</ng-container>

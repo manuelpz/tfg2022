@@ -2,11 +2,11 @@
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
       <form (ngSubmit)="nuevaCaracteristica()" novalidate #f="ngForm">
-          <label for="nombre">Nueva caracteristica:</label>
-          <input  class="form-control" type="text" name="caracteristica" [(ngModel)]="caracteristica"><br>
-        <button class="btn btn-outline-success btn-block" [disabled]="caracteristica === '' || caracteristica.trim().length===0">Crear</button>
+        <label for="nombre">Nueva caracteristica:</label>
+        <input class="form-control" type="text" name="caracteristica" [(ngModel)]="caracteristica"><br>
+        <button class="btn btn-outline-success btn-block"
+          [disabled]="caracteristica === '' || caracteristica.trim().length===0">Crear</button>
       </form>
     </div>
   </div>
 </div>
-

@@ -5,8 +5,6 @@ import { NuevoUsuario } from '../models/nuevo-usuario';
 import { Observable } from 'rxjs';
 import { LoginUsuario } from '../models/login-usuario';
 import { JwtDTO } from '../models/jwt-dto';
-import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'

@@ -5,18 +5,19 @@ import { ParamFiltrosOrdenadoresService } from '../param-filtros-ordenadores.ser
 @Component({
   selector: 'app-resultados-ordenadores',
   templateUrl: './resultados-ordenadores.component.html',
-  styleUrls: ['./resultados-ordenadores.component.css']
+  styleUrls: ['./resultados-ordenadores.component.css'],
 })
 export class ResultadosOrdenadoresComponent implements OnInit {
+  constructor(
+    private bdOrdenadores: BdOrdenadoresService,
+    private paramsFiltros: ParamFiltrosOrdenadoresService
+  ) {}
 
-  constructor(private bdOrdenadores:BdOrdenadoresService, private paramsFiltros:ParamFiltrosOrdenadoresService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  getOrdenadores() {
+    return this.bdOrdenadores.getOrdenadores();
   }
-  getOrdenadores(){
-    return this.bdOrdenadores.getOrdenadores()
-  }
-  getPatron(){
-    return this.paramsFiltros.getPatron()
+  getPatron() {
+    return this.paramsFiltros.getPatron();
   }
 }

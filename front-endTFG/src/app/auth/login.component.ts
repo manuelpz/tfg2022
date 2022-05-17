@@ -7,7 +7,7 @@ import { TokenService } from '../service/token.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
   isLogged = false;
@@ -16,23 +16,21 @@ export class LoginComponent implements OnInit {
   nombreUsuario!: string;
   password!: string;
   roles: string[] = [];
-  errMesj!: string
+  errMesj!: string;
 
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
     private router: Router
-  ) { }
-
+  ) {}
 
   ngOnInit(): void {
-    if(this.tokenService.getToken()){
+    if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLoginFail = false;
-      this.roles =this.tokenService.getAuthorities();
+      this.roles = this.tokenService.getAuthorities();
     }
   }
-
 
   onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
@@ -46,12 +44,12 @@ export class LoginComponent implements OnInit {
         this.roles = data.authorities;
         this.router.navigate(['/nav']);
       },
-      err =>{
-      this.isLogged = false,
-      this.isLoginFail = true,
-      this.errMesj = err.error.error
-      console.log(err.error.error)
+      (err) => {
+        (this.isLogged = false),
+          (this.isLoginFail = true),
+          (this.errMesj = err.error.error);
+        console.log(err.error.error);
       }
-    )
+    );
   }
 }

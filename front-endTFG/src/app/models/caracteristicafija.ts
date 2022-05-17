@@ -1,8 +1,7 @@
 export class Caracteristicafija {
+  caracteristicaf: string;
 
-  caracteristicaf: string
-
-  constructor(caracteristicaf: string){
-    this.caracteristicaf = caracteristicaf
+  constructor(caracteristicaf: string) {
+    this.caracteristicaf = caracteristicaf;
   }
 }

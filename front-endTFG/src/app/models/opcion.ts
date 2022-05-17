@@ -1,10 +1,7 @@
-import { Caracteristica } from "./caracteristica";
-
 export class Opcion {
-  id: number
+  id: number;
 
-  constructor(id:number) {
-    this.id = id
+  constructor(id: number) {
+    this.id = id;
   }
-
 }

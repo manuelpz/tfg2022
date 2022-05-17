@@ -1,12 +1,11 @@
-import { Tipo } from "./tipo"
+import { Tipo } from './tipo';
 
 export class CaracteristicaPropia {
+  caracteristica: string;
+  tipo: Tipo;
 
-caracteristica: string
-tipo: Tipo
-
-constructor(caracteristica: string, tipo: Tipo){
-  this.caracteristica = caracteristica
-  this.tipo = tipo
-}
+  constructor(caracteristica: string, tipo: Tipo) {
+    this.caracteristica = caracteristica;
+    this.tipo = tipo;
+  }
 }

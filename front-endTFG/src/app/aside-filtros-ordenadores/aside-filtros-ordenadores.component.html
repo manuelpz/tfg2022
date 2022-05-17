@@ -1,19 +1,25 @@
-
 <table id="marcaFilters" class="table table-striped">
-    <thead class="thead-light">
-        <tr><th>patron</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>
-            <div class="form-group">
-                <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"(keyup)="setPatron(patron.value)">
-            </div>
-        </td></tr>
-    </tbody>
+  <thead class="thead-light">
+    <tr>
+      <th>patron</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="form-group">
+          <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"
+            (keyup)="setPatron(patron.value)">
+        </div>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 <table id="tecFilters" class="table table-striped">
 </table>
-<button routerLink="/nuevo-dispositivo" class="btn btn-primary" id="resetFilters" (click)="patron.value=''">Añadir nuevo dispositivo</button><br><br>
-<button routerLink="/nueva-caracteristica-global" class="btn btn-primary" id="resetFilters" (click)="patron.value=''">Añadir nueva carateristica global</button><br><br>
+<button routerLink="/nuevo-dispositivo" class="btn btn-primary" id="resetFilters" (click)="patron.value=''">Añadir nuevo
+  dispositivo</button><br><br>
+<button routerLink="/nueva-caracteristica-global" class="btn btn-primary" id="resetFilters"
+  (click)="patron.value=''">Añadir nueva carateristica global</button><br><br>
 <button routerLink="/nav" class="btn btn-link">Volver al menu</button>

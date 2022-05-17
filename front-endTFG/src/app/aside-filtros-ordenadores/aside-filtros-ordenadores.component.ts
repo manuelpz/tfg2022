@@ -5,19 +5,20 @@ import { ParamFiltrosOrdenadoresService } from '../param-filtros-ordenadores.ser
 @Component({
   selector: 'app-aside-filtros-ordenadores',
   templateUrl: './aside-filtros-ordenadores.component.html',
-  styleUrls: ['./aside-filtros-ordenadores.component.css']
+  styleUrls: ['./aside-filtros-ordenadores.component.css'],
 })
 export class AsideFiltrosOrdenadoresComponent implements OnInit {
+  constructor(
+    private bdOrdenadores: BdOrdenadoresService,
+    private paramsFiltros: ParamFiltrosOrdenadoresService
+  ) {}
 
-  constructor(private bdOrdenadores:BdOrdenadoresService,private paramsFiltros:ParamFiltrosOrdenadoresService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  getOrdenadores() {
+    return this.bdOrdenadores.getOrdenadores();
   }
-getOrdenadores(){
-  return this.bdOrdenadores.getOrdenadores()
-}
 
-setPatron(unPatron:string){
-  this.paramsFiltros.setPatron(unPatron)
+  setPatron(unPatron: string) {
+    this.paramsFiltros.setPatron(unPatron);
   }
 }

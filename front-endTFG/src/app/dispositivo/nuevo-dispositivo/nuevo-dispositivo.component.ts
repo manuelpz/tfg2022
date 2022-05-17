@@ -12,8 +12,8 @@ import { DispositivoService } from '../../service/dispositivo.service';
   styleUrls: ['./nuevo-dispositivo.component.css'],
 })
 export class NuevoDispositivoComponent implements OnInit {
-  tipo!: Tipo
-  ultimoDispositivo: any
+  tipo!: Tipo;
+  ultimoDispositivo: any;
   private tipos: any;
   private urlGet = 'http://localhost:8080/api/tipos';
 
@@ -27,7 +27,7 @@ export class NuevoDispositivoComponent implements OnInit {
   ngOnInit(): void {
     this.http.get(this.urlGet).subscribe((response: any) => {
       this.tipos = response;
-    })
+    });
   }
 
   crear(): void {

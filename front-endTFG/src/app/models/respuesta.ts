@@ -1,7 +1,7 @@
 export class Respuesta {
-  respuesta: string
+  respuesta: string;
 
   constructor(respuesta: string) {
-    this.respuesta = respuesta
+    this.respuesta = respuesta;
   }
 }

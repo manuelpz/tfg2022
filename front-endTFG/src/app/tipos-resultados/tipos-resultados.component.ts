@@ -5,18 +5,19 @@ import { ParamFiltrosOrdenadoresService } from '../param-filtros-ordenadores.ser
 @Component({
   selector: 'app-tipos-resultados',
   templateUrl: './tipos-resultados.component.html',
-  styleUrls: ['./tipos-resultados.component.css']
+  styleUrls: ['./tipos-resultados.component.css'],
 })
 export class TiposResultadosComponent implements OnInit {
+  constructor(
+    private bdOrdenadores: BdOrdenadoresService,
+    private paramsFiltros: ParamFiltrosOrdenadoresService
+  ) {}
 
-  constructor(private bdOrdenadores:BdOrdenadoresService, private paramsFiltros:ParamFiltrosOrdenadoresService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  getTipos() {
+    return this.bdOrdenadores.getTipos();
   }
-  getTipos(){
-    return this.bdOrdenadores.getTipos()
-  }
-  getPatronTipo(){
-    return this.paramsFiltros.getPatronTipo()
+  getPatronTipo() {
+    return this.paramsFiltros.getPatronTipo();
   }
 }

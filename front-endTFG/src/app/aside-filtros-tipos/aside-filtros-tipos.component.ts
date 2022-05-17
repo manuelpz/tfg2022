@@ -4,15 +4,13 @@ import { ParamFiltrosOrdenadoresService } from '../param-filtros-ordenadores.ser
 @Component({
   selector: 'app-aside-filtros-tipos',
   templateUrl: './aside-filtros-tipos.component.html',
-  styleUrls: ['./aside-filtros-tipos.component.css']
+  styleUrls: ['./aside-filtros-tipos.component.css'],
 })
 export class AsideFiltrosTiposComponent implements OnInit {
+  constructor(private paramsFiltros: ParamFiltrosOrdenadoresService) {}
 
-  constructor(private paramsFiltros:ParamFiltrosOrdenadoresService) { }
-
-  ngOnInit(): void {
+  ngOnInit(): void {}
+  setPatronTipo(unPatronTipo: string) {
+    this.paramsFiltros.setPatronTipo(unPatronTipo);
   }
-  setPatronTipo(unPatronTipo:string){
-    this.paramsFiltros.setPatronTipo(unPatronTipo)
-    }
 }
