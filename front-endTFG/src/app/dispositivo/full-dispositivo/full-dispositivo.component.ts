@@ -5,10 +5,8 @@ import {ToastrService } from 'ngx-toastr';
 import { BdOrdenadoresService } from 'src/app/bd-ordenadores.service';
 
 import { caracteristicaf } from 'src/app/models/caracteristicaf';
-import { Dispositivo } from 'src/app/models/dispositivo';
 import { Resultado } from 'src/app/models/resultado';
 import { ResultadoFijo } from 'src/app/models/resultado-fijo';
-import { OrdenadoresComponent } from 'src/app/ordenadores/ordenadores.component';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
 @Component({
@@ -54,7 +52,7 @@ export class FullDispositivoComponent implements OnInit {
         //OBTENCION CARACTERISTICAS FIJAS
         this.http.get(this.urlCaracteristicas).subscribe((response: any) => {
           this.caracteristicasf = response;
-        });
+        })
 
     }
 

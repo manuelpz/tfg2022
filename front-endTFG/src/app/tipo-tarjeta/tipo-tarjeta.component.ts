@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { CaracteristicasPropiasService } from '../service/caracteristicas-propias.service';
 
 @Component({
   selector: 'app-tipo-tarjeta',
@@ -7,9 +8,13 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class TipoTarjetaComponent implements OnInit {
 
-  constructor() { }
+  constructor(private caracteristicasService: CaracteristicasPropiasService) { }
   @Input() tipos:any
   ngOnInit(): void {
+  }
+
+  setTipo(tipo: any){
+    return this.caracteristicasService.setTipo(tipo)
   }
 
 }

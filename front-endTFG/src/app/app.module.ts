@@ -32,6 +32,7 @@ import { NuevoDispositivoComponent } from './dispositivo/nuevo-dispositivo/nuevo
 import { PdfComponent } from './pdf/pdf.component';
 import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-dispositivo.component';
 import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristica-fija.component';
+import { CaracteristicasPropiasComponent } from './caracteristicas-propias/caracteristicas-propias.component';
 
 
 
@@ -62,6 +63,7 @@ import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristic
        PdfComponent,
        FullDispositivoComponent,
        CaracteristicaFijaComponent,
+       CaracteristicasPropiasComponent,
   ],
   imports: [
     BrowserModule,
