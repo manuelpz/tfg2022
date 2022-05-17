@@ -14,10 +14,12 @@ import { TiposComponent } from './tipos/tipos.component';
 import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-dispositivo.component';
 import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristica-fija.component';
 import { CaracteristicasPropiasComponent } from './caracteristicas-propias/caracteristicas-propias.component';
+import { ListadoCaracteristicasComponent } from './caracteristica-fija/listado-caracteristicas/listado-caracteristicas.component';
 
 
 const routes: Routes =[ {path:'nav',component:NavComponent},
 {path:'dispositivos',component:OrdenadoresComponent},
+{path:'caracteristicas-fijas',component:ListadoCaracteristicasComponent},
 {path:'login',component:LoginComponent},
 {path:'registro',component:RegistroComponent},
 {path:'nuevo-dispositivo',component:NuevoDispositivoComponent},

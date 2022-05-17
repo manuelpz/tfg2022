@@ -1,0 +1,5 @@
+<!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
+<ng-container *ngFor="let caracteristicas of getCaracteristicas()">
+    <app-caracteristica-tarjeta [caracteristica]="caracteristicas"></app-caracteristica-tarjeta>
+</ng-container>
+<button routerLink="/nueva-caracteristica-global">Nueva caracteristica</button>

@@ -16,8 +16,9 @@
         <a routerLink="/registro" class="nav-link" style="cursor: pointer;"><i class="fas fa-user-plus"></i> Nuevo
           administrador</a>
       </li>
-      <li class="nav-item" *ngIf="isLogged" (click)="onLogOut()">
-        <a class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open"></i> Cerrar Sesión</a>
+      <li class="nav-item" *ngIf="isLogged">
+        <a  (click)="onLogOut()" class="nav-link" style="cursor: pointer;"><i class="fas fa-door-open"></i> Cerrar Sesión</a>
+        <a class="nav-link" routerLink="/caracteristicas-fijas" style="cursor: pointer;"><i class="fas fa-cubes"></i> Características Generales</a>
       </li>
 
     </ul>

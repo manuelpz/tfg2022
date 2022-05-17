@@ -9,12 +9,14 @@ import { Router } from '@angular/router';
 export class BdOrdenadoresService {
 
   private ordenadores:any
+  private caracteristicas:any
   private tipo:any
   private respuesta:any
   private post:any
   private cargando:boolean=true
   private urlDispositivos="http://localhost:8080/api/dispositivos"
   private urlDispositivo="http://localhost:8080/api/dispositivo/id/"
+  private urlCaracteristicas="http://localhost:8080/api/caracteristicasfijas"
   private urlTipo="http://localhost:8080/api/tipos"
   private urlPostTipo="http://localhost:8080/api/tipo"
   private urlBase = "http://localhost:8080/api/"
@@ -35,8 +37,11 @@ export class BdOrdenadoresService {
   this.http.get(this.urlTipo).subscribe((response:any)=>{
 
     this.tipo = response
+  })
 
-
+  this.tipo = new Array()
+  this.http.get(this.urlCaracteristicas).subscribe((response:any)=>{
+    this.caracteristicas = response
   })
 }
 
@@ -45,6 +50,17 @@ getDispositivos(){
   this.http.get(this.urlDispositivos).subscribe((response)=>{
     this.ordenadores = response
   })
+}
+
+getCaracteristicasEliminadas(){
+  this.caracteristicas = new Array()
+  this.http.get(this.urlCaracteristicas).subscribe((response)=>{
+    this.caracteristicas = response
+  })
+}
+
+getCaracteristicas(){
+  return this.caracteristicas
 }
 setCrearTipos(crearTipo:string){
    this.body={
@@ -80,6 +96,13 @@ setDispositivo(dispositivo:string){
     this.http.delete(this.urlBase+"dispositivo/eliminar/"+id).subscribe((response:any)=>{
       this.toastr.success("El dispositivo se ha eliminado correctamente")
       this.getDispositivos()
+    })
+  }
+
+  eliminarCaracteristica(id: number){
+    this.http.delete(this.urlBase+"eliminar/caracteristicafija/"+id).subscribe((response:any)=>{
+      this.toastr.success("La caracteristica se ha eliminado correctamente")
+      this.getCaracteristicasEliminadas()
     })
   }
 

@@ -33,6 +33,8 @@ import { PdfComponent } from './pdf/pdf.component';
 import { FullDispositivoComponent } from './dispositivo/full-dispositivo/full-dispositivo.component';
 import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristica-fija.component';
 import { CaracteristicasPropiasComponent } from './caracteristicas-propias/caracteristicas-propias.component';
+import { ListadoCaracteristicasComponent } from './caracteristica-fija/listado-caracteristicas/listado-caracteristicas.component';
+import { CaracteristicaTarjetaComponent } from './caracteristica-fija/caracteristica-tarjeta/caracteristica-tarjeta.component';
 
 
 
@@ -57,13 +59,15 @@ import { CaracteristicasPropiasComponent } from './caracteristicas-propias/carac
        FiltroPatronTipoPipe,
        LoginComponent,
        RegistroComponent,
-       MenuComponent,
        CrearTipoComponent,
        NuevoDispositivoComponent,
        PdfComponent,
+       ListadoCaracteristicasComponent,
+        MenuComponent,
        FullDispositivoComponent,
        CaracteristicaFijaComponent,
        CaracteristicasPropiasComponent,
+       CaracteristicaTarjetaComponent
   ],
   imports: [
     BrowserModule,
