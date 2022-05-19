@@ -17,7 +17,7 @@ export class MenuComponent implements OnInit {
   }
 
   onLogOut(): void {
-    this.tokenService.logout();
+    this.tokenService.logOut();
     window.location.reload();
   }
 }

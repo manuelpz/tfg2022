@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { LoginUsuario } from '../models/login-usuario';
 import { AuthService } from '../service/auth.service';
 import { TokenService } from '../service/token.service';
@@ -10,21 +11,23 @@ import { TokenService } from '../service/token.service';
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent implements OnInit {
+
   isLogged = false;
   isLoginFail = false;
-  loginUsuario!: LoginUsuario;
-  nombreUsuario!: string;
-  password!: string;
+  loginUsuario: LoginUsuario;
+  nombreUsuario: string;
+  password: string;
   roles: string[] = [];
-  errMesj!: string;
+  errMsj: string;
 
   constructor(
     private tokenService: TokenService,
     private authService: AuthService,
-    private router: Router
-  ) {}
+    private router: Router,
+    private toastr: ToastrService
+  ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     if (this.tokenService.getToken()) {
       this.isLogged = true;
       this.isLoginFail = false;
@@ -35,21 +38,27 @@ export class LoginComponent implements OnInit {
   onLogin(): void {
     this.loginUsuario = new LoginUsuario(this.nombreUsuario, this.password);
     this.authService.login(this.loginUsuario).subscribe(
-      (data: any) => {
+      data => {
         this.isLogged = true;
-        this.isLoginFail = false;
+
         this.tokenService.setToken(data.token);
-        this.tokenService.setUserName(data.nombreusuario);
+        this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
         this.roles = data.authorities;
-        this.router.navigate(['/nav']);
+        this.toastr.success('Bienvenido ' + data.nombreUsuario, 'Empecemos', {
+          timeOut: 3000, positionClass: 'toast-top-center'
+        });
+        this.router.navigate(['/']);
       },
-      (err) => {
-        (this.isLogged = false),
-          (this.isLoginFail = true),
-          (this.errMesj = err.error.error);
-        console.log(err.error.error);
+      err => {
+        this.isLogged = false;
+        this.errMsj = err.error.message;
+        this.toastr.error(this.errMsj, 'Fail', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        });
+        // console.log(err.error.message);
       }
     );
   }
+
 }

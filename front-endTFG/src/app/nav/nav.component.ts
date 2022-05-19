@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BdOrdenadoresService } from '../bd-ordenadores.service';
+import { TokenService } from '../service/token.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,7 +7,12 @@ import { BdOrdenadoresService } from '../bd-ordenadores.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent implements OnInit {
-  constructor(private bd: BdOrdenadoresService) {}
+  constructor(private tokenService: TokenService) {}
+  isLogged=false
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.tokenService.getToken()) {
+      this.isLogged = true;
+    } else this.isLogged = false;
+  }
 }
