@@ -1,5 +1,5 @@
 <app-menu></app-menu>
-<ng-container *ngIf="isLogged">
+<ng-container *ngIf="isAdmin">
 <div class="container">
   <div class="row">
     <div class="col">
@@ -10,4 +10,7 @@
     </div>
   </div>
 </div>
+</ng-container>
+<ng-container *ngIf="!isAdmin">
+  <app-error-acceso></app-error-acceso>
 </ng-container>

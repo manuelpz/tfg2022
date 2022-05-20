@@ -37,7 +37,7 @@ public class Dispositivos {
 	private int id;
 
 	@JsonIgnoreProperties({"dispositivos","caracteristicas","caracteristicasf"})
-	@ManyToOne(fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "ID_TIPO")
 	@NotNull
 	private Tipos tipo;
