@@ -35,6 +35,9 @@ import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristic
 import { CaracteristicasPropiasComponent } from './caracteristicas-propias/caracteristicas-propias.component';
 import { ListadoCaracteristicasComponent } from './caracteristica-fija/listado-caracteristicas/listado-caracteristicas.component';
 import { CaracteristicaTarjetaComponent } from './caracteristica-fija/caracteristica-tarjeta/caracteristica-tarjeta.component';
+import { interceptorProvider } from './interceptors/disp-interceptor.service';
+import { RouterModule } from '@angular/router';
+import { ErrorAccesoComponent } from './error-acceso/error-acceso.component';
 
 
 
@@ -67,7 +70,8 @@ import { CaracteristicaTarjetaComponent } from './caracteristica-fija/caracteris
        FullDispositivoComponent,
        CaracteristicaFijaComponent,
        CaracteristicasPropiasComponent,
-       CaracteristicaTarjetaComponent
+       CaracteristicaTarjetaComponent,
+       ErrorAccesoComponent
   ],
   imports: [
     BrowserModule,
@@ -77,9 +81,11 @@ import { CaracteristicaTarjetaComponent } from './caracteristica-fija/caracteris
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     ToastContainerModule,
-    FormsModule
+    FormsModule,
+
   ],
-  providers: [BdOrdenadoresService,BdOrdenadoresService],
+  providers: [BdOrdenadoresService, interceptorProvider],
+  exports: [RouterModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

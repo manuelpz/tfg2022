@@ -8,11 +8,15 @@ import { TokenService } from '../service/token.service';
 })
 export class NavComponent implements OnInit {
   constructor(private tokenService: TokenService) {}
-  isLogged=false
+  roles: string[];
+  isAdmin = false;
 
   ngOnInit(): void {
-    if (this.tokenService.getToken()) {
-      this.isLogged = true;
-    } else this.isLogged = false;
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach(rol => {
+      if (rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
   }
 }

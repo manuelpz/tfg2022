@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient}from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
-import { Router } from '@angular/router';
+
 
 @Injectable({
   providedIn: 'root'
@@ -24,13 +24,11 @@ export class BdOrdenadoresService {
 
 
 //Saberse esta muy bien
-  constructor(private http:HttpClient,private toastr:ToastrService, private router: Router) {
-
-  this.ordenadores = new Array()
+  constructor(private http:HttpClient,private toastr:ToastrService) {
+    this.ordenadores = new Array()
   http.get(this.urlDispositivos).subscribe((response)=>{
 
     this.ordenadores = response
-
 
   })
   this.tipo = new Array()
@@ -43,7 +41,8 @@ export class BdOrdenadoresService {
   this.http.get(this.urlCaracteristicas).subscribe((response:any)=>{
     this.caracteristicas = response
   })
-}
+
+   }
 
 getDispositivos(){
   this.ordenadores = new Array()
