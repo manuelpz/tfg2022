@@ -9,7 +9,6 @@ public interface TrazabilidadService {
     Trazabilidad createTrazabilidad(Trazabilidad trazabilidad);
     Trazabilidad getTrazabilidad(Integer id);
     List<Trazabilidad> getAllTrazabilidades();
-    List<Trazabilidad> getTrazabilidadesByDispositivo(String dispositivo);
     void deleteTrazabilidad(Integer id);
     Trazabilidad modifyTrazabilidad(Trazabilidad trazabilidad);
 }

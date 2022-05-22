@@ -26,12 +26,11 @@ public class Trazabilidad {
     private int id;
 
     //Puede que tenga que cambiarlo en un futuro para que sea más purista ...
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Dispositivos> dispositivos = new ArrayList<>();
-
     @Column(name = "Lugar")
     private String lugar;
 
+    @OneToMany(cascade = CascadeType.ALL)
+    private List<Dispositivos> dispositivos = new ArrayList<>();
 
     @Column(name = "fecha_de_vida")
     private LocalDateTime datestart;

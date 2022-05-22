@@ -1,7 +1,7 @@
 package com.api.service.Impl;
 
 import com.api.entity.Trazabilidad;
-import com.api.repository.TrazabilidadReposiitory;
+import com.api.repository.TrazabilidadRepository;
 import com.api.service.TrazabilidadService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,7 +11,7 @@ import java.util.List;
 public class TrazabilidadServiceImp implements TrazabilidadService {
 
     @Autowired
-    TrazabilidadReposiitory trazabilidadRepository;
+    TrazabilidadRepository trazabilidadRepository;
 
 
     @Override
@@ -30,10 +30,6 @@ public class TrazabilidadServiceImp implements TrazabilidadService {
         return trazabilidadRepository.findAll();
     }
 
-    @Override
-    public List<Trazabilidad> getTrazabilidadesByDispositivo(String dispositivo) {
-        return trazabilidadRepository.getTrazabilidadByDispositivo(dispositivo);
-    }
 
     @Override
     public void deleteTrazabilidad(Integer id) {

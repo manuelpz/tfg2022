@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface TrazabilidadReposiitory extends JpaRepository<Trazabilidad, Integer> {
+public interface TrazabilidadRepository extends JpaRepository<Trazabilidad, Integer> {
 
-    List<Trazabilidad> getTrazabilidadByDispositivo(String dispositivo);
 }

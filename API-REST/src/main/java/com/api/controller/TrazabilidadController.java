@@ -26,10 +26,6 @@ public class TrazabilidadController {
     public Trazabilidad getTrazabilidad(@PathVariable(value = "id") int id){
         return trazabilidadService.getTrazabilidad(id);
     }
-    @GetMapping("/dispositivo/trazabilidad/{dispositivo}")
-    public List<Trazabilidad> getTrazabilidadByDispositivo(@PathVariable(value = "dispositivo") String dispositivo){
-        return trazabilidadService.getTrazabilidadesByDispositivo(dispositivo);
-    }
 
     @PostMapping("/dispositivo/trazabilidad")
     public Trazabilidad addTrazabilidad(@Validated @RequestBody Trazabilidad trazabilidad){
