@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { LoginUsuario } from '../models/login-usuario';
+import { LoginUsuario } from '../models/login/login-usuario';
 import { AuthService } from '../service/auth.service';
 import { TokenService } from '../service/token.service';
 
@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
         this.toastr.success('Bienvenido ' + data.nombreUsuario, 'Empecemos', {
           timeOut: 3000, positionClass: 'toast-top-center'
         });
-        this.router.navigate(['/']);
+        this.router.navigate(['/nav']);
       },
       err => {
         this.isLogged = false;

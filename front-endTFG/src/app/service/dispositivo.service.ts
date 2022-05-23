@@ -1,9 +1,9 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Dispositivo } from '../models/dispositivo';
-import { Resultado } from '../models/resultado';
-import { ResultadoFijo } from '../models/resultado-fijo';
+import { Dispositivo } from '../models/dispositivos/dispositivo';
+import { Resultado } from '../models/resultados/resultado';
+import { ResultadoFijo } from '../models/resultados/resultado-fijo';
 
 
 @Injectable({

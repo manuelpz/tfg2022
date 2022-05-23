@@ -2,7 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { Caracteristicafija } from '../models/caracteristicafija';
+import { BdOrdenadoresService } from '../bd-ordenadores.service';
+import { Caracteristicafija } from '../models/caracteristicas/caracteristicafija';
 
 @Component({
   selector: 'app-caracteristica-fija',
@@ -14,6 +15,7 @@ export class CaracteristicaFijaComponent implements OnInit {
   caracteristica = '';
   constructor(
     private http: HttpClient,
+    private bdordenadores: BdOrdenadoresService,
     private toastr: ToastrService,
     private route: Router
   ) {}
@@ -26,8 +28,9 @@ export class CaracteristicaFijaComponent implements OnInit {
       .post(this.urlBase + 'nuevo/caracteristicafija', caracteristica)
       .subscribe((data) => {
         this.toastr.success('Nueva caracteristica añadida', '¡Hecho!');
-        this.route.navigate(['/dispositivos']);
-        (err) => {
+        this.bdordenadores.getCaracteristicasRefresh()
+        this.route.navigate(['/caracteristicas-fijas']);
+        (err: any) => {
           this.toastr.error(
             'No hemos podido insertar la caracteristica',
             'ERROR'

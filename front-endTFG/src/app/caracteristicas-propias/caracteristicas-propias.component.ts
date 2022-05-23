@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { CaracteristicaPropia } from '../models/caracteristica-propia';
+import { CaracteristicaPropia } from '../models/caracteristicas/caracteristica-propia';
 import { CaracteristicasPropiasService } from '../service/caracteristicas-propias.service';
 
 @Component({
@@ -11,7 +11,7 @@ import { CaracteristicasPropiasService } from '../service/caracteristicas-propia
   styleUrls: ['./caracteristicas-propias.component.css'],
 })
 export class CaracteristicasPropiasComponent implements OnInit {
-  caracteristicaPantalla: any = this.caracteristicasService.getTipo().tipo;
+  caracteristicaPantalla: any = this.caracteristicasService.getTipo()
   caracteristica = '';
   private urlBase = 'http://localhost:8080/api/';
   constructor(
@@ -32,7 +32,7 @@ export class CaracteristicasPropiasComponent implements OnInit {
       .post(this.urlBase + 'caracteristica', caracteristicaNueva)
       .subscribe((data) => {
         this.toastr.success('Nueva caracteristica añadida', '¡Hecho!');
-        this.route.navigate(['/dispositivos']);
+        this.route.navigate(['/tipos']);
         (err) => {
           this.toastr.error(
             'No hemos podido insertar la caracteristica',

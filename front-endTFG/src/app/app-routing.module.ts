@@ -14,21 +14,24 @@ import { CaracteristicaFijaComponent } from './caracteristica-fija/caracteristic
 import { CaracteristicasPropiasComponent } from './caracteristicas-propias/caracteristicas-propias.component';
 import { ListadoCaracteristicasComponent } from './caracteristica-fija/listado-caracteristicas/listado-caracteristicas.component';
 import { ProdGuardService as guard} from './guard/prod-guard.service';
+import { OpcionComponent } from './opcion/opcion.component';
 
 
-const routes: Routes =[ {path:'nav',component:NavComponent},
-{path:'dispositivos',component:OrdenadoresComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-{path:'caracteristicas-fijas',component:ListadoCaracteristicasComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
+const routes: Routes =[
 {path:'login',component:LoginComponent},
-{path:'registro',component:RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-{path:'nuevo-dispositivo',component:NuevoDispositivoComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-{path:'caracteristicas',component:FullDispositivoComponent},
-{path:'nueva-caracteristica-global',component:CaracteristicaFijaComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-{path:'nueva-caracteristica-propia',component:CaracteristicasPropiasComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
-{path:'tipos',component:TiposComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user'] }},
-{path:'creartipos',component:CrearTipoComponent,  canActivate: [guard], data: { expectedRol: ['admin', 'user']}},
+{path:'nav',component:NavComponent},
+{path:'dispositivos',component:OrdenadoresComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'caracteristicas-fijas',component:ListadoCaracteristicasComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'registro',component:RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'nuevo-dispositivo',component:NuevoDispositivoComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'caracteristicas',component:FullDispositivoComponent, canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'nueva-caracteristica-global',component:CaracteristicaFijaComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'nueva-caracteristica-propia',component:CaracteristicasPropiasComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'nueva-opcion',component:OpcionComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'tipos',component:TiposComponent, canActivate: [guard], data: { expectedRol: ['admin'] }},
+{path:'creartipos',component:CrearTipoComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'dispositivo/:id',component:QrComponenteComponent},
-{path: '',redirectTo:'/nav',pathMatch:'full'},
+{path: '',redirectTo:'/login',pathMatch:'full'},
 {path:'**',component:Page404Component}];
 
 @NgModule({

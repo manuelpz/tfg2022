@@ -1,4 +1,4 @@
-import { Tipo } from './tipo';
+import { Tipo } from '../tipo';
 
 export class Dispositivo {
   tipo: Tipo;

@@ -1,0 +1,14 @@
+<app-menu></app-menu>
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form (ngSubmit)="nuevaOpcion()" novalidate #f="ngForm">
+        <label for="nombre"><b>Nueva opción</b></label>
+        <input class="form-control" type="text" name="opcion" [(ngModel)]="opcion"><br>
+        <button class="btn btn-outline-success btn-block"
+          [disabled]="opcion === '' || opcion.trim().length===0">Añadir</button>
+      </form>
+    </div>
+  </div>
+  <button  routerLink="/caracteristicas" class="btn btn-outline-primary">Volver</button>
+</div>

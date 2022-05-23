@@ -13,6 +13,7 @@ export class BdOrdenadoresService {
   private tipo:any
   private respuesta:any
   private post:any
+  private caracteristicaId: any
   private cargando:boolean=true
   private urlDispositivos="http://localhost:8080/api/dispositivos"
   private urlDispositivo="http://localhost:8080/api/dispositivo/id/"
@@ -51,7 +52,7 @@ getDispositivos(){
   })
 }
 
-getCaracteristicasEliminadas(){
+getCaracteristicasRefresh(){
   this.caracteristicas = new Array()
   this.http.get(this.urlCaracteristicas).subscribe((response)=>{
     this.caracteristicas = response
@@ -101,7 +102,7 @@ setDispositivo(dispositivo:string){
   eliminarCaracteristica(id: number){
     this.http.delete(this.urlBase+"eliminar/caracteristicafija/"+id).subscribe((response:any)=>{
       this.toastr.success("La caracteristica se ha eliminado correctamente")
-      this.getCaracteristicasEliminadas()
+      this.getCaracteristicasRefresh()
     })
   }
 
@@ -122,6 +123,16 @@ setDispositivo(dispositivo:string){
     }
  estaCargando(){
    return this.cargando
+ }
+
+ setCaracteristica(caracteristicaId: number){
+   localStorage.removeItem("caracteristicaID")
+   this.caracteristicaId=caracteristicaId
+  localStorage.setItem("caracteristicaID", this.caracteristicaId);
+ }
+
+ getCaracteristicaId(){
+    return localStorage.getItem("caracteristicaID")
  }
 
 }

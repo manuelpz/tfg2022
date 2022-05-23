@@ -19,12 +19,6 @@ export class TiposResultadosComponent implements OnInit {
 
   ngOnInit(): void {
     this.getTipos();
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach(rol => {
-      if (rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
   }
   getTipos() {
     return this.bdOrdenadores.getTipos();

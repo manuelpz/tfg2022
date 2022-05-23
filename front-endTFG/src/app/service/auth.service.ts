@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { NuevoUsuario } from '../models/nuevo-usuario';
+import { NuevoUsuario } from '../models/login/nuevo-usuario';
 import { Observable } from 'rxjs';
-import { LoginUsuario } from '../models/login-usuario';
-import { JwtDTO } from '../models/jwt-dto';
+import { LoginUsuario } from '../models/login/login-usuario';
+import { JwtDTO } from '../models/login/jwt-dto';
 
 @Injectable({
   providedIn: 'root'

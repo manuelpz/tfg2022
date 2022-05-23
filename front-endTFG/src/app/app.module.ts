@@ -38,6 +38,8 @@ import { CaracteristicaTarjetaComponent } from './caracteristica-fija/caracteris
 import { interceptorProvider } from './interceptors/disp-interceptor.service';
 import { RouterModule } from '@angular/router';
 import { ErrorAccesoComponent } from './error-acceso/error-acceso.component';
+import { OpcionComponent } from './opcion/opcion.component';
+import { MenuLoginComponent } from './menu-login/menu-login.component';
 
 
 
@@ -71,7 +73,9 @@ import { ErrorAccesoComponent } from './error-acceso/error-acceso.component';
        CaracteristicaFijaComponent,
        CaracteristicasPropiasComponent,
        CaracteristicaTarjetaComponent,
-       ErrorAccesoComponent
+       ErrorAccesoComponent,
+       OpcionComponent,
+       MenuLoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
-import { Caracteristica } from './caracteristica';
-import { Dispositivo } from './dispositivo';
-import { Opcion } from './opcion';
+import { Caracteristica } from '../caracteristicas/caracteristica';
+import { Dispositivo } from '../dispositivos/dispositivo';
+import { Opcion } from '../opciones/opcion';
 
 export class Resultado {
   dispositivo: Dispositivo;

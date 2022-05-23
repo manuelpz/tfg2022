@@ -4,9 +4,9 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { BdOrdenadoresService } from 'src/app/bd-ordenadores.service';
 
-import { caracteristicaf } from 'src/app/models/caracteristicaf';
-import { Resultado } from 'src/app/models/resultado';
-import { ResultadoFijo } from 'src/app/models/resultado-fijo';
+import { caracteristicaf } from 'src/app/models/caracteristicas/caracteristicaf';
+import { Resultado } from 'src/app/models/resultados/resultado';
+import { ResultadoFijo } from 'src/app/models/resultados/resultado-fijo';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
 @Component({
@@ -46,6 +46,7 @@ export class FullDispositivoComponent implements OnInit {
     //OBTENCION CARACTERISTICAS
     this.http.get(this.caracteristicasUrl).subscribe((response: any) => {
       this.caracteristicas = response;
+
     });
 
     //OBTENCION CARACTERISTICAS FIJAS
@@ -63,7 +64,6 @@ export class FullDispositivoComponent implements OnInit {
         caracteristicaf,
         this.respuesta[i]
       );
-      console.log(resultadoFijo);
       this.dispositivoService
         .guardarResultadoFijo(resultadoFijo)
         .subscribe((data) => console.log('ResultadoFijo guardado'));
@@ -91,9 +91,11 @@ export class FullDispositivoComponent implements OnInit {
     return this.caracteristicasf;
   }
 
-  getOptions(tipo: string): any {
-    return this.caracteristicas.filter(
-      (caracteristica) => caracteristica.tipo.tipo === tipo
-    );
+  getOptions(tipo: string) {
+    return this.caracteristicas.filter(caracteristica =>caracteristica.tipo.tipo == tipo);
+  }
+
+  setCaracteristica(caracteristicaId: number){
+    return this.bdOrdenadores.setCaracteristica(caracteristicaId);
   }
 }

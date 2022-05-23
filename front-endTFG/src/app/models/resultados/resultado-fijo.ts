@@ -1,5 +1,5 @@
-import { caracteristicaf } from "./caracteristicaf";
-import { Dispositivo } from "./dispositivo";
+import { caracteristicaf } from "../caracteristicas/caracteristicaf";
+import { Dispositivo } from "../dispositivos/dispositivo";
 
 export class ResultadoFijo {
 

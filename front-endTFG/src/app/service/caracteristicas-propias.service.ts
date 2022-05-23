@@ -9,10 +9,12 @@ export class CaracteristicasPropiasService {
   constructor() { }
 
   setTipo(tipo: any){
+    localStorage.removeItem("tipo")
     this.tipo = tipo
+    localStorage.setItem("tipo",JSON.stringify(this.tipo.tipo))
   }
 
   getTipo(){
-    return this.tipo
+    return localStorage.getItem("tipo")
   }
 }

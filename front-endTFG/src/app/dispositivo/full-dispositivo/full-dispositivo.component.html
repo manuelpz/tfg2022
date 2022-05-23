@@ -1,3 +1,4 @@
+<app-menu></app-menu>
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
@@ -13,14 +14,16 @@
               <div class="form-group">
                 <h5>{{caracteristica.caracteristica}}</h5>
                 <select class="form-control" name="opcion" [(ngModel)]="opcionf[i]">
-                  <option *ngFor="let opcion of caracteristica.opciones" [ngValue]="opcion">{{opcion.opcion}}</option>
+                  <option  *ngFor="let opcion of caracteristica.opciones" [ngValue]="opcion">{{opcion.opcion}}</option>
                 </select>
+
+                 <button (click)="setCaracteristica(caracteristica.id)" routerLink="/nueva-opcion" class="btn btn-outline-info"><i>¡Añade una nueva opción!</i></button>
               </div>
             </ng-container>
           </ng-container>
         </ng-container>
 
-        <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+        <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
       </form>
     </div>
   </div>

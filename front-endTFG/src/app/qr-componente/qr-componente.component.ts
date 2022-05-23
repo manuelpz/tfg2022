@@ -16,7 +16,7 @@ export class QrComponenteComponent implements OnInit {
     this.Dispositivo.setDispositivo(this.dispositivo)
   }
 getDispositivo(){
- 
+
   return this.Dispositivo.getDispotivo()
 }
 estaCargando(){
