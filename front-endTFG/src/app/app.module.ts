@@ -40,6 +40,8 @@ import { RouterModule } from '@angular/router';
 import { ErrorAccesoComponent } from './error-acceso/error-acceso.component';
 import { OpcionComponent } from './opcion/opcion.component';
 import { MenuLoginComponent } from './menu-login/menu-login.component';
+import { HeaderComponent } from './shared/components/header/header.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -54,6 +56,8 @@ import { MenuLoginComponent } from './menu-login/menu-login.component';
     ResultadosOrdenadoresComponent,
     OrdenadorTarjetaComponent,
     QrComponenteComponent,
+    HeaderComponent,
+    FooterComponent,
 
     FiltroPatronPipe,
        ObjToArrayPipe,

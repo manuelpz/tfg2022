@@ -1,7 +1,10 @@
 <!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
+
+    <!--<div class="masthead"> </div>-->
 <ng-container *ngFor="let caracteristicas of getCaracteristicas()">
     <app-caracteristica-tarjeta [caracteristica]="caracteristicas"></app-caracteristica-tarjeta>
 </ng-container>
 <br><br>
 <button class="btn btn-primary" routerLink="/nueva-caracteristica-global">Nueva caracteristica</button><br><br>
 <button class="btn btn-primary" routerLink="/nav">Volver al menú</button>
+

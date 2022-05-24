@@ -1,7 +1,9 @@
- <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"
+<div class="masthead" style="padding-bottom: 450px;" >
+<input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"
    (keydown.enter)="setCrearTipo(patron.value)" (keydown.enter)="JsonTipo()" (keydown.enter)="patron.value = ''">
  <a routerLink="/tipos" routerLinkActive="active" aria-current="page" href="#">
    <tr>
      <th>Volver</th>
    </tr>
  </a>
+</div>

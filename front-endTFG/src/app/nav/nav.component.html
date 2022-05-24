@@ -1,15 +1,7 @@
 <app-menu></app-menu>
+
 <ng-container *ngIf="isAdmin">
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <a routerLink="/dispositivos" routerLinkActive="active" class="nav-link" aria-current="page" href="#">
-        <button type="button" class="btn btn-outline-primary">Dispositivos</button></a><br>
-      <a routerLink="/tipos" routerLinkActive="active" class="nav-link" aria-current="page" href="#">
-        <button type="button" class="btn btn-outline-primary">Tipos</button></a><br>
-    </div>
-  </div>
-</div>
+<app-header></app-header>
 </ng-container>
 <ng-container *ngIf="!isAdmin">
   <app-error-acceso></app-error-acceso>
