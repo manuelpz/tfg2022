@@ -41,6 +41,11 @@ public class CaracteristicasFijasServiceImpl implements CaracteristicasFijasServ
 		caracteristicasFijasRepository.delete(caracteristica);
 	}
 
+	@Override
+	public boolean existsByCaracteristicaf(String caracteristicaf) {
+		return caracteristicasFijasRepository.existsByCaracteristicaf(caracteristicaf);
+	}
+
 	
 
 }

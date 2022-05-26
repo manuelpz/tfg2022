@@ -3,6 +3,18 @@
 
 	<div class="col col-lg-3">
 		<h5 class="card-title">Tipo: {{tipos.tipo}}</h5>
+    <div class="btn-group dropend">
+      <button type="button" class="btn btn-secondary">
+        Caracteristicas </button>
+      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropright</span>
+      </button>
+      <ul class="dropdown-menu">
+          <li *ngFor = "let caracteristica of tipos.caracteristicas" class="dropdown-item">
+              {{caracteristica.caracteristica}} <button (click)="eliminarCaracteristica(caracteristica)">-</button>
+          </li>
+        </ul>
+        </div>
     <button routerLink="/nueva-caracteristica-propia" (click)="setTipo(tipos)" class="btn btn-outline-success btn-block">Añadir caracteristicas</button><br>
 	</div>
 

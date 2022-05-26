@@ -15,5 +15,6 @@ public interface CaracteristicasService {
 	List<Caracteristicas> getAllCaracteristicas();
 	void deleteCaracteristica(int id);
 	Caracteristicas modifyCaracteristica(Caracteristicas caracteristica);
+	boolean existsByCaracteristica(String caracteristica);
 	
 }

@@ -33,13 +33,13 @@ export class CaracteristicasPropiasComponent implements OnInit {
       .subscribe((data) => {
         this.toastr.success('Nueva caracteristica añadida', '¡Hecho!');
         this.route.navigate(['/tipos']);
+      },
         (err) => {
           this.toastr.error(
-            'No hemos podido insertar la caracteristica',
+            'Esta caracteristica ya existe',
             'ERROR'
-          );
+          )
           this.route.navigate(['/nueva-caracteristica-propia']);
-        };
-      });
+        })
   }
 }

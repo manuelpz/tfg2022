@@ -79,7 +79,7 @@ import { FooterComponent } from './footer/footer.component';
        CaracteristicaTarjetaComponent,
        ErrorAccesoComponent,
        OpcionComponent,
-       MenuLoginComponent
+       MenuLoginComponent,
   ],
   imports: [
     BrowserModule,

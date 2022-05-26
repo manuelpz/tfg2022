@@ -40,7 +40,6 @@ export class LoginComponent implements OnInit {
     this.authService.login(this.loginUsuario).subscribe(
       data => {
         this.isLogged = true;
-
         this.tokenService.setToken(data.token);
         this.tokenService.setUserName(data.nombreUsuario);
         this.tokenService.setAuthorities(data.authorities);
@@ -52,12 +51,11 @@ export class LoginComponent implements OnInit {
       },
       err => {
         this.isLogged = false;
-        this.errMsj = err.error.message;
-        this.toastr.error(this.errMsj, 'Fail', {
+        this.errMsj = "Usuario o contraseña incorrectos";
+        this.toastr.error(this.errMsj, 'Error', {
           timeOut: 3000,  positionClass: 'toast-top-center',
         });
-      }
-    );
+      });
   }
 
 }

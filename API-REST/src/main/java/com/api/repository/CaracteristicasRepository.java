@@ -11,4 +11,5 @@ import com.api.entity.Caracteristicas;
 public interface CaracteristicasRepository extends JpaRepository<Caracteristicas, Integer> {
 
 	List<Caracteristicas> getCaracteristicasByTipoTipo(String tipo);
+	boolean existsByCaracteristica(String caracteristica);
 }

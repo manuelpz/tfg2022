@@ -23,20 +23,22 @@ export class CaracteristicaFijaComponent implements OnInit {
   ngOnInit(): void {}
 
   nuevaCaracteristica() {
-    const caracteristica = new Caracteristicafija(this.caracteristica);
-    this.http
-      .post(this.urlBase + 'nuevo/caracteristicafija', caracteristica)
-      .subscribe((data) => {
-        this.toastr.success('Nueva caracteristica añadida', '¡Hecho!');
+    const caracteristica = new Caracteristicafija(this.caracteristica)
+    this.http.post(this.urlBase + 'nuevo/caracteristicafija', caracteristica)
+      .subscribe(
+        data => {
+        this.toastr.success('Nueva caracteristica añadida', '¡Hecho!',{
+          timeOut: 3000, positionClass: 'toast-top-center'
+        })
         this.bdordenadores.getCaracteristicasRefresh()
-        this.route.navigate(['/caracteristicas-fijas']);
-        (err: any) => {
+        this.route.navigate(['/caracteristicas-fijas'])
+      },
+        err => {
           this.toastr.error(
-            'No hemos podido insertar la caracteristica',
-            'ERROR'
-          );
-          this.route.navigate(['/nueva-caracteristica-global']);
-        };
-      });
+            'Esta caracteristica ya existe',
+            'ERROR', {
+          timeOut: 3000,  positionClass: 'toast-top-center',
+        })
+      })
+      }
   }
-}

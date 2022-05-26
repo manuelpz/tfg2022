@@ -8,4 +8,5 @@ import com.api.entity.CaracteristicasFijas;
 @Repository
 public interface CaracteristicasFijasRepository extends JpaRepository<CaracteristicasFijas, Integer> {
 
+	boolean existsByCaracteristicaf(String caracteristicaf);
 }

@@ -13,5 +13,6 @@ public interface CaracteristicasFijasService {
 	CaracteristicasFijas createCaracteristicaFija(CaracteristicasFijas caracteristica);
 	CaracteristicasFijas modifyCaracteristicaFija(CaracteristicasFijas caracteristica);
 	void deleteCaracteristicaFija(int id);
+	boolean existsByCaracteristicaf(String caracteristicaf);
 
 }

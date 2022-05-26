@@ -39,7 +39,7 @@ export class RegistroComponent implements OnInit {
       data => {
         this.toastr.success('Cuenta Creada', 'OK', {
           timeOut: 3000, positionClass: 'toast-top-center'
-        });
+        })
 
         this.router.navigate(['/login']);
       },
@@ -47,10 +47,9 @@ export class RegistroComponent implements OnInit {
         this.errMsj = err.error.mensaje;
         this.toastr.error(this.errMsj, 'Fail', {
           timeOut: 3000,  positionClass: 'toast-top-center',
-        });
-        // console.log(err.error.message);
+        })
       }
-    );
+    )
   }
 
 }

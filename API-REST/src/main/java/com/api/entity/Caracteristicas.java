@@ -36,7 +36,7 @@ public class Caracteristicas {
 	@Column(name = "ID_CARACTERISTICA")
 	private int id;
 	
-	@Column(name = "CARACTERISTICA")
+	@Column(name = "CARACTERISTICA", unique = true)
 	private String caracteristica;
 	
 	@JsonIgnoreProperties(value="caracteristicas")

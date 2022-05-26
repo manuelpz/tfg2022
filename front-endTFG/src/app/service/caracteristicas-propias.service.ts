@@ -17,4 +17,5 @@ export class CaracteristicasPropiasService {
   getTipo(){
     return localStorage.getItem("tipo")
   }
+  
 }

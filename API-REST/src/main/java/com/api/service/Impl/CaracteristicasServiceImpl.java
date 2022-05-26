@@ -49,4 +49,9 @@ public class CaracteristicasServiceImpl implements CaracteristicasService {
 	public List<Caracteristicas> getCaracteristicasByTipo(String tipo) {
 		return caracteristicasRepository.getCaracteristicasByTipoTipo(tipo);
 	}
+
+	@Override
+	public boolean existsByCaracteristica(String caracteristica) {
+		return caracteristicasRepository.existsByCaracteristica(caracteristica);
+	}
 }
