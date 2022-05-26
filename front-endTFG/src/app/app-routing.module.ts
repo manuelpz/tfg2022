@@ -15,11 +15,13 @@ import { CaracteristicasPropiasComponent } from './caracteristicas-propias/carac
 import { ListadoCaracteristicasComponent } from './caracteristica-fija/listado-caracteristicas/listado-caracteristicas.component';
 import { ProdGuardService as guard} from './guard/prod-guard.service';
 import { OpcionComponent } from './opcion/opcion.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 const routes: Routes =[
 {path:'login',component:LoginComponent},
 {path:'nav',component:NavComponent},
+{path: 'usuarios', component: UsuariosComponent},
 {path:'dispositivos',component:OrdenadoresComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'caracteristicas-fijas',component:ListadoCaracteristicasComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'registro',component:RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin']}},

@@ -39,9 +39,9 @@ import { interceptorProvider } from './interceptors/disp-interceptor.service';
 import { RouterModule } from '@angular/router';
 import { ErrorAccesoComponent } from './error-acceso/error-acceso.component';
 import { OpcionComponent } from './opcion/opcion.component';
-import { MenuLoginComponent } from './menu-login/menu-login.component';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
 
 
 
@@ -79,7 +79,7 @@ import { FooterComponent } from './footer/footer.component';
        CaracteristicaTarjetaComponent,
        ErrorAccesoComponent,
        OpcionComponent,
-       MenuLoginComponent,
+       UsuariosComponent,
   ],
   imports: [
     BrowserModule,
