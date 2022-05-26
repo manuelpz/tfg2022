@@ -21,7 +21,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 const routes: Routes =[
 {path:'login',component:LoginComponent},
 {path:'nav',component:NavComponent},
-{path: 'usuarios', component: UsuariosComponent},
+{path: 'usuarios', component: UsuariosComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'dispositivos',component:OrdenadoresComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'caracteristicas-fijas',component:ListadoCaracteristicasComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'registro',component:RegistroComponent, canActivate: [guard], data: { expectedRol: ['admin']}},
