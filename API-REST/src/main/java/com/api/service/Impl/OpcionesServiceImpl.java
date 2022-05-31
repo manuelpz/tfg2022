@@ -48,4 +48,9 @@ public class OpcionesServiceImpl implements OpcionesService{
 	public List<Opciones> getOpcionesByCaracteristicaId(int id) {
 		return opcionesRepository.getOpcionesByCaracteristicaId(id);
 	}
+
+	@Override
+	public boolean existsByOpcion(String opcion) {
+		return opcionesRepository.existsByOpcion(opcion);
+	}
 }
