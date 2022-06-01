@@ -1,35 +1,38 @@
-<table id="marcaFilters" class="table table-striped">
-  <thead class="thead-light">
+
+<table id="marcaFilters" class="table " style="background-color: #FFFFFF33;">
+  <thead class="thead-light" style="text-align: center;">
     <tr>
-      <th>patron</th>
+      <th style="font-size: 20px;">Busqueda</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
         <div class="form-group">
-          <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"
-            (keyup)="setPatronTipo(patron.value)">
+          <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del tipo"
+            (keyup)="setPatronTipo(patron.value)" style="text-align: center;">
         </div>
       </td>
     </tr>
+<tr>
+  <td>
+    <div type="button" class="btn btn-white btn-block" routerLink="/creartipos" routerLinkActive="active" style="cursor: pointer; font-size: 17px;"> 
+      Crear Tipo  
+ </div>
+  </td>
+</tr>
+
   </tbody>
 </table>
+<br>
 
-<table id="tecFilters" class="table table-striped">
-  <thead class="thead-light">
-    <a routerLink="/creartipos" routerLinkActive="active" aria-current="page" href="#">
-      <tr>
-        <th>Crear Tipos</th>
-      </tr>
-    </a>
 
-  </thead>
-  <thead class="thead-light">
-    <a routerLink="/nav" routerLinkActive="active" aria-current="page" href="#">
-      <tr>
-        <th>Volver al Menu</th>
-      </tr>
-    </a>
-  </thead>
-</table>
+
+
+
+
+
+
+
+    
+

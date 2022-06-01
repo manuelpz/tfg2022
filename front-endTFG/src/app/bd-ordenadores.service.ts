@@ -34,14 +34,16 @@ export class BdOrdenadoresService {
   })
   this.tipo = new Array()
   this.http.get(this.urlTipo).subscribe((response:any)=>{
+
     this.tipo = response
   })
 
-  this.caracteristicas = new Array()
+  this.tipo = new Array()
   this.http.get(this.urlCaracteristicas).subscribe((response:any)=>{
     this.caracteristicas = response
   })
-}
+
+   }
 
 getDispositivos(){
   this.ordenadores = new Array()
@@ -54,13 +56,6 @@ getCaracteristicasRefresh(){
   this.caracteristicas = new Array()
   this.http.get(this.urlCaracteristicas).subscribe((response)=>{
     this.caracteristicas = response
-  })
-}
-
-getTiposRefresh(){
-  this.tipo = new Array()
-  this.http.get(this.urlTipo).subscribe((response)=>{
-    this.tipo = response
   })
 }
 
@@ -84,8 +79,11 @@ JsonTipo(){
   })
 }
 
+
 getTipos(){
+
   return this.tipo
+
 }
 setDispositivo(dispositivo:string){
     this.http.get(this.urlDispositivo+dispositivo).subscribe((response:any)=>{

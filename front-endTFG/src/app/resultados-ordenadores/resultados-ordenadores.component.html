@@ -1,11 +1,13 @@
 <!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
 
-<ng-container *ngFor="let ordenadores of getOrdenadores() | filtroPatron:getPatron()">
-
+<ng-container *ngFor="let ordenadores of getOrdenadores() | filtroPatron:getPatron()" >
+  <div>
   <ng-container>
 
     <app-ordenador-tarjeta [ordenador]="ordenadores"></app-ordenador-tarjeta>
 
   </ng-container>
+</div>
 </ng-container>
+
 

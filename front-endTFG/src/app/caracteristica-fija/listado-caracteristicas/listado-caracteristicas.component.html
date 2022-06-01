@@ -1,10 +1,29 @@
 <!-- RELLENAR CON UN LISTADO DE TODOS LOS MODELOS -->
 
-    <!--<div class="masthead"> </div>-->
-<ng-container *ngFor="let caracteristicas of getCaracteristicas()">
+   <div class="masthead" > 
+    <div class="row justify-content-md-center text-center">
+    <div class="text-center"><h1 class="display-4">Caracteristicas fijas</h1></div>
+    <br>
+    
+        
+<ng-container *ngFor="let caracteristicas of getCaracteristicas()" >
     <app-caracteristica-tarjeta [caracteristica]="caracteristicas"></app-caracteristica-tarjeta>
 </ng-container>
-<br><br>
-<button class="btn btn-primary" routerLink="/nueva-caracteristica-global">Nueva caracteristica</button><br><br>
-<button class="btn btn-primary" routerLink="/nav">Volver al menú</button>
+<div class="container">
+    <div class="row justify-content-md-center text-center">
+        <div class="col col-lg-4 ">
+            <button class="btn btn-outline-success mt-4" routerLink="/nueva-caracteristica-global">Nueva caracteristica</button><br><br>
+    <button class="btn btn-primary  mt-0" routerLink="/nav">Volver al menu</button>
+        </div>
+        
+    </div>
+    
+    
+    </div>
+</div>
+
+
+<br>
+
+</div>
 

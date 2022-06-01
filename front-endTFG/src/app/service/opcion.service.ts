@@ -20,9 +20,6 @@ export class OpcionService {
       (response) => {
         this.router.navigate(['/caracteristicas'])
         this.toastr.success('Opcion creada correctamente', '¡Hecho!');
-    },
-    (error) => {
-      this.toastr.error('Esta opcion ya', '¡Error!');
     })
   }
 }

@@ -1,9 +1,9 @@
-
+<div class="masthead">
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
       <form (ngSubmit)="nuevaCaracteristica()" novalidate #f="ngForm">
-        <label for="nombre">Nueva caracteristica:</label>
+     <h1 class="display-6">  <label for="nombre" >Nueva caracteristica:</label></h1> 
         <input class="form-control" type="text" name="caracteristica" [(ngModel)]="caracteristica"><br>
         <button class="btn btn-outline-success btn-block"
           [disabled]="caracteristica === '' || caracteristica.trim().length===0">Crear</button>
@@ -11,3 +11,5 @@
     </div>
   </div>
 </div>
+</div>
+
