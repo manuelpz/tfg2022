@@ -59,6 +59,12 @@ getCaracteristicasRefresh(){
   })
 }
 
+getTiposRefresh(){
+  this.tipo = new Array()
+  this.http.get(this.urlTipo).subscribe((response)=>{
+    this.tipo = response
+  })
+}
 getCaracteristicas(){
   return this.caracteristicas
 }
