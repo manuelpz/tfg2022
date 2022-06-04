@@ -1,17 +1,17 @@
 <app-menu></app-menu>
 
-<div class="masthead" style="padding-top: 90px; ">
-<div class="row justify-content-center">
+<div class="masthead " style="padding-top: 90px; ">
+<div class="row  justify-content-center">
 <h1 class="display-4 text-center">USUARIOS</h1>
-<div class="list-group list-group-flush col-sm-4 ">
+<div class="list-group  col-sm-4 ">
   <div *ngFor="let usuario of getUsuarios()" class="list-group-item">
-    <span style="font-size: 20px;">{{usuario.nombre}}</span>
+    <span style="font-size: 20px;">-{{usuario.nombre}}</span>
     <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger" style="float: right;">Eliminar</button>
   </div>
 <br>
   <button class="btn btn-outline-success" routerLink="/registro">Nuevo Usuario</button>
 </div>
-<br>
+
 
 </div>
 </div>
