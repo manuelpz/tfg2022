@@ -46,6 +46,11 @@ public class TiposServiceImpl implements TiposService{
 		return tipo;
 	}
 
+	@Override
+	public boolean existsByTipo(String tipo) {
+		return tiposRepository.existsByTipo(tipo);
+	}
+
 	
 	
 	
