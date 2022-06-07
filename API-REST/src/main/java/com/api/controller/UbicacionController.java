@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST})
+@CrossOrigin(origins = "*", methods= {RequestMethod.GET,RequestMethod.POST, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api")
 public class UbicacionController {
 
@@ -40,5 +40,6 @@ public class UbicacionController {
     public void deleteTrazabilidad(@PathVariable(value = "id") int id){
         ubicacionService.deleteUbicacion(id);
     }
+
 
 }

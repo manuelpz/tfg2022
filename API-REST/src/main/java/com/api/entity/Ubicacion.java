@@ -7,9 +7,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Data
@@ -35,10 +35,15 @@ public class Ubicacion {
     @Column (name= "fecha")
     private LocalDateTime localDateTime;
 
+    @Column (name= "fecha_muerte")
+    private Date fecha_muerte;
+
 
     @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
     @JoinColumn(name = "ID_DISPOSITIVO")
     private List<Dispositivos> dispositivos = new ArrayList<>();
+
+
 
 
 
