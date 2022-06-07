@@ -44,7 +44,4 @@ public class Ubicacion {
     private List<Dispositivos> dispositivos = new ArrayList<>();
 
 
-
-
-
 }
