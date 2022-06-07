@@ -16,8 +16,7 @@ public class UbicacionServiceImp implements UbicacionService {
 
     @Autowired
     UbicacionRepository ubicacionRepository;
-    @Autowired
-    DispositivosRepository dispositivosRepository;
+
 
 
     @Override
