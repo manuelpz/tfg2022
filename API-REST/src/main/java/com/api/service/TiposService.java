@@ -14,5 +14,6 @@ public interface TiposService {
 	List<Tipos> getAllTipos();
 	void deleteTipo(int id);
 	Tipos modifyTipo(Tipos tipo);
+	boolean existsByTipo(String tipo);
 
 }

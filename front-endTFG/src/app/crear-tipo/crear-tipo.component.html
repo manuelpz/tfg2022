@@ -1,21 +1,14 @@
-<div class="masthead"  >
-   <div class="container">
-   <div class="row mt-5">
+<div class="masthead">
+  <div class="container">
+    <div class="row mt-5">
       <div class="col-md-4 mx-auto">
-     
-<h1 class="display-4 text-center">Crear Tipo</h1>
-  
-<input #patron type="text" class="form-control form-control-lg " id="modelo" placeholder="Nombre del tipo"
-   (keydown.enter)="setCrearTipo(patron.value)" (keydown.enter)="JsonTipo()" (keydown.enter)="patron.value = ''">
-   <br>
- <button class="btn btn-primary" routerLink="/tipos" routerLinkActive="active" aria-current="page"  href="#">
- 
-      Volver 
- 
-</button>
-
-
-</div>
-</div>
-</div>
-
+        <h1 class="display-4 text-center">Crear Tipo</h1>
+        <input #patron type="text" class="form-control form-control-lg " id="modelo" placeholder="Nombre del tipo"
+          (keydown.enter)="setCrearTipo(patron.value)" (keydown.enter)="JsonTipo()" (keydown.enter)="patron.value = ''">
+        <br>
+        <button class="btn btn-primary" routerLink="/tipos" routerLinkActive="active" aria-current="page" href="#">
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>

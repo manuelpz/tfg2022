@@ -3,6 +3,8 @@ package com.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -16,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.dto.Mensaje;
 import com.api.entity.Tipos;
 import com.api.service.TiposService;
 
@@ -38,8 +41,13 @@ public class TiposController {
 	}
 	
 	@PostMapping("/tipo")
-	public Tipos createTipo(@Validated @RequestBody Tipos tipo) {
-		return tiposService.createTipo(tipo);
+	public ResponseEntity createTipo(@Validated @RequestBody Tipos tipo) {
+		if(tiposService.existsByTipo(tipo.getTipo()))
+			return new ResponseEntity(new Mensaje("Este tipo ya existe"), HttpStatus.BAD_REQUEST);
+	else {
+		tiposService.createTipo(tipo);
+		return new ResponseEntity(new Mensaje("Nuevo tipo añadido"), HttpStatus.CREATED);
+	}
 	}
 	
 	@PutMapping("/tipo")
@@ -47,7 +55,7 @@ public class TiposController {
 		return tiposService.modifyTipo( tipo);
 	}
 	
-	@DeleteMapping("/tipo/{tipo}")
+	@DeleteMapping("/tipo/{id}")
 	public void deleteTipo(@PathVariable(value = "id") int id) {
 		tiposService.deleteTipo(id);
 	}

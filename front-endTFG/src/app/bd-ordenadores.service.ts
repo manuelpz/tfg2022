@@ -70,18 +70,18 @@ getCaracteristicas(){
 }
 setCrearTipos(crearTipo:string){
    this.body={
-
     "tipo":""+crearTipo
   }
-  console.log(this.body)
 }
 
 JsonTipo(){
   this.http.post(this.urlPostTipo,this.body).subscribe((response:any)=>{
     this.post=response
     console.log(this.post)
-    this.toastr.success("Se ha insertado correctamente")
-
+    this.toastr.success("El nuevo tipo se ha insertado correctamente")
+  },
+  (err:any)=>{
+    this.toastr.error("Este tipo ya existe")
   })
 }
 
