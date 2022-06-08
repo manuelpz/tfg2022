@@ -11,4 +11,5 @@ import com.api.entity.Tipos;
 public interface TiposRepository extends JpaRepository<Tipos, Integer>{
 
 	Tipos getByTipo(String tipo);
+	boolean existsByTipo(String tipo);
 }

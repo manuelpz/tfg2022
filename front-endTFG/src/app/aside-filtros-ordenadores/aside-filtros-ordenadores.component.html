@@ -1,25 +1,36 @@
 
-<table id="marcaFilters" class="table table-striped">
-  <thead class="thead-light">
+<table id="marcaFilters" class="table" style="background-color: #FFFFFF33; ">
+  <thead class="thead-light"style="text-align: center;">
     <tr>
-      <th>patron</th>
+      <th style="font-size: 20px;">Busqueda</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td>
         <div class="form-group">
-          <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del modelo"
-            (keyup)="setPatron(patron.value)">
+          <input #patron type="text" class="form-control" id="modelo" placeholder="Nombre del dispositivo"
+            (keyup)="setPatron(patron.value)" style="text-align: center;">
         </div>
       </td>
     </tr>
+
+    <tr>
+      <td>
+        <button type="button" class="btn btn-white btn-block" routerLink="/caracteristicas-fijas" style="cursor: pointer; font-size: 17px;">Características Generales</button>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <button routerLink="/nuevo-dispositivo" type="button" class="btn btn-white btn-block" id="resetFilters" (click)="patron.value=''" style="cursor: pointer; font-size: 17px;">Añadir nuevo
+          dispositivo</button>
+      </td>
+    </tr>
+  
   </tbody>
 </table>
+<br>
 
-<table id="tecFilters" class="table table-striped">
-</table>
-<button class="nav-link" routerLink="/caracteristicas-fijas" style="cursor: pointer;">Características Generales</button>
-<button routerLink="/nuevo-dispositivo" class="btn btn-primary" id="resetFilters" (click)="patron.value=''">Añadir nuevo
-  dispositivo</button><br><br>
-<button routerLink="/nav" class="btn btn-link">Volver al menu</button>
+
+

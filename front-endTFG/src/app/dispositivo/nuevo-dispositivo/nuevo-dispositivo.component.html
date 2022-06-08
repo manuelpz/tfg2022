@@ -6,7 +6,7 @@
       <form (ngSubmit)="crear()" novalidate #f="ngForm">
         <div class="form-group">
           <label for="tipo">
-            <h5>El nuevo equipo es...</h5>
+            <h1 class="display-6">El nuevo equipo es...</h1>
           </label>
           <select class="form-control" name="tipo" [(ngModel)]="tipo" #caracter>
             <ng-container *ngFor="let tipo of getTipos()">

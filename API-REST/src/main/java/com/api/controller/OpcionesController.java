@@ -3,6 +3,8 @@ package com.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.api.dto.Mensaje;
 import com.api.entity.Opciones;
 
 import com.api.service.OpcionesService;
@@ -43,8 +46,13 @@ public class OpcionesController {
 	}
 	
 	@PostMapping("/opcion")
-	public Opciones createOpcion(@Validated @RequestBody Opciones opcion) {
-		return opcionesService.createOpcion(opcion);
+	public ResponseEntity createOpcion(@Validated @RequestBody Opciones opcion) {
+		if(opcionesService.existsByOpcion(opcion.getOpcion()))
+			return new ResponseEntity(new Mensaje("Esta opcion ya existe"), HttpStatus.BAD_REQUEST);
+		else {
+			opcionesService.createOpcion(opcion);
+			return new ResponseEntity(new Mensaje("Opcion añadida"), HttpStatus.CREATED);
+			}
 	}
 	
 	@PutMapping("/opcion")

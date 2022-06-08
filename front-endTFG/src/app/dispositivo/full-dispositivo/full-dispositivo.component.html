@@ -1,29 +1,37 @@
 <app-menu></app-menu>
-<div class="masthead">
+<div class="masthead" >
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
+      <br>
       <form (ngSubmit)="guardarFull()" novalidate #f="ngForm">
+      <div>  <h1 class="display-5">Características</h1></div>
+        <br>
+    <h3>-Generales</h3>
+      
         <ng-container *ngFor="let caracteristicaf of getCaracteristicas(); let i = index">
-          <label for="caracteristicaf">{{caracteristicaf.caracteristicaf}}</label>
+          <label style="font-size: 20px;" for="caracteristicaf">{{caracteristicaf.caracteristicaf}}</label>
           <input class="form-control" type="text" name="respuesta" [(ngModel)]="respuesta[i]">
         </ng-container>
-
+        <br>
+       <h3>-Propias</h3>
+        
         <ng-container *ngIf="ultimoDispositivo && caracteristicas">
-          <ng-container *ngFor="let caracteristica of getOptions(ultimoDispositivo.tipo.tipo); let i = index">
+          <ng-container  *ngFor="let caracteristica of getOptions(ultimoDispositivo.tipo.tipo); let i = index">
             <ng-container *ngIf="caracteristica.tipo.id == ultimoDispositivo.tipo.id">
+              
               <div class="form-group">
-                <h5>{{caracteristica.caracteristica}}</h5>
+                <label style="font-size: 20px;">{{caracteristica.caracteristica}}</label>
                 <select class="form-control" name="opcion" [(ngModel)]="opcionf[i]">
                   <option  *ngFor="let opcion of caracteristica.opciones" [ngValue]="opcion">{{opcion.opcion}}</option>
                 </select>
 
-                 <button (click)="setCaracteristica(caracteristica.id)" routerLink="/nueva-opcion" class="btn btn-outline-info"><i>¡Añade una nueva opción!</i></button>
+                 <button (click)="setCaracteristica(caracteristica.id)" routerLink="/nueva-opcion" class="btn btn-outline-dark"><i>¡Añade una nueva opción!</i></button>
               </div>
             </ng-container>
           </ng-container>
         </ng-container>
-
+<br>
         <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
       </form>
     </div>

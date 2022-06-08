@@ -1,12 +1,11 @@
 <app-menu></app-menu>
 <div class="masthead" >
   <div class="container" style="margin-top: 100px;">
-<h5>Añadiendo caracteristica al tipo {{caracteristicaPantalla}}</h5>
-
+<h1 class="display-6">Añadiendo caracteristica al tipo {{caracteristicaPantalla}}</h1>
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
       <form (ngSubmit)="nuevaCaracteristica()" novalidate #f="ngForm">
-        <label for="nombre">Nueva caracteristica:</label>
+        <label for="nombre" style="font-size: 20px;">Nueva caracteristica:</label>
         <input class="form-control" type="text" name="caracteristica" [(ngModel)]="caracteristica"><br>
         <button class="btn btn-outline-success btn-block"
           [disabled]="caracteristica === '' || caracteristica.trim().length===0">Crear</button>

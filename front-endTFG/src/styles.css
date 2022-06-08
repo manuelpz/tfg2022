@@ -11323,7 +11323,7 @@ header.masthead {
   overflow: hidden;
   padding-top: calc(7rem + 72px);
   padding-bottom: 7rem;
-  background: linear-gradient(0deg, #ff6a00 0%, #ee0979 100%);
+  background: linear-gradient(0deg, rgba(255,154,0,1) 12%, rgba(255,226,0,1) 82%, rgba(248,67,49,1) 98%, rgba(238,9,121,1) 100%);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: scroll;
@@ -11335,10 +11335,11 @@ div.masthead{
   overflow: hidden;
   padding-top: 1rem;
   padding-bottom: 24rem;
-  background: linear-gradient(5deg, #ff6a00 10%, #ee0979 110%);
+  background:
+  linear-gradient(0deg, rgba(255,161,17,1) 29%, rgba(254,255,0,1) 75%, rgba(253,126,63,1) 95%);
   background-repeat: no-repeat;
   background-position: center center;
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-size: cover;
 
 }

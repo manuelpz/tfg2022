@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { BdOrdenadoresService } from '../bd-ordenadores.service';
 import { CaracteristicaPropia } from '../models/caracteristicas/caracteristica-propia';
 import { CaracteristicasPropiasService } from '../service/caracteristicas-propias.service';
 
@@ -16,6 +17,7 @@ export class CaracteristicasPropiasComponent implements OnInit {
   private urlBase = 'http://localhost:8080/api/';
   constructor(
     private caracteristicasService: CaracteristicasPropiasService,
+    private bdOrdenadores: BdOrdenadoresService,
     private http: HttpClient,
     private toastr: ToastrService,
     private route: Router
@@ -32,6 +34,7 @@ export class CaracteristicasPropiasComponent implements OnInit {
       .post(this.urlBase + 'caracteristica', caracteristicaNueva)
       .subscribe((data) => {
         this.toastr.success('Nueva caracteristica añadida', '¡Hecho!');
+        this.bdOrdenadores.getTiposRefresh()
         this.route.navigate(['/tipos']);
       },
         (err) => {
