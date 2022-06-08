@@ -1,17 +1,37 @@
-<div class="row">
+
+<div class="container  mt-3">
+<div class="row card" style="background-color: #FFFFFFF2;">
   <div class="col col-lg-3">
-    <h5 class="card-title">{{ordenador.tipo.tipo}}</h5>
+    
+    <h1 class="display-6">-{{ordenador.tipo.tipo}}</h1>
   </div>
-  <div class="col col-lg-6">
-    <p *ngFor=" let resultado of ordenador.resultadosf" class="card-tex">{{resultado.caracteristicaf.caracteristicaf }}
-      :
-      {{resultado.respuesta }}</p>
-    <p *ngFor=" let resultado of ordenador.resultados" class="card-tex">{{resultado.caracteristica.caracteristica }} :
-      {{resultado.opcion.opcion }}</p>
-    <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" class="nav-link" aria-current="page"
+  <div class="col col-lg-4  align-self-center" >
+   
+    <div class="card" style=" align-items: center;" >
+   <div class="card-body " >
+  
+    <div *ngFor=" let resultado of ordenador.resultadosf"  
+     class="lead">
+      {{resultado.caracteristicaf.caracteristicaf }}: {{resultado.respuesta }}
+   </div>
+   <br>
+    <div *ngFor=" let resultado of ordenador.resultados"   class="lead">
+      {{resultado.caracteristica.caracteristica }} : {{resultado.opcion.opcion }}
+    </div>
+    <br>
+    <div class="">
+      <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" aria-current="page"
       href="#">
-      <button #dispositivo type="button" class="btn btn-outline-primary">Generar QR</button></a>
+      <button #dispositivo type="button" class="btn btn-light"  style="border-color:grey ;">Generar QR</button></a>
     <button (click)="eliminarDispositivo(ordenador.id)" type="button"
-      class="btn btn-outline-danger">Eliminar</button><br><br>
+    class="btn btn-danger" style="margin-left:20px;">Eliminar</button>
   </div>
+    
+  </div>
+  </div>
+  <br>
 </div>
+
+</div>
+</div>
+

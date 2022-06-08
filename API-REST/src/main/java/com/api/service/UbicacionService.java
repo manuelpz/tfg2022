@@ -11,7 +11,10 @@ public interface UbicacionService {
     Ubicacion getUbicacion(Integer id);
     List<Ubicacion> getAllUbicaciones();
     void deleteUbicacion(Integer id);
+<<<<<<< HEAD
    
+=======
+>>>>>>> 9afad6d2b413b003821da72db197f469fd233e9b
     Ubicacion modifyUbicacion(Ubicacion ubicacion);
 
 }
