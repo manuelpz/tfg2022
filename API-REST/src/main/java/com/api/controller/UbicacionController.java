@@ -1,6 +1,13 @@
 package com.api.controller;
 
+<<<<<<< HEAD
 import com.api.entity.Dispositivos;
+=======
+<<<<<<< HEAD
+import com.api.entity.Dispositivos;
+=======
+>>>>>>> 9afad6d2b413b003821da72db197f469fd233e9b
+>>>>>>> dc79bd5b5eb1c7179076cf60ba732b9fd0b52365
 import com.api.entity.Ubicacion;
 import com.api.service.UbicacionService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +28,14 @@ public class UbicacionController {
     public List<Ubicacion> getAllUbicaciones(){
         return ubicacionService.getAllUbicaciones();
     }
+<<<<<<< HEAD
    
+=======
+<<<<<<< HEAD
+   
+=======
+>>>>>>> 9afad6d2b413b003821da72db197f469fd233e9b
+>>>>>>> dc79bd5b5eb1c7179076cf60ba732b9fd0b52365
 
     @GetMapping("/dispositivo/ubicacion/{id}")
     public Ubicacion getUbicacion(@PathVariable(value = "id") int id){
