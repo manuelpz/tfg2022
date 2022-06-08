@@ -11,6 +11,7 @@ public interface UbicacionService {
     Ubicacion getUbicacion(Integer id);
     List<Ubicacion> getAllUbicaciones();
     void deleteUbicacion(Integer id);
+   
     Ubicacion modifyUbicacion(Ubicacion ubicacion);
 
 }

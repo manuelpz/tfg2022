@@ -13,14 +13,18 @@ export class BdOrdenadoresService {
   private tipo:any
   private respuesta:any
   private post:any
+  private ubicaciones:any
   private caracteristicaId: any
+ 
   private cargando:boolean=true
   private urlDispositivos="http://localhost:8080/api/dispositivos"
   private urlDispositivo="http://localhost:8080/api/dispositivo/id/"
   private urlCaracteristicas="http://localhost:8080/api/caracteristicasfijas"
   private urlTipo="http://localhost:8080/api/tipos"
+  private urlUbicaciones="http://localhost:8080/api/dispositivo/ubicacion/"
   private urlPostTipo="http://localhost:8080/api/tipo"
   private urlBase = "http://localhost:8080/api/"
+
   private body:any
 
 
@@ -42,6 +46,10 @@ export class BdOrdenadoresService {
   this.http.get(this.urlCaracteristicas).subscribe((response:any)=>{
     this.caracteristicas = response
   })
+  this.ubicaciones = new Array()
+  this.http.get(this.urlUbicaciones).subscribe((response)=>{
+    this.ubicaciones = response
+  })
 
    }
 
@@ -49,6 +57,12 @@ getDispositivos(){
   this.ordenadores = new Array()
   this.http.get(this.urlDispositivos).subscribe((response)=>{
     this.ordenadores = response
+  })
+}
+setDispositivo(dispositivo:string){
+  this.http.get(this.urlDispositivo+dispositivo).subscribe((response:any)=>{
+    this.respuesta = response
+    this.cargando=false
   })
 }
 
@@ -91,12 +105,7 @@ getTipos(){
   return this.tipo
 
 }
-setDispositivo(dispositivo:string){
-    this.http.get(this.urlDispositivo+dispositivo).subscribe((response:any)=>{
-      this.respuesta = response
-      this.cargando=false
-    })
-}
+
 
   eliminarDispositivo(id: number){
     this.http.delete(this.urlBase+"dispositivo/eliminar/"+id).subscribe((response:any)=>{
@@ -140,5 +149,14 @@ setDispositivo(dispositivo:string){
  getCaracteristicaId(){
     return localStorage.getItem("caracteristicaID")
  }
+
+ 
+
+
+getUbi(){
+
+  return (this.ubicaciones) 
+}
+
 
 }

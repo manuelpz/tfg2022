@@ -49,5 +49,7 @@ public class UbicacionServiceImp implements UbicacionService {
         return updatePlace;
     }
 
+	
+
 
 }

@@ -6,7 +6,7 @@
 </ng-container>
 <div class="row justify-content-center mt-5">
 <div class="card col col-sm-3 " >
-  <img src="..." alt="Card image cap">
+  
   <div class="card-body">
       <ng-container *ngIf="getDispositivo()">
         <h1 class="">
@@ -27,6 +27,15 @@
   
           </span> 
       
+        </ng-container><br>
+        <b>Sitios por los que ha pasado</b> <br>
+        <ng-container *ngFor="let dispositivo of getDispositivo().ubicaciones">
+        
+    
+          <span class="lead"><b>Lugar:</b> {{dispositivo.lugar}} -- <b>Fecha de Entrada:</b> {{dispositivo.localDateTime}}<br>
+  
+          </span> 
+       
         </ng-container>
       </ng-container>
     

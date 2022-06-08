@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\pedro\Documents\tfg2022-main\API-REST"/>
 			<item value="C:\Users\pedro\Documents\API-REST"/>
 		</list>
 		<list key="projectNameTemplate">

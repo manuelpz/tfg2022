@@ -14,10 +14,15 @@ export class QrComponenteComponent implements OnInit {
   ngOnInit(): void {
     this.dispositivo =  this.rutaActiva.snapshot.params['id']
     this.Dispositivo.setDispositivo(this.dispositivo)
+
   }
 getDispositivo(){
 
   return this.Dispositivo.getDispotivo()
+}
+getUbi(){
+
+  return this.Dispositivo.getUbi()
 }
 estaCargando(){
   return this.Dispositivo.estaCargando()
