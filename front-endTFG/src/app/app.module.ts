@@ -44,6 +44,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UbicacionesComponent } from './ubicaciones/ubicaciones.component';
+import { UbicacionTarjetaComponent } from './ubicacion-tarjeta/ubicacion-tarjeta.component';
 
 
 
@@ -83,6 +84,7 @@ import { UbicacionesComponent } from './ubicaciones/ubicaciones.component';
        UsuariosComponent,
        HomepageComponent,
        UbicacionesComponent,
+       UbicacionTarjetaComponent,
   ],
   imports: [
     BrowserModule,
