@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -17,6 +17,7 @@ export class NuevoDispositivoComponent implements OnInit {
   private tipos: any;
   private urlGet = 'http://localhost:8080/api/tipos';
 
+
   constructor(
     private dispositivoService: DispositivoService,
     private toastr: ToastrService,
@@ -28,11 +29,15 @@ export class NuevoDispositivoComponent implements OnInit {
     this.http.get(this.urlGet).subscribe((response: any) => {
       this.tipos = response;
     });
+
   }
+
+
 
   crear(): void {
     const dispositivo = new Dispositivo(this.tipo);
     this.dispositivoService.guardarDispo(dispositivo).subscribe((data) => {
+      console.log(dispositivo);
       this.toastr.info(
         'Añada caracteristicas a su nuevo dispositivo',
         'Dispositivo añadido correctamente',

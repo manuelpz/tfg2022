@@ -17,10 +17,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-
-import org.hibernate.mapping.Set;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -55,7 +51,8 @@ public class Dispositivos implements Serializable {
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
 	private List<ResultadosFijos> resultadosf = new ArrayList<>();
-	@JsonManagedReference
+	
+
 	@ManyToMany(fetch = FetchType.LAZY,mappedBy = "dispositivos")
 	 private List<Ubicacion> ubicaciones = new ArrayList<>();
 

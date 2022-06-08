@@ -43,6 +43,7 @@ import { OpcionComponent } from './opcion/opcion.component';
 import { FooterComponent } from './footer/footer.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { UbicacionesComponent } from './ubicaciones/ubicaciones.component';
 
 
 
@@ -81,6 +82,7 @@ import { HomepageComponent } from './homepage/homepage.component';
        OpcionComponent,
        UsuariosComponent,
        HomepageComponent,
+       UbicacionesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,14 @@
 package com.api.service.Impl;
 
-import com.api.entity.Dispositivos;
+
 import com.api.entity.Ubicacion;
-import com.api.repository.DispositivosRepository;
 import com.api.repository.UbicacionRepository;
 import com.api.service.UbicacionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @Service
 public class UbicacionServiceImp implements UbicacionService {
@@ -48,16 +47,4 @@ public class UbicacionServiceImp implements UbicacionService {
         Ubicacion updatePlace = ubicacionRepository.save(ubicacion);
         return updatePlace;
     }
-
-<<<<<<< HEAD
-	
-
-=======
-<<<<<<< HEAD
-	
-
-=======
->>>>>>> 9afad6d2b413b003821da72db197f469fd233e9b
->>>>>>> dc79bd5b5eb1c7179076cf60ba732b9fd0b52365
-
 }
