@@ -47,9 +47,11 @@ public class Dispositivos implements Serializable {
 	private Tipos tipo;
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"dispositivo"})
 	private List<Resultados> resultados = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
+	@JsonIgnoreProperties({"dispositivo"})
 	private List<ResultadosFijos> resultadosf = new ArrayList<>();
 	
 

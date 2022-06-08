@@ -41,5 +41,6 @@ public class ResultadosFijos {
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA_FIJA")
+	@JsonIgnoreProperties({"resultadosFijos"})
 	private CaracteristicasFijas caracteristicaf;
 }
