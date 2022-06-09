@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.api.entity.Dispositivos;
+
 import com.api.entity.Ubicacion;
 
 @Service
@@ -17,6 +18,8 @@ public interface DispositivosService {
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
 	Dispositivos findTopByOrderByIdDesc();
+	
 	Ubicacion findTopByOrderByUbicacionesDesc();
+	
 	Dispositivos findById(int id);
 }

@@ -64,6 +64,7 @@ export class FullDispositivoComponent implements OnInit {
         caracteristicaf,
         this.respuesta[i]
       );
+      console.log(resultadoFijo)
       this.dispositivoService
         .guardarResultadoFijo(resultadoFijo)
         .subscribe((data) => console.log('ResultadoFijo guardado'));
@@ -76,6 +77,7 @@ export class FullDispositivoComponent implements OnInit {
         caracteristica,
         this.opcionf[i]
       );
+      console.log(resultado)
       this.dispositivoService.guardarResultado(resultado).subscribe((data) => {
         console.log('Resultado guardado');
       });

@@ -42,7 +42,7 @@ public class Opciones {
 	@OneToMany(mappedBy = "opcion", cascade = CascadeType.ALL)
 	private List<Resultados> resultados = new ArrayList<>();
 	
-	@JsonIgnoreProperties({"tipo", "opciones"})
+	@JsonIgnoreProperties(value = {"tipo", "opciones"}, allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;

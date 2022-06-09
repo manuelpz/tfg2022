@@ -13,7 +13,7 @@ export class OrdenadorTarjetaComponent implements OnInit {
   setDispositivo(dispositivo: string) {
     return this.Dispositivo.setDispositivo(dispositivo);
   }
- 
+
 
   eliminarDispositivo(id: number) {
     return this.Dispositivo.eliminarDispositivo(id);

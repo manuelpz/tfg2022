@@ -1,3 +1,4 @@
+
 package com.api.repository;
 
 import com.api.entity.Ubicacion;

@@ -47,15 +47,16 @@ public class Dispositivos implements Serializable {
 	private Tipos tipo;
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"dispositivo"})
+	@JsonIgnoreProperties(value = {"dispositivo"}, allowSetters = true)
 	private List<Resultados> resultados = new ArrayList<>();
 	
 	@OneToMany(mappedBy = "dispositivo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"dispositivo"})
+	@JsonIgnoreProperties(value = {"dispositivo"}, allowSetters = true)
 	private List<ResultadosFijos> resultadosf = new ArrayList<>();
 	
 
-	@ManyToMany(fetch = FetchType.LAZY,mappedBy = "dispositivos")
+	@ManyToMany(mappedBy = "dispositivos")
+	@Builder.Default
 	 private List<Ubicacion> ubicaciones = new ArrayList<>();
 
 

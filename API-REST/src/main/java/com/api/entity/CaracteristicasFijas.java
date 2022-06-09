@@ -37,7 +37,7 @@ public class CaracteristicasFijas {
 	@Column(name= "CARARACTERISTICA_FIJA")
 	private String caracteristicaf;
 	
-	@JsonIgnoreProperties({"caracteristicaf"})
+	@JsonIgnoreProperties(value = {"caracteristicaf"}, allowSetters = true)
 	@OneToMany(mappedBy = "caracteristicaf", cascade = CascadeType.ALL)
 	private List<ResultadosFijos> resultadosFijos = new ArrayList<>();
 }

@@ -2,6 +2,8 @@ package com.api.entity;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -27,6 +29,7 @@ public class Ubicacion implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
+    @JsonSerialize(using = ToStringSerializer.class)
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "ID_UBICACION")
     private int id;
@@ -45,12 +48,13 @@ public class Ubicacion implements Serializable {
     private Date fecha_muerte;
 
 
-    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "ubicacion_dispositivos",
     joinColumns = @JoinColumn(name = "ID_UBICACION"),
     inverseJoinColumns = @JoinColumn(name = "ID_DISPOSITIVO")
 )
-	@JsonIgnoreProperties({"resultados","resultadosf"})
+	@JsonIgnoreProperties(value = {"resultados","resultadosf"}, allowSetters = true)
+    @Builder.Default
     private List<Dispositivos> dispositivos = new ArrayList<>();
 }
 

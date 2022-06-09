@@ -39,7 +39,7 @@ public class Caracteristicas {
 	@Column(name = "CARACTERISTICA", unique = true)
 	private String caracteristica;
 	
-	@JsonIgnoreProperties(value="caracteristicas")
+	@JsonIgnoreProperties(value="caracteristicas", allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_TIPO")
 	private Tipos tipo;

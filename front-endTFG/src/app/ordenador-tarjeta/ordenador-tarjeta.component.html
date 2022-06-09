@@ -2,15 +2,15 @@
 <div class="container  mt-3">
 <div class="row card" style="background-color: #FFFFFFF2;">
   <div class="col col-lg-3">
-    
+
     <h1 class="display-6">-{{ordenador.tipo.tipo}}</h1>
   </div>
   <div class="col col-lg-4  align-self-center" >
-   
+
     <div class="card" style=" align-items: center;" >
    <div class="card-body " >
-  
-    <div *ngFor=" let resultado of ordenador.resultadosf"  
+
+    <div *ngFor=" let resultado of ordenador.resultadosf"
      class="lead">
       {{resultado.caracteristicaf.caracteristicaf }}: {{resultado.respuesta }}
    </div>
@@ -22,7 +22,7 @@
     <div class="lead" *ngIf="ordenador.ubicaciones">
     <b>Lugar actual:</b> {{ordenador.ubicaciones[ordenador.ubicaciones.length-1].lugar}}
     </div>
-    
+
     <br>
     <div class="">
       <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" aria-current="page"
@@ -31,7 +31,7 @@
     <button (click)="eliminarDispositivo(ordenador.id)" type="button"
     class="btn btn-danger" style="margin-left:20px;">Eliminar</button>
   </div>
-    
+
   </div>
   </div>
   <br>

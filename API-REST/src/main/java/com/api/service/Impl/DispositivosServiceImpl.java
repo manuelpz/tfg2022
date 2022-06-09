@@ -9,6 +9,9 @@ import org.springframework.stereotype.Service;
 import com.api.entity.Dispositivos;
 import com.api.entity.Tipos;
 import com.api.entity.Ubicacion;
+/*
+import com.api.entity.Ubicacion;
+*/
 import com.api.repository.DispositivosRepository;
 import com.api.repository.TiposRepository;
 import com.api.service.DispositivosService;

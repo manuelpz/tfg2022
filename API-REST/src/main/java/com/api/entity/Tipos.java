@@ -42,11 +42,11 @@ public class Tipos {
 	private String tipo;
 	
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"caracteristicas","tipo","dispositivos","opciones","resultados"})
+	@JsonIgnoreProperties(value = {"caracteristicas","tipo","dispositivos","opciones","resultados"}, allowSetters = true)
 	private List<Caracteristicas> caracteristicas = new ArrayList<>();
 
 	@OneToMany(mappedBy = "tipo", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties({"tipo","resultados","resultadosf"})
+	@JsonIgnoreProperties(value = {"tipo","resultados","resultadosf"}, allowSetters = true)
 	@Builder.Default
 	private List<Dispositivos> dispositivos = new ArrayList<>();
 

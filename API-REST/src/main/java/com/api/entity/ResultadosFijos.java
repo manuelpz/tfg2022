@@ -1,5 +1,7 @@
 package com.api.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -11,6 +13,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -24,9 +28,12 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "RESULTADOS_FIJOS")
-public class ResultadosFijos {
+public class ResultadosFijos implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
+	@JsonSerialize(using = ToStringSerializer.class)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_RESULTADO")
 	private int id;
@@ -34,13 +41,13 @@ public class ResultadosFijos {
 	@Column(name = "RESPUESTA")
 	private String respuesta;
 	
-	@JsonIgnoreProperties({"tipo", "resultados","resultadosf"})
+	@JsonIgnoreProperties(value = {"tipo", "resultados","resultadosf"}, allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_DISPOSITIVO")
 	private Dispositivos dispositivo;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA_FIJA")
-	@JsonIgnoreProperties({"resultadosFijos"})
+	@JsonIgnoreProperties(value = "resultadosFijos", allowSetters = true)
 	private CaracteristicasFijas caracteristicaf;
 }

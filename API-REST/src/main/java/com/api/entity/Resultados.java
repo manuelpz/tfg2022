@@ -2,6 +2,8 @@ package com.api.entity;
 
 
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -13,6 +15,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,24 +30,27 @@ import lombok.NoArgsConstructor;
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @Entity
 @Table(name = "RESULTADOS")
-public class Resultados {
+public class Resultados implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
+	@JsonSerialize(using = ToStringSerializer.class)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name = "ID_RESULTADO")
 	private int id;
 	
-	@JsonIgnoreProperties({"tipo", "resultados","resultadosf"})
+	@JsonIgnoreProperties(value = {"tipo", "resultados","resultadosf"}, allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_DISPOSITIVO")
 	private Dispositivos dispositivo;
 	
-	@JsonIgnoreProperties({"resultados", "caracteristica"})
+	@JsonIgnoreProperties(value = {"resultados", "caracteristica"}, allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_OPCION")
 	private Opciones opcion;
 	
-	@JsonIgnoreProperties({"tipo", "opciones","resultados"})
+	@JsonIgnoreProperties(value = {"tipo", "opciones","resultados"}, allowSetters = true)
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "ID_CARACTERISTICA")
 	private Caracteristicas caracteristica;
