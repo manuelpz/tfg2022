@@ -28,6 +28,9 @@
       <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" aria-current="page"
       href="#">
       <button #dispositivo type="button" class="btn btn-light"  style="border-color:grey ;">Generar QR</button></a>
+      <a routerLink="/nueva-ubicacion" (click)="setUltimoDispositivo(ordenador)" routerLinkActive="active" aria-current="page"
+      href="#">
+      <button #dispositivo type="button" class="btn btn-light"  style="border-color:grey ;">Cambiar Ubicacion</button></a>
     <button (click)="eliminarDispositivo(ordenador.id)" type="button"
     class="btn btn-danger" style="margin-left:20px;">Eliminar</button>
   </div>

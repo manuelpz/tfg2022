@@ -16,6 +16,8 @@ export class BdOrdenadoresService {
   private post:any
   private ubicaciones:any
   private caracteristicaId: any
+              ultimoDispositivo: any
+
 
   private cargando:boolean=true
   private urlDispositivos="http://localhost:8080/api/dispositivos"
@@ -153,5 +155,9 @@ getTipos(){
 
 getUbi(){
   return (this.ubicaciones)
+  }
+
+  setUltimoDispositivo(dispositivo:string){
+    this.ultimoDispositivo=dispositivo
   }
 }

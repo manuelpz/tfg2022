@@ -24,4 +24,8 @@ export class OrdenadorTarjetaComponent implements OnInit {
     console.log(this.ordenador)
     return arrayfil
   }
+
+  setUltimoDispositivo(dispositivo: string) {
+    return this.Dispositivo.setUltimoDispositivo(dispositivo);
+  }
 }

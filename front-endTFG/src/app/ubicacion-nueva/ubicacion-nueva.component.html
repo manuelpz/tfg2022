@@ -1,1 +1,14 @@
+<div class="masthead">
+<form (ngSubmit)="actualizarUbicacion()" novalidate #f="ngForm">
+<h3>Nueva ubicación</h3>
+<label for="ubicacion">Ubicación</label>
+<input class="form-control" type="text" name="ubicacion" [(ngModel)]="lugar">
 
+<label for="ubicacion">Descripción</label>
+<input class="form-control" type="text" name="descripcion" [(ngModel)]="descripcion">
+
+<label for="localDateTime">Fecha</label>
+<input class="form-control" type="date" name="fecha" [(ngModel)]="localDateTime"><br>
+<button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+</form>
+</div>
