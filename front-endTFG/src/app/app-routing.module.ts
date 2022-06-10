@@ -17,6 +17,7 @@ import { ProdGuardService as guard} from './guard/prod-guard.service';
 import { OpcionComponent } from './opcion/opcion.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { UbicacionesComponent } from './ubicaciones/ubicaciones.component';
+import { UbicacionNuevaComponent } from './ubicacion-nueva/ubicacion-nueva.component';
 
 
 const routes: Routes =[
@@ -31,6 +32,7 @@ const routes: Routes =[
 {path:'nueva-caracteristica-global',component:CaracteristicaFijaComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'nueva-caracteristica-propia',component:CaracteristicasPropiasComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'ubicaciones',component:UbicacionesComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
+{path:'nueva-ubicacion',component:UbicacionNuevaComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'nueva-opcion',component:OpcionComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},
 {path:'tipos',component:TiposComponent, canActivate: [guard], data: { expectedRol: ['admin'] }},
 {path:'creartipos',component:CrearTipoComponent,  canActivate: [guard], data: { expectedRol: ['admin']}},

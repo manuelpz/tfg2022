@@ -48,4 +48,9 @@ public class UbicacionServiceImp implements UbicacionService {
         Ubicacion updatePlace = ubicacionRepository.save(ubicacion);
         return updatePlace;
     }
+    
+    @Override
+	public Ubicacion findTopByOrderByIdDesc() {
+		return ubicacionRepository.findTopByOrderByIdDesc();
+	}
 }

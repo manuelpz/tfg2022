@@ -18,8 +18,8 @@ public interface DispositivosService {
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
 	Dispositivos findTopByOrderByIdDesc();
-	
-	Ubicacion findTopByOrderByUbicacionesDesc();
+	void isPlaced(Ubicacion ubicacion);
+
 	
 	Dispositivos findById(int id);
 }

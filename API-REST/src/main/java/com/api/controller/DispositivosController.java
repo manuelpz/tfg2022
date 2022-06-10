@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.api.entity.Dispositivos;
+import com.api.entity.Ubicacion;
 /*
 import com.api.entity.Ubicacion;
 */
@@ -39,12 +40,6 @@ public class DispositivosController {
 	public Dispositivos getLastId() {
 		return dispositivosService.findTopByOrderByIdDesc();	
 	}
-	/*
-	@GetMapping("/dispositivo/lastUbicacion")
-	public Ubicacion getLastUbi() {
-		return dispositivosService.findTopByOrderByUbicacionesDesc();	
-	}
-	*/
 	
 	@GetMapping("/dispositivos")
 	public List<Dispositivos> getAllDispositivos() {

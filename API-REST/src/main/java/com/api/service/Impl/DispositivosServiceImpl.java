@@ -74,7 +74,8 @@ public class DispositivosServiceImpl implements DispositivosService {
 	}
 
 	@Override
-	public Ubicacion findTopByOrderByUbicacionesDesc() {
-		return dispositivosRepository.findTopByOrderByUbicacionesDesc();
+	public void isPlaced(Ubicacion ubicacion) {
+		
+		
 	}
 }

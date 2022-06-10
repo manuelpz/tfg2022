@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient}from '@angular/common/http';
 import { ToastrService } from 'ngx-toastr';
+import { Ubicacion } from './models/ubicacion';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class BdOrdenadoresService {
   private post:any
   private ubicaciones:any
   private caracteristicaId: any
- 
+
   private cargando:boolean=true
   private urlDispositivos="http://localhost:8080/api/dispositivos"
   private urlDispositivo="http://localhost:8080/api/dispositivo/id/"
@@ -28,7 +29,6 @@ export class BdOrdenadoresService {
   private body:any
 
 
-//Saberse esta muy bien
   constructor(private http:HttpClient,private toastr:ToastrService) {
     this.ordenadores = new Array()
   http.get(this.urlDispositivos).subscribe((response)=>{
@@ -150,13 +150,7 @@ getTipos(){
     return localStorage.getItem("caracteristicaID")
  }
 
- 
-
-
 getUbi(){
-
-  return (this.ubicaciones) 
-}
-
-
+  return (this.ubicaciones)
+  }
 }

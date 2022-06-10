@@ -37,4 +37,11 @@ export class DispositivoService {
     return this.http.post(this.urlBaseRespuesta +'respuesta', respuesta);
   }
 
+  public guardarUbicacion(ubicacion: any): Observable<any>{
+    return this.http.post(this.urlBase +'ubicacion', ubicacion);
+  }
+
+  public guardarUbicacionDispositivo(ubicacionDispositivo: any): Observable<any>{
+    return this.http.post(this.urlBase +'ubicacionDispositivo', ubicacionDispositivo);
+  }
 }

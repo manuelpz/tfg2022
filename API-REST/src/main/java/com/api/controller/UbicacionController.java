@@ -42,6 +42,11 @@ public class UbicacionController {
     public void deleteTrazabilidad(@PathVariable(value = "id") int id){
         ubicacionService.deleteUbicacion(id);
     }
+    
+    @GetMapping("/dispositivo/lastUbicacion")
+	public Ubicacion getLastUbi() {
+		return ubicacionService.findTopByOrderByIdDesc();	
+	}
 
 
 }

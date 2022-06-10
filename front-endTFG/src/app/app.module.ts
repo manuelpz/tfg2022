@@ -45,6 +45,7 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { UbicacionesComponent } from './ubicaciones/ubicaciones.component';
 import { UbicacionTarjetaComponent } from './ubicacion-tarjeta/ubicacion-tarjeta.component';
+import { UbicacionNuevaComponent } from './ubicacion-nueva/ubicacion-nueva.component';
 
 
 
@@ -85,6 +86,7 @@ import { UbicacionTarjetaComponent } from './ubicacion-tarjeta/ubicacion-tarjeta
        HomepageComponent,
        UbicacionesComponent,
        UbicacionTarjetaComponent,
+       UbicacionNuevaComponent,
   ],
   imports: [
     BrowserModule,

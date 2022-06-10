@@ -32,8 +32,7 @@ public class Ubicacion implements Serializable {
     @JsonSerialize(using = ToStringSerializer.class)
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name = "ID_UBICACION")
-    private int id;
-
+    private Integer id;
 
     @Column(name = "lugar")
     private String lugar;
@@ -45,11 +44,11 @@ public class Ubicacion implements Serializable {
     private Date localDateTime;
 
     @Column (name= "fecha_muerte")
-    private Date fecha_muerte;
+    private String fecha_muerte;
 
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "ubicacion_dispositivos",
+    @JoinTable(name = "Ubicacion_dispositivos",
     joinColumns = @JoinColumn(name = "ID_UBICACION"),
     inverseJoinColumns = @JoinColumn(name = "ID_DISPOSITIVO")
 )

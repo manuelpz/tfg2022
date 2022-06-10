@@ -7,6 +7,8 @@ import { BdOrdenadoresService } from 'src/app/bd-ordenadores.service';
 import { caracteristicaf } from 'src/app/models/caracteristicas/caracteristicaf';
 import { Resultado } from 'src/app/models/resultados/resultado';
 import { ResultadoFijo } from 'src/app/models/resultados/resultado-fijo';
+import { Ubicacion } from 'src/app/models/ubicacion';
+import { UbicacionDispositivos } from 'src/app/models/ubicacion-dispositivos';
 import { DispositivoService } from 'src/app/service/dispositivo.service';
 
 @Component({
@@ -22,11 +24,16 @@ export class FullDispositivoComponent implements OnInit {
   opciones: any;
   opcionf: any[] = [];
   respuesta: string[] = [];
+  lugar:string
+  descripcion: string
+  localDateTime: Date;
+  fecha_muerte = "Todavía sin definir"
+  ultimaUbicacion: any
 
   //VARIABLES PRIVADAS
   private caracteristicasUrl = 'http://localhost:8080/api/caracteristicas';
   private urlCaracteristicas = 'http://localhost:8080/api/caracteristicasfijas';
-
+  private urlLastUbicacion = 'http://localhost:8080/api/dispositivo/lastUbicacion'
   constructor(
     private dispositivoService: DispositivoService,
     private bdOrdenadores: BdOrdenadoresService,
@@ -82,13 +89,31 @@ export class FullDispositivoComponent implements OnInit {
         console.log('Resultado guardado');
       });
     }
-    this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
+
+
+    const ubicacion = new Ubicacion(this.lugar,this.descripcion,this.localDateTime, this.fecha_muerte)
+    console.log(ubicacion)
+    this.dispositivoService.guardarUbicacion(ubicacion).subscribe((data) => {
+      this.http.get(this.urlLastUbicacion).subscribe((response: any) => {
+        this.ultimaUbicacion = response
+        console.log(this.ultimaUbicacion.id)
+      const ubicacionDispositivo = new UbicacionDispositivos(this.ultimaUbicacion, this.ultimoDispositivo)
+      console.log(ubicacionDispositivo)
+      this.dispositivoService.guardarUbicacionDispositivo(ubicacionDispositivo).subscribe((data) => {
+        console.log('UbicacionDispo guardada');
+         this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
     this.route.navigate(['/dispositivos']);
     (err) => {
       this.toastr.error('Error al guardar dispositivo', 'Error');
-    };
+      }
     this.bdOrdenadores.getDispositivos();
+      })
+      })
+    })
+
   }
+
+
   getCaracteristicas(): any {
     return this.caracteristicasf;
   }
