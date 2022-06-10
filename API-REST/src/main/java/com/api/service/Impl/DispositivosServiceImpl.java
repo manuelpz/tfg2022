@@ -69,13 +69,6 @@ public class DispositivosServiceImpl implements DispositivosService {
 
 	@Override
 	public Dispositivos findById(int id) {
-		// TODO Auto-generated method stub
 		return dispositivosRepository.findById(id);
-	}
-
-	@Override
-	public void isPlaced(Ubicacion ubicacion) {
-		
-		
 	}
 }

@@ -16,8 +16,6 @@ public interface DispositivosRepository extends JpaRepository<Dispositivos, Inte
 
 	Dispositivos findTopByOrderByIdDesc();
 	
-	void isPlaced(Ubicacion ubicacion);
-	
 	Dispositivos findById(int id);
 
 	Dispositivos getById(int id);

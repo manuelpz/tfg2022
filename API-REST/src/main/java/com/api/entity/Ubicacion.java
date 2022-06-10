@@ -1,7 +1,9 @@
 package com.api.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 
@@ -53,7 +55,7 @@ public class Ubicacion implements Serializable {
     inverseJoinColumns = @JoinColumn(name = "ID_DISPOSITIVO")
 )
 	@JsonIgnoreProperties(value = {"resultados","resultadosf"}, allowSetters = true)
-    @Builder.Default
+    @JsonBackReference
     private List<Dispositivos> dispositivos = new ArrayList<>();
 }
 

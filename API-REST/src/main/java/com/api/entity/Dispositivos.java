@@ -17,6 +17,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
@@ -56,7 +58,6 @@ public class Dispositivos implements Serializable {
 	
 
 	@ManyToMany(mappedBy = "dispositivos")
-	@Builder.Default
 	 private List<Ubicacion> ubicaciones = new ArrayList<>();
 
 

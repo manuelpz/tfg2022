@@ -1,10 +1,10 @@
 export class UbicacionDispositivos {
 
-  id_ubicacion: any
-  id_dispositivo: any
+  ubicacion: any
+  dispositivo: any
 
-  constructor(id_ubicacion: any, id_dispositivo: any) {
-    this.id_ubicacion = id_ubicacion
-    this.id_dispositivo = id_dispositivo
+  constructor(ubicacion: any, dispositivo: any) {
+    this.ubicacion = ubicacion
+    this.dispositivo = dispositivo
   }
 }

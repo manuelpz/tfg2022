@@ -97,10 +97,12 @@ export class FullDispositivoComponent implements OnInit {
       this.http.get(this.urlLastUbicacion).subscribe((response: any) => {
         this.ultimaUbicacion = response
         console.log(this.ultimaUbicacion.id)
-      const ubicacionDispositivo = new UbicacionDispositivos(this.ultimaUbicacion, this.ultimoDispositivo)
-      console.log(ubicacionDispositivo)
+      const ubicacionDispositivo = new UbicacionDispositivos( this.ultimaUbicacion ,this.ultimoDispositivo)
+      console.log(this.ultimaUbicacion)
+      console.log(this.ultimoDispositivo)
       this.dispositivoService.guardarUbicacionDispositivo(ubicacionDispositivo).subscribe((data) => {
-        console.log('UbicacionDispo guardada');
+
+        console.log(ubicacionDispositivo);
          this.toastr.success('Dispositivo guardado correctamente', 'Guardado');
     this.route.navigate(['/dispositivos']);
     (err) => {

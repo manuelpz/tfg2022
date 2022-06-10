@@ -17,9 +17,6 @@ public interface DispositivosService {
 	void deleteDispositivo(int id);
 	Dispositivos modifyDispositivo(Dispositivos dispositivos);
 	List<Dispositivos> findByTipo(String tipo);
-	Dispositivos findTopByOrderByIdDesc();
-	void isPlaced(Ubicacion ubicacion);
-
-	
+	Dispositivos findTopByOrderByIdDesc();	
 	Dispositivos findById(int id);
 }
