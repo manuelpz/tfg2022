@@ -57,7 +57,7 @@ public class Dispositivos implements Serializable {
 	private List<ResultadosFijos> resultadosf = new ArrayList<>();
 	
 
-	@ManyToMany(mappedBy = "dispositivos")
+	@ManyToMany(mappedBy = "dispositivos",cascade = CascadeType.ALL)
 	 private List<Ubicacion> ubicaciones = new ArrayList<>();
 
 

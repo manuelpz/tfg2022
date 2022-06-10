@@ -108,6 +108,7 @@ getTipos(){
 
 
   eliminarDispositivo(id: number){
+
     this.http.delete(this.urlBase+"dispositivo/eliminar/"+id).subscribe((response:any)=>{
       this.toastr.success("El dispositivo se ha eliminado correctamente")
       this.getDispositivos()

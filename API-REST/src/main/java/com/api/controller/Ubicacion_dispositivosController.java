@@ -41,7 +41,7 @@ public class Ubicacion_dispositivosController {
 	}
 	
 	@DeleteMapping("/ubicacionDispositivo/{id}")
-	public void deleteTipo(@PathVariable(value = "id") int id) {
+	public void deleteUbiDispo(@PathVariable(value = "id") int id) {
 		ubiDisposService.deleteUbiDispo(id);
 	}
 }
