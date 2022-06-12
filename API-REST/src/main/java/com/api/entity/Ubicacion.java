@@ -45,8 +45,7 @@ public class Ubicacion implements Serializable {
     @Column (name= "fecha")
     private Date localDateTime;
 
-    @Column (name= "fecha_muerte")
-    private String fecha_muerte;
+
 
 
     @ManyToMany(cascade = CascadeType.ALL)
