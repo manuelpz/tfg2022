@@ -3,12 +3,10 @@
     <div class="row mt-5">
       <div class="col-md-4 mx-auto">
         <h1 class="display-4 text-center">Crear Tipo</h1>
-        <input #patron type="text" class="form-control form-control-lg " id="modelo" placeholder="Nombre del tipo"
-          (keydown.enter)="setCrearTipo(patron.value)" (keydown.enter)="JsonTipo()" (keydown.enter)="patron.value = ''">
+        <input #patron type="text" class="form-control form-control-lg " id="modelo" placeholder="Nombre del tipo">
         <br>
-        <button class="btn btn-primary" routerLink="/tipos" routerLinkActive="active" aria-current="page" href="#">
-          Volver
-        </button>
+        <button class="btn btn-primary" routerLink="/tipos" routerLinkActive="active" aria-current="page" (click)="setCrearTipo(patron.value)" (click)="JsonTipo()" (click)="patron.value = ''">Añadir tipo</button><br><br>
+        <button class="btn btn-secondary" routerLink="/tipos" routerLinkActive="active" aria-current="page">Volver</button>
       </div>
     </div>
   </div>

@@ -95,6 +95,7 @@ JsonTipo(){
     this.post=response
     console.log(this.post)
     this.toastr.success("El nuevo tipo se ha insertado correctamente")
+    this.getTiposRefresh()
   },
   (err:any)=>{
     this.toastr.error("Este tipo ya existe")
