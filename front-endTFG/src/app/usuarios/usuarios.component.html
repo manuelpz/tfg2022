@@ -4,7 +4,7 @@
   <div class="container ">
 <div class="row justify-content-center mt-5">
 <h1 class="display-4 text-center">Usuarios</h1>
-<div class="list-group  col-lg-4 col-sm-6 ">
+<div class="list-group  col-lg-4 col-sm-8 ">
   <div *ngFor="let usuario of getUsuarios()" class="list-group-item ">
     <span style="font-size: 20px;">-{{usuario.nombre}}</span>
     <button (click)="eliminarUsuario(usuario.id)" class="btn btn-danger" style="float: right;">Eliminar</button>
