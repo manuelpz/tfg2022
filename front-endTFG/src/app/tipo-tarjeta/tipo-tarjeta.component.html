@@ -1,35 +1,39 @@
 
 <div class="container  mt-3">
-<div class="row card" style="background-color: #FFFFFFF2;">
-
-	<div class="col col-lg-5 ">
-		<h1 class="display-6">Tipo: {{tipos.tipo}}</h1>
-  </div>
-    <div class="col col-lg-7 align-self-end">
-      <div class="row" style="border: none;">
-        <div class="col col-8 col-sm-5">
-    <div class="btn-group dropend ">
-      <button  class="btn btn-secondary">
-        Caracteristicas </button>
-      <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-        <span class="visually-hidden">Toggle Dropright</span>
-      </button>
-      <ul class="dropdown-menu">
-          <li *ngFor = "let caracteristica of tipos.caracteristicas" class="dropdown-item">
-              {{caracteristica.caracteristica}} <button (click)="eliminarCaracteristica(caracteristica)">-</button>
-          </li>
-        </ul>
-        </div>
-      </div>
-      <div class="col col-4 col-sm-5  ml-auto">
-        <button routerLink="/nueva-caracteristica-propia" (click)="setTipo(tipos)" class="btn btn-outline-success btn-block">Añadir caracteristicas</button><br><br>
-        <button  (click)="eliminarTipo()" class="btn btn-outline-danger btn-block">Eliminar este tipo</button><br>
-      </div>
-
-
+  <div class="row card" style="background-color: #FFFFFFF2;  border: none;">
+  
+    <div class="col col-lg-12 ">
+      <div class="card-header">
+      <h1 class="display-5">Tipo: {{tipos.tipo}}</h1>
     </div>
+    </div>
+    <br>
+      <div class="col col-lg-7 align-self-end">
+        <div class="row" style="border: none;">
+          <div class="col col-8 col-sm-5">
+      <div class="btn-group dropend ">
+        <button  class="btn btn-secondary">
+          Caracteristicas </button>
+        <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropright</span>
+        </button>
+        <ul class="dropdown-menu">
+            <li *ngFor = "let caracteristica of tipos.caracteristicas" class="dropdown-item">
+                {{caracteristica.caracteristica}} <button (click)="eliminarCaracteristica(caracteristica)">-</button>
+            </li>
+          </ul>
+          </div>
+        </div>
+        <div class="col col-4 col-sm-5  ml-auto">
+          <button routerLink="/nueva-caracteristica-propia" (click)="setTipo(tipos)" class="btn btn-outline-success btn-block">Añadir caracteristicas</button><br><br>
+          <button  (click)="eliminarTipo()" class="btn btn-outline-danger btn-block">Eliminar este tipo</button><br>
+        </div>
+  
+  
+      </div>
+    </div>
+    <br>
   </div>
-  <br>
-</div>
-
-</div>
+  
+  </div>
+  

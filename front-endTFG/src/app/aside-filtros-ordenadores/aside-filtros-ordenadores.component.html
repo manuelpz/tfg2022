@@ -1,8 +1,8 @@
-
+<div class="container">
 <table id="marcaFilters" class="table" style="background-color: white; ">
   <thead class="thead-light"style="text-align: center;">
     <tr>
-      <th style="font-size: 20px;">Busqueda</th>
+      <th style="font-size: 20px;">Búsqueda</th>
     </tr>
   </thead>
   <tbody>
@@ -27,10 +27,17 @@
           dispositivo</button>
       </td>
     </tr>
+    <tr>
+      <td>
+        <button routerLink="/nav" type="button" class="btn btn-white btn-block" id="resetFilters" (click)="patron.value=''" style="cursor: pointer; font-size: 17px;">Volver al menú</button>
+      </td>
+    </tr>
   
   </tbody>
 </table>
+
 <br>
+</div>
 
 
 

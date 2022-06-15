@@ -1,6 +1,6 @@
 <app-menu></app-menu>
-<div class="masthead" style="padding-bottom: 262px;">
-<div class="container" style="padding-top: 50px;">
+<div class="masthead mt-5" >
+<div class="container mt-5" >
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
       <form (ngSubmit)="crear()" novalidate #f="ngForm">
@@ -15,8 +15,14 @@
           </select>
         </div>
         <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+       
       </form>
+      <div class="d-flex justify-content-center">
+        <button class="btn btn-primary mt-3"  routerLink="/dispositivos" routerLinkActive="active">Volver</button>
+      </div>
+      
     </div>
   </div>
 </div>
 </div>
+

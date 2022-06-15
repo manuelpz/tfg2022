@@ -1,15 +1,17 @@
 <app-menu></app-menu>
-<div class="masthead" >
-  <div class="container" style="margin-top: 100px;">
-<h1 class="display-6">Añadiendo caracteristica al tipo {{caracteristicaPantalla}}</h1>
+<div class="masthead mt-5" >
+  <div class="container mt-5" >
+<h1 class="display-5">Añadiendo caracteristica al tipo {{caracteristicaPantalla}}</h1>
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
       <form (ngSubmit)="nuevaCaracteristica()" novalidate #f="ngForm">
-        <label for="nombre" style="font-size: 20px;">Nueva caracteristica:</label>
+        <label for="nombre" class="lead">Nueva característica:</label>
         <input class="form-control" type="text" name="caracteristica" [(ngModel)]="caracteristica"><br>
         <button class="btn btn-outline-success btn-block"
           [disabled]="caracteristica === '' || caracteristica.trim().length===0">Crear</button>
+          
       </form>
+      <div class="d-flex justify-content-center"><button class="btn btn-primary mt-3"  routerLink="/tipos" routerLinkActive="active">Volver</button></div>
     </div>
   </div>
 </div>

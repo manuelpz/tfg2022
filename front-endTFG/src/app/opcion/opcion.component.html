@@ -6,13 +6,15 @@
       <br>
 
       <form (ngSubmit)="nuevaOpcion()" novalidate #f="ngForm">
-        <label for="nombre"><b>Nueva opción</b></label>
+        <h1 for="nombre" class="display-5">Nueva opción</h1>
         <input class="form-control" type="text" name="opcion" [(ngModel)]="opcion"><br>
         <button class="btn btn-outline-success btn-block"
           [disabled]="opcion === '' || opcion.trim().length===0">Añadir</button>
       </form>
     </div>
   </div>
-  <button  routerLink="/caracteristicas" class="btn btn-outline-primary">Volver</button>
+  <div class="d-flex justify-content-center mt-3">
+  <button  routerLink="/caracteristicas" class="btn btn-primary">Volver</button>
+</div>
 </div>
 </div>

@@ -1,14 +1,32 @@
 <div class="masthead">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-6">
 <form (ngSubmit)="actualizarUbicacion()" novalidate #f="ngForm">
-<h3>Nueva ubicación</h3>
-<label for="ubicacion">Ubicación</label>
+
+<div class="card">
+    <div class="card-header" >
+        <h1 class="display-4">Nueva ubicación</h1>
+         </div>
+    <div class="card-body">
+<label for="ubicacion" class="lead mt-2">Ubicación</label>
 <input class="form-control" type="text" name="ubicacion" [(ngModel)]="lugar">
 
-<label for="ubicacion">Descripción</label>
+<label for="ubicacion"  class="lead mt-3">Descripción</label>
 <input class="form-control" type="text" name="descripcion" [(ngModel)]="descripcion">
 
-<label for="localDateTime">Fecha</label>
+<label for="localDateTime"  class="lead mt-3">Fecha</label>
 <input class="form-control" type="date" name="fecha" [(ngModel)]="localDateTime"><br>
 <button type="submit" class="btn btn-outline-success btn-block" [disabled]="!f.valid">Actualizar</button>
+</div>
+</div>
 </form>
 </div>
+</div>
+<div  class="d-flex justify-content-center">
+     
+    <button class="btn btn-primary mt-3"  routerLink="/dispositivos" routerLinkActive="active">Volver</button>
+ </div>
+</div>
+</div>
+
