@@ -19,7 +19,7 @@
       {{resultado.caracteristica.caracteristica }} : {{resultado.opcion.opcion }}
     </div>
 
-    <div class="lead" *ngIf="ordenador.ubicaciones">
+    <div class="lead" *ngIf="ordenador.ubicaciones.length">
     <b>Ubicacion</b> {{ordenador.ubicaciones[ordenador.ubicaciones.length-1].lugar}}
     </div>
 
