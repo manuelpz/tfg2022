@@ -1,57 +1,56 @@
-
 <div class="container  mt-3">
   <div class="row card" style="background-color: #FFFFFFF2; border: none;">
-    
+
     <div class="col col-lg-12">
       <div class="card-header">
-      <h1 class="display-5">-{{ordenador.tipo.tipo}}</h1>
-    </div>
-    </div>
-  
-    <br>
-    <div class="col col-lg-4  align-self-center" >
-      
-      <div class="card" style=" align-items: center;" >
-     <div class="card-body " >
-  
-      <div *ngFor=" let resultado of ordenador.resultadosf"
-       >
-       <span style="font-size: 21px;"> <b>{{resultado.caracteristicaf.caracteristicaf }}:</b>
-      </span><span class="lead"> {{resultado.respuesta }}</span>
-     </div>
-     <br>
-      <div *ngFor=" let resultado of ordenador.resultados" >
-        <span style="font-size: 21px;"> <b>  {{resultado.caracteristica.caracteristica }} :</b></span>
-        <span class="lead"> {{resultado.opcion.opcion }}</span>
+        <h1 class="display-5">-{{ordenador.tipo.tipo}}</h1>
       </div>
-  
-      <br>
-      <div *ngIf="ordenador.ubicaciones.length">
-      <span style="font-size: 21px;"> <b> Ubicación actual:</b></span>
-      <span class="lead"> {{ordenador.ubicaciones[ordenador.ubicaciones.length-1].lugar}}
-      </span>
-      </div>
-  
-      <br>
-      <div >
-        <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" aria-current="page"
-        href="#">
-        <button #dispositivo type="button" class="btn btn-light"  style="border-color:grey ;">Generar QR</button></a>
-   
-      <button (click)="eliminarDispositivo(ordenador.id)" type="button"
-      class="btn btn-danger" style="float: right;">Eliminar</button>
     </div>
-    <div  class="d-flex justify-content-center">
-      <a routerLink="/nueva-ubicacion" (click)="setUltimoDispositivo(ordenador)" routerLinkActive="active" aria-current="page"
-        href="#">
-        <button #dispositivo type="button" class="btn btn-light mt-2"  style="border-color:grey ;">Cambiar Ubicacion</button></a>
-    </div>
-  
-    </div>
-    </div>
-    <br>
-  </div>
-  
-  </div>
-  </div>
 
+    <br>
+    <div class="col col-lg-4  align-self-center">
+
+      <div class="card" style=" align-items: center;">
+        <div class="card-body ">
+          <div style="font-size: 21px;" class="lead" *ngIf="!ordenador.resultadosf.length && !ordenador.resultados.length">Aún no se han establecido caracteristicas para este dispositivo</div>
+          <div *ngFor=" let resultado of ordenador.resultadosf">
+            <span style="font-size: 21px;"> <b>{{resultado.caracteristicaf.caracteristicaf }}:</b>
+            </span><span class="lead"> {{resultado.respuesta }}</span>
+          </div>
+          <br>
+          <div *ngFor=" let resultado of ordenador.resultados">
+            <span style="font-size: 21px;"> <b> {{resultado.caracteristica.caracteristica }} :</b></span>
+            <span class="lead"> {{resultado.opcion.opcion }}</span>
+          </div>
+
+
+          <br>
+          <div *ngIf="ordenador.ubicaciones.length">
+            <span style="font-size: 21px;"> <b> Ubicación actual:</b></span>
+            <span class="lead"> {{ordenador.ubicaciones[ordenador.ubicaciones.length-1].lugar}}
+            </span>
+          </div>
+
+          <br>
+          <div>
+            <a routerLink="/dispositivo/{{ordenador.id}}" routerLinkActive="active" aria-current="page" href="#">
+              <button #dispositivo type="button" class="btn btn-light" style="border-color:grey ;">Generar
+                QR</button></a>
+
+            <button (click)="eliminarDispositivo(ordenador.id)" type="button" class="btn btn-danger"
+              style="float: right;">Eliminar</button>
+          </div>
+          <div class="d-flex justify-content-center">
+            <a routerLink="/nueva-ubicacion" (click)="setUltimoDispositivo(ordenador)" routerLinkActive="active"
+              aria-current="page" href="#">
+              <button #dispositivo type="button" class="btn btn-light mt-2" style="border-color:grey ;">Cambiar
+                Ubicacion</button></a>
+          </div>
+
+        </div>
+      </div>
+      <br>
+    </div>
+
+  </div>
+</div>
